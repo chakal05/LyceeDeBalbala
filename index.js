@@ -1,8 +1,6 @@
 $(document).ready(function(){
 
-    
-    check();
-
+  
 
 })
 
@@ -15,15 +13,17 @@ function check(){
     }
 
     
-$("form").submit(function(e){
+    $("form").submit(function(e){
 
-    e.preventDefault();
-    let errorMessage = "";
-    let missingFields ="";
+         e.preventDefault();
+         let errorMessage = "";
+         let missingFields ="";
    
   
     if($("#email").val() != "" && isEmail($("#email").val()) === false){
+
         errorMessage += "<p>Votre email n'est pas valide</p>";
+
     } 
     
     if($("#email").val() === ""){
