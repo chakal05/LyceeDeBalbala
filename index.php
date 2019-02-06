@@ -1,15 +1,17 @@
 <?php
 session_start();
 
-$success = "";
 $error = "";
 $missing = "";
 
     if (array_key_exists("Logout", $_GET)) {
 
         unset($_SESSION);
-
-    }else if(array_key_exists("email", $_SESSION)) {
+        setcookie("id", "", time() - 60*60);
+        $_COOKIE["id"] = "";  
+        
+    
+    }else if ((array_key_exists("id", $_SESSION) AND $_SESSION['id']) OR (array_key_exists("id", $_COOKIE) AND $_COOKIE['id'])) {
 
         header("Location: loggedInPage.php");
 
@@ -46,25 +48,30 @@ $missing = "";
         
     } else {
 
-        $query = "SELECT `Email` FROM `class` WHERE Email = '".mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
+        $query = "SELECT id FROM `class` WHERE email = '".mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
         $result = mysqli_query($link, $query);
-    
-        if (mysqli_num_rows($result) > 0) {
-            $query = "SELECT `Password` FROM `class` WHERE `Password` = '".mysqli_real_escape_string($link, $_POST["password"])."' LIMIT 1";
-            $result = mysqli_query($link, $query);
-            $row = mysqli_num_rows($result);
 
-            if($row ) {
-               $_SESSION['email'] = $_POST['email'];
+        if (mysqli_num_rows($result) > 0) {
+
+            $query = "SELECT id FROM `class` WHERE `password` = '".mysqli_real_escape_string($link, $_POST["password"])."' LIMIT 1";
+            $result = mysqli_query($link, $query);
+            $row =  mysqli_fetch_array($result);
+
+            if(isset ($row) ) {
+
+               $_SESSION['id'] = $row['id'];
+
+               setcookie("id", $row['id'], time() + (86400 * 7), "/");
 
                header("Location: loggedInPage.php");
+               
             }
              
     
         }else {
             
         $error = '<div class="alert alert-danger" role="alert"><p>Ce compte n existe pas dans notre base</p>' . $error . '</div>';
-        
+               
         }
         
 
@@ -89,9 +96,14 @@ $missing = "";
 </head>
 <body>
 
+    <div class="logo">
+   <img src="logo_devise.jpg">
+   </div>
+
     <div class="container">
+        
     <h1> Lycée De Balbala</h1>
-    <div id="errorMessage"> <?php echo $error.$success; ?> </div>
+    <div id="errorMessage"> <?php echo $error ?> </div>
     <form method="POST">
      <div class="form-group">
              
