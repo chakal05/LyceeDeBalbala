@@ -4,17 +4,17 @@ session_start();
 $error = "";
 $missing = "";
 
-    if (array_key_exists("Logout", $_GET)) {
+    if (array_key_exists("logout", $_GET) == '1') {
 
-        unset($_SESSION);
-        setcookie("id", "", time() - 60*60);
-        $_COOKIE["id"] = "";  
+        session_unset();
+        session_destroy();
+        header("location: index.php");
+        exit();
+
+    }  else if ((array_key_exists("id", $_SESSION) AND $_SESSION['id'])) {
         
-    
-    }else if ((array_key_exists("id", $_SESSION) AND $_SESSION['id']) OR (array_key_exists("id", $_COOKIE) AND $_COOKIE['id'])) {
-
-        header("Location: loggedInPage.php");
-
+        header("Location: loggedinpage.php");
+        
     }
 
     if (array_key_exists("submit", $_POST))  {
@@ -46,36 +46,42 @@ $missing = "";
       
         $error = '<div class="alert alert-danger" role="alert"><p>Il y a des erreurs dans votre formulaire</p>' . $error . '</div>';
         
-    } else {
+    } else  {
 
         $query = "SELECT id FROM `class` WHERE email = '".mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
         $result = mysqli_query($link, $query);
 
         if (mysqli_num_rows($result) > 0) {
 
-            $query = "SELECT id FROM `class` WHERE `password` = '".mysqli_real_escape_string($link, $_POST["password"])."' LIMIT 1";
+            $query = "SELECT * FROM `class` WHERE `password` = '".mysqli_real_escape_string($link, $_POST["password"])."' LIMIT 1";
             $result = mysqli_query($link, $query);
             $row =  mysqli_fetch_array($result);
 
-            if(isset ($row) ) {
+            if(isset($row)) {
 
-               $_SESSION['id'] = $row['id'];
+                    $_SESSION['id'] = true;
+                    $_SESSION['id'] = $row['id']; 
 
-               setcookie("id", $row['id'], time() + (86400 * 7), "/");
+                if($_POST['password'] === $row['password']) {  
 
-               header("Location: loggedInPage.php");
-               
+                    header("Location: loggedInPage.php");
+
+                } 
+
+            } else {
+
+                $error = 
+                $error = '<div class="alert alert-danger" role="alert"><p>Mot de passe faux</p></div>';
+                       
             }
-             
     
-        }else {
+        } else {
             
-        $error = '<div class="alert alert-danger" role="alert"><p>Ce compte n existe pas dans notre base</p>' . $error . '</div>';
-               
-        }
+            $error = '<div class="alert alert-danger" role="alert"><p>Ce compte n existe pas dans notre base</p>' . $error . '</div>';
+                   
+            }
         
-
-    }
+    } 
 
 
    }
