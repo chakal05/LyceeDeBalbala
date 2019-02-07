@@ -2,7 +2,7 @@ html, body{
     width: 100%;
     height: 100%;
     overflow-x: hidden;
-    
+    background-color: #e7e7e7;
 }
 
 *{
@@ -13,6 +13,7 @@ html, body{
 
 .logo {
     width: 100%;
+    border: 1px solid;
 }
 
 
@@ -62,15 +63,36 @@ nav p{
 }
 
 
-.bigBox{
+.container{
     width: 100%;
    display: grid;
    grid-template-columns: 1fr 2fr 1fr;
-   grid-template-rows: 50px auto;
+   grid-template-rows:  auto;
    grid-gap: 5px;
 }
 
-.bigBox div {
-    border: 1px solid;
+.container div {
+    background-color: #fff;
     text-align: center;
+}
+
+.container div h2{
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.container div ul li{
+    list-style: none;
+    margin: 10px;
+}
+
+.container div ul li a {
+    text-decoration: none;
+    color: #21398A;
+}
+
+.container div ul li a:hover,
+.container div ul li a:focus{
+    font-size: 17px;
+    color: #000000;
 }

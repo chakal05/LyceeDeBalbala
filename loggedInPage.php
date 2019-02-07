@@ -16,7 +16,6 @@
 
 
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +24,7 @@
     <title>Lycée de Balbala</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="loggedPage.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
 
     
 </head>
@@ -113,25 +112,36 @@
             <p>Username</p>
         </nav>
      
-    <div class="bigBox">
+    <div class="container">
         
       <div>
 
-        <p>Mes Activites</p>
+        <h2>Mes Activites</h2>
+
+        <ul>
+            
+          <li><a href="#">Littérature </a></li>
+          <li><a href="#">Linguistique</a></li>
+          <li><a href="#">Littérature comparée</a></li>
+          <li><a href="#">Méthologie du FLE</a></li>
+          <li><a href="#">Méthologie de l'écrit</a></li>
+
+        </ul>
 
       </div>
 
       <div>
 
-        <p>Nouvelles de l'Universitée</p>
+        <h2>Nouvelles </h2>
 
       </div>
 
       <div>
 
-        <p>Informations sur les classes et cours</p>
+        <h2>Informations </h2>
 
       </div>
+
     </div>
   
 
