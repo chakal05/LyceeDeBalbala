@@ -19,7 +19,7 @@ $missing = "";
 
     if (array_key_exists("submit", $_POST))  {
     
-    $link = mysqli_connect("127.0.0.1", "root", "", "etudiants");
+    include("connection.php");
 
     if(mysqli_connect_error()) {
         die("database error");
@@ -108,7 +108,7 @@ $missing = "";
 
     <div class="container">
         
-    <h1> Lycée De Balbala</h1>
+    <h1> Université de Djibouti</h1>
     <div id="errorMessage"> <?php echo $error ?> </div>
     <form method="POST">
      <div class="form-group">
