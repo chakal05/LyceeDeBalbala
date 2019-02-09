@@ -15,8 +15,7 @@
   
 
 
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -24,7 +23,7 @@
     <title>Universite de Djibouti</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="loggedPage.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="loggedInPage.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="jquery-ui.min.css">
 
@@ -93,8 +92,18 @@
 
             </ul>
 
-            <button type="button" class="btn btn-success">Username</button>
-        </nav>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Username
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Profile</a>
+    <a class="dropdown-item" href="#">Log out</a>
+  </div>
+</div>
+
+</nav>
      
     <div class="container">
         
