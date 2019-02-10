@@ -70,7 +70,7 @@ $missing = "";
 
             } else {
 
-                $error = 
+              
                 $error = '<div class="alert alert-danger" role="alert"><p>Mot de passe faux</p></div>';
                        
             }
