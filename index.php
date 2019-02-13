@@ -50,37 +50,23 @@ session_start();
         $error = '<div class="alert alert-danger" role="alert"><p>Il y a des erreurs dans votre formulaire</p>' . $error . '</div>';
         
     } else   {
-        $query = "SELECT * FROM `class` WHERE email = '".mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
-        
-        $result = mysqli_query($link, $query);
-        
-        if (mysqli_num_rows($result) > 0) {
-           
-            $row =  mysqli_fetch_array($result);
-            
-                if($_POST['password'] === $row['password']){
-                    
-                     $_SESSION['username'] = $row['username']; 
-                     
-                     header("Location: loggedinpage.php");
-                  
-                    exit;
-                } else {
-              
-                $error = '<div class="alert alert-danger" role="alert"><p>Mot de passe faux</p></div>';
-                       
-            }
-                 
     
-        } else {
+        $query =  $query = "SELECT * FROM `class` WHERE email = '".mysqli_real_escape_string($link, $_POST['email'])."' AND password ='".mysqli_real_escape_string($link, $_POST['password'])."' LIMIT 1";
+         
+        $result = mysqli_query($link, $query);
+        $row =  mysqli_fetch_array($result);
+        if (isset($row)) {
             
-            $error = '<div class="alert alert-danger" role="alert"><p>Ce compte n existe pas dans notre base</p>' . $error . '</div>';
-                   
-            }
-        
-    } 
-    }
-   
+             $_SESSION['username']=$row['username'];
+              header("Location: loggedinpage.php");
+              exit;
+        } else {
+                       $error = '<div class="alert alert-danger" role="alert"><p>Email et/ou mot de passe non reconnu</p></div>';
+            
+             }
+            
+        } 
+        }
    
 
 ?>
@@ -110,7 +96,7 @@ session_start();
     <div id="errorMessage"> <?php echo $error ?> </div>
 
     <form method="POST">
-    
+
      <div class="form-group">
              
              <input type="email" class="form-control" id="email" placeholder="Votre Email " name="email">
