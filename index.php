@@ -1,23 +1,26 @@
 <?php
+
 session_start();
 
-$error = "";
-$missing = "";
+  $error = "";
+  $missing = "";
 
-    if (array_key_exists("logout", $_GET) == '1') {
+  if (array_key_exists('logout', $_GET) == '1') {
 
+        header("location: index.php");
         session_unset();
         session_destroy();
-        header("location: index.php");
-        exit();
+        exit;
 
-    }  else if ((array_key_exists("id", $_SESSION) AND $_SESSION['id'])) {
+    } 
+    
+    if (isset($_SESSION['username'])) {
         
-        header("Location: loggedinpage.php");
-        
-    }
-
-    if (array_key_exists("submit", $_POST))  {
+    // If the user is already logged in send to home
+    
+    header("Location: loggedinpage.php");
+    
+    } else if (array_key_exists('submit', $_POST))  {
     
     include("connection.php");
 
@@ -46,34 +49,28 @@ $missing = "";
       
         $error = '<div class="alert alert-danger" role="alert"><p>Il y a des erreurs dans votre formulaire</p>' . $error . '</div>';
         
-    } else  {
-
-        $query = "SELECT id FROM `class` WHERE email = '".mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
+    } else   {
+        $query = "SELECT * FROM `class` WHERE email = '".mysqli_real_escape_string($link, $_POST['email'])."' LIMIT 1";
+        
         $result = mysqli_query($link, $query);
-
+        
         if (mysqli_num_rows($result) > 0) {
-
-            $query = "SELECT * FROM `class` WHERE `password` = '".mysqli_real_escape_string($link, $_POST["password"])."' LIMIT 1";
-            $result = mysqli_query($link, $query);
+           
             $row =  mysqli_fetch_array($result);
-
-            if(isset($row)) {
-
-                    $_SESSION['id'] = true;
-                    $_SESSION['id'] = $row['id']; 
-
-                if($_POST['password'] === $row['password']) {  
-
-                    header("Location: loggedInPage.php");
-
-                } 
-
-            } else {
-
+            
+                if($_POST['password'] === $row['password']){
+                    
+                     $_SESSION['username'] = $row['username']; 
+                     
+                     header("Location: loggedinpage.php");
+                  
+                    exit;
+                } else {
               
                 $error = '<div class="alert alert-danger" role="alert"><p>Mot de passe faux</p></div>';
                        
             }
+                 
     
         } else {
             
@@ -82,9 +79,9 @@ $missing = "";
             }
         
     } 
-
-
-   }
+    }
+   
+   
 
 ?>
 
@@ -109,8 +106,11 @@ $missing = "";
     <div class="container">
         
     <h1> Université de Djibouti</h1>
+
     <div id="errorMessage"> <?php echo $error ?> </div>
+
     <form method="POST">
+    
      <div class="form-group">
              
              <input type="email" class="form-control" id="email" placeholder="Votre Email " name="email">
