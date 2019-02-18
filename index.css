@@ -10,19 +10,9 @@ html, body{
     box-sizing: border-box;
 }
 
-.logo {
-    width: 100%;
-}
-
-
-.logo img {
-    width: 100%;
-    height: 150px;
-}
 
 .container{
     width: 100%;
-    margin-top: 0;
     background-color: rgb(34, 45, 80);
     text-align: center;
 }
@@ -45,5 +35,5 @@ form{
 }
 
 button{
-    margin-bottom: 3%;
+    margin-bottom: 13%;
 }
