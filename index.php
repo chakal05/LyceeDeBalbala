@@ -50,8 +50,9 @@ session_start();
         $error = '<div class="alert alert-danger" role="alert"><p>PHP CODE Il y a des erreurs dans votre formulaire </p>' . $error . '</div>';
         
     } else {
+        
     
-    $query =  $query = "SELECT * FROM `etudiants` WHERE email = '".mysqli_real_escape_string($link, $_POST['email'])."' AND password ='".mysqli_real_escape_string($link, $_POST['password'])."' LIMIT 1";
+    $query = "SELECT * FROM `class` WHERE email = '".mysqli_real_escape_string($link, $_POST['email'])."' AND password ='".mysqli_real_escape_string($link, $_POST['password'])."' LIMIT 1";
      
     $result = mysqli_query($link, $query);
     $row =  mysqli_fetch_array($result);
@@ -84,16 +85,19 @@ session_start();
     <title>Lycée de Balbala</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css">
 
     
 </head>
 <body>
+   
     
-    <div>
-   <?php  include("header.php"); ?>
-</div>
-
+   <div class="bild">
+       
+       <img src="logo_devise.jpg">
+       
+   </div>
+   
     <div class="container">
         
     <h1> Université de Djibouti</h1>

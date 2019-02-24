@@ -1,7 +1,7 @@
 html, body{
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
+   
 }
 
 *{
@@ -13,13 +13,46 @@ html, body{
 
 .container{
     width: 100%;
+    padding:0;
    border: 1px solid;
    display: grid;
-    grid-template-columns: 1fr 2fr;
-   grid-template-rows:  auto;
+    grid-template-columns: 1fr 3fr;
+   grid-template-rows: auto;
+   grid-gap: 15px;
 }
 
 .left{
-    border: 1px solid;
-    margin-left= 0;
+    margin-left: -5%;
+}
+
+h4{
+    font-size: 19px;
+    width: 50%;
+}
+
+.left div {
+    
+    background-color: #FFFFFF;
+}
+
+.functions{
+    margin-top: 15px;
+}
+
+.pages{
+    width: 100%;
+    height: 30px;
+}
+.pages ul {
+    list-style: none;
+}
+
+.pages ul li {
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+.display-message{
+    width: 100%; 
 }

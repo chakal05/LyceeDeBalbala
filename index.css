@@ -10,9 +10,20 @@ html, body{
     box-sizing: border-box;
 }
 
+.bild {
+    width: 100%;
+   text-align:left;
+   margin-bottom: 1%;
+   margin-top: 1%;
+}
+
+
+.bild img {
+    height: 91px;
+  margin-left: 13%;
+}
 
 .container{
-    width: 100%;
     background-color: rgb(34, 45, 80);
     text-align: center;
 }
@@ -35,5 +46,5 @@ form{
 }
 
 button{
-    margin-bottom: 13%;
+    margin-bottom: 3%;
 }
