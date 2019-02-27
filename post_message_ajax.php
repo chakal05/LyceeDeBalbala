@@ -20,8 +20,11 @@
         
         if($q){
             echo "Posted";
+          
         }else{
             echo "Error";
         }
     }
+
+   
 ?>

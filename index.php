@@ -1,17 +1,12 @@
 <?php
-
 session_start();
-
   $error = "";
   $missing = "";
-
   if (array_key_exists('logout', $_GET) == '1') {
-
         header("location: index.php");
         session_unset();
         session_destroy();
         exit;
-
     } 
     
     if (isset( $_SESSION['id'])) {
@@ -23,7 +18,6 @@ session_start();
     } else if (array_key_exists('submit', $_POST))  {
     
     include("connection.php");
-
     if(mysqli_connect_error()) {
         die("database error");
     }
@@ -35,16 +29,13 @@ session_start();
     if($_POST['email'] && filter_var($_POST['email'] , FILTER_VALIDATE_EMAIL) === false) {
         $error.= "Votre email n'est pas valide<br>";
     }
-
     
     if(!$_POST['password']) {
         $missing.= "Mot de passe absent<br>";
     } 
-
     if($missing != "") {
         $error .= "Les espaces suivants doivent etre remplis: <br>" .$missing;
     }
-
     if($error != "") {
       
         $error = '<div class="alert alert-danger" role="alert"><p>PHP CODE Il y a des erreurs dans votre formulaire </p>' . $error . '</div>';
@@ -73,7 +64,6 @@ session_start();
     }
    
    
-
 ?>
 
 

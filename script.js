@@ -1,5 +1,18 @@
 $(document).ready(function(){
-    check();
+    check();    
+
+   
+       
+        //get message
+        c_id =  $.trim($("#conversation_id").val());
+        //get new message every 2 second
+        setInterval(function(){
+            $("td").load("get_message_ajax.php?c_id="+c_id);
+        }, 2000);
+     
+        $("td").prop("scrollHeight");
+
+
     
     
     /*post message via ajax*/
@@ -22,20 +35,9 @@ $(document).ready(function(){
     });
         
        
-        //get message
-        c_id =  $.trim($("#conversation_id").val());
-        //get new message every 2 second
-        setInterval(function(){
-            $(".display-message").load("get_message_ajax.php?c_id="+c_id);
-        }, 2000);
-     
-        $(".display-message").prop("scrollHeight");
-
-
         
        
     })
-    
     
         function check(){
        

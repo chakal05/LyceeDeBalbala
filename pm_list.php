@@ -1,13 +1,8 @@
 <?php
-
-     require_once("connection.php");
-    session_start();
-    if(!isset($_SESSION['id'])){
-        header( "location: loggedinpage.php");
-    }
-
-
-
+    require_once("connection.php");
+session_start();
+   
+ 
 ?>
 
 <!DOCTYPE html>
@@ -49,32 +44,60 @@
           </div>
       </div>
         
-        <div class="right">
+        <div class="display-message">
+        <table class="table table-bordered">
+    <thead class="thead-light">
+    <tr>
 
-            <div class="pages">
-            <ul>
-            <li>Page :</li>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li><a href="#">Page suivante</a></li>  
-            <li> Messages sur la page : </li>
-            <li> Total(messages)</li>
-            </ul>
-            </div>
-          <br>
-            
+      <th scope="col">Message</th>
+      <th scope="col">Auteur</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php 
+ if(isset($_SESSION['id'])){
+  $user = $_SESSION['id'];
+  //get the conversation id and
+//fetch all the messages of $user_id(loggedin user) and $user_two from their conversation
+$sql = "SELECT * FROM `messages` WHERE user_to='$user' AND user_to_read ='no'";
+$result = mysqli_query($link,$sql);
+//check their are any messages
+if(mysqli_num_rows($result) > 0){
+while ($m = mysqli_fetch_array($result)) {
+    //format the message and display it to the user
+    $user_from = $m['user_from'];
+    $user_to = $m['user_to'];
+    $message = $m['message'];
+    $time = $m['time'];
+    //get name and image of $user_form from `user` table
+    $user = mysqli_query($link, "SELECT username FROM `class` WHERE id='$user_from'");
+    $user_fetch = mysqli_fetch_assoc($user);
+    $user_from_username = $user_fetch['username'];
+  
+    echo "<tr><td><a href='new_pm.php'> $message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
 
-
-            <div class="display-message">
-            </div>
-            
-            
-            
-            
-        </div>
+    //display the message
     
-    </div>
+      }
+
+      echo "</table";
+  }else{
+      echo "No Messages";
+  }
+} else {
+  echo "session_id not set";
+}
+
+  ?>
+   
+  </tbody>
+</table>
+          
+          
+         
+        </div>
+        </div>
     
     
     
@@ -84,6 +107,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
- <script src="script.js"></script>
+ <script src=""></script>
 </body>
 </html>

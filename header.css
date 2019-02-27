@@ -13,16 +13,16 @@ html, body{
    margin-bottom: 31px;
 } 
 .logo {
-       width: 100%;
-     text-align:left;
-     margin-bottom: 1%;
-     margin-top: 1%;
+   width: 100%;
+   text-align:left;
+   margin-bottom: 1%;
+   margin-top: 1%;
   }
   
   
 .logo img {
-   height: 120px;
-   margin-left: 7%;
+   height: 91px;
+    margin-left: 17%;
 }
   
   
@@ -55,7 +55,7 @@ nav ul li a {
 }
 .dropdown .btn {
    color: #fff;
-   
+   padding-bottom: 3px;
 }
 
 .dropdown .green:hover
@@ -63,22 +63,21 @@ nav ul li a {
    background-color:#4BB74C;
 }
 
-.dropdown-menu{
-   
-   
-}
 .dropdown-item{
 margin-left: 0.3%;
    
 }
-nav i {
+nav a i {
    color: #fff;
    font-size: 27px;
-  
+   padding-top: 5px;
+   position: absolute;
+   right: 30%;
 }
 
-.username{
-
+.username {
+position: absolute;
+right: 2.5%;
 
 }
 

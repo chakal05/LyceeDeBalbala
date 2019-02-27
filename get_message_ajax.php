@@ -1,5 +1,4 @@
 <?php
-
     require_once("connection.php");
 session_start();
     if(isset($_SESSION['id'])){
@@ -9,7 +8,6 @@ session_start();
         $sql = "SELECT * FROM `messages` WHERE user_to='$user' AND user_to_read ='no'";
         $result = mysqli_query($link,$sql);
         //check their are any messages
-
         if(mysqli_num_rows($result) > 0){
             while ($m = mysqli_fetch_assoc($result)) {
                 //format the message and display it to the user
@@ -24,23 +22,18 @@ session_start();
               
  
                 //display the message
-                
-                echo "
-                           
-                                <div class='text-con'>
-                                <ul class='list-group'>
+        echo "
 
-                        <li class='list-group-item '>
-                        
-                        <a href='#''>{$user_from_username}</a>
-                        <p>{$message}</p>
-                        
-                        </li>
+     
+            <tr>
 
-                                  
-                                </div> ";
-                            
-                          
+        <td>{$message}</td>
+        <td>{$user_from_username}</td>
+        <td> 19/02/10 14:34</td> 
+        
+        </tr>
+       
+                   " ;      
  
             }
         }else{
