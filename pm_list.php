@@ -66,6 +66,7 @@ $result = mysqli_query($link,$sql);
 if(mysqli_num_rows($result) > 0){
 while ($m = mysqli_fetch_array($result)) {
     //format the message and display it to the user
+    $conversation_Id = $m['conversation_id'];
     $user_from = $m['user_from'];
     $user_to = $m['user_to'];
     $message = $m['message'];
@@ -75,7 +76,7 @@ while ($m = mysqli_fetch_array($result)) {
     $user_fetch = mysqli_fetch_assoc($user);
     $user_from_username = $user_fetch['username'];
   
-    echo "<tr><td><a href='new_pm.php'> $message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
+    echo "<tr><td><a href='reading_mess.php?conversation_id=$conversation_Id'> $message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
 
     //display the message
     
