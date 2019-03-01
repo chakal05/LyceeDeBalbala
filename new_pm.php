@@ -9,7 +9,7 @@
         $receiver = "";
     }
     
-  
+   
 
 ?>
 
@@ -109,16 +109,9 @@
          <input type="hidden" id="conversation_id" name="conversation_id" value="<?php echo base64_encode($conversation_id); ?>">
                 <input type="hidden" id="user_from" name="user_from" value="<?php echo base64_encode($user_id); ?>">
                 <input type="hidden" id="user_to" name="user_to" value="<?php echo base64_encode($user_to); ?>">
-        
         <button type="button" class="btn btn-success" name= "send" id="send">Envoyer</button>
                  <span id="error"></span>
                  
-                
-              
-                
-         
-            
-       
         </div>
         
     </div>
