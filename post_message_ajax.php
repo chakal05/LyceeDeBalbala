@@ -28,14 +28,7 @@
         //insert into `messages`
         
         $q = mysqli_query($link, "INSERT INTO `messages` 
-        VALUES ('',
-        '$conversation_id',
-        '$user_from',
-        '$user_to',
-        '$message',
-         NOW(),
-        'yes',
-        'no')");
+        VALUES ('','$conversation_id','$user_from','$user_to','$message',NOW(),'yes','no')");
         
         if($q){
             echo "Posted";

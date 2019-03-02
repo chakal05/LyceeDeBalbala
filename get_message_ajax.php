@@ -36,8 +36,6 @@ session_start();
                    " ;      
  
             }
-        }else{
-            echo "No Messages";
         }
     } else {
         echo "session_id not set";

@@ -60,26 +60,31 @@ session_start();
   $user = $_SESSION['id'];
   //get the session id and
 //fetch all the unread messages of $user_id(loggedin user) and $user_two from their conversation
-$sql1 = "SELECT * FROM `messages` WHERE user_to='$user' AND user_from_read ='yes' AND user_to_read ='no' ORDER BY id DESC";
+$sql1 = "SELECT * FROM `messages` WHERE user_to='$user' AND user_to_read ='no' ORDER BY id DESC";
 // query for read messages
-$sql2 = "SELECT * FROM `messages` WHERE user_to='$user' AND user_from_read ='yes' AND user_to_read ='yes' ORDER BY id DESC";
+$sql2 = "SELECT * FROM `messages` WHERE user_to='$user' AND user_to_read ='yes' ORDER BY id DESC";
 $result = mysqli_query($link,$sql1);
 $result1 = mysqli_query($link,$sql2);
 //check their are any messages
 if(mysqli_num_rows($result) > 0){
 while ($m = mysqli_fetch_array($result)) {
     //format the message and display it to the user
+
     $conversation_Id = $m['conversation_id'];
     $user_from = $m['user_from'];
     $user_to = $m['user_to'];
     $message = $m['message'];
     $time = $m['time'];
+
+    $format = strip_tags($message); 
+    $formated_message = substr($format, 0, 100); 
+
     //get name and image of $user_form from `user` table
     $user = mysqli_query($link, "SELECT username FROM `class` WHERE id='$user_from'");
     $user_fetch = mysqli_fetch_assoc($user);
     $user_from_username = $user_fetch['username'];
   
-    echo "<tr class='table-primary'><td><a href='reading_mess.php?conversation_id=$conversation_Id'> $message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
+    echo "<tr class='table-primary'><td><a href='reading_mess.php?conversation_id=$conversation_Id'> $formated_message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
 
     //display the message
     
@@ -97,12 +102,15 @@ while ($m = mysqli_fetch_array($result)) {
       $user_to = $m['user_to'];
       $message = $m['message'];
       $time = $m['time'];
-      //get name and image of $user_form from `user` table
-      $user = mysqli_query($link, "SELECT username FROM `class` WHERE id='$user_from'");
+      
+    $format = strip_tags($message); 
+    $formated_message = substr($format, 0, 100); 
+      //get name  $user_form from `class` table
+      $user = mysqli_query($link, "SELECT * FROM `class` WHERE id= $user_from ");
       $user_fetch = mysqli_fetch_assoc($user);
       $user_from_username = $user_fetch['username'];
     
-      echo "<tr><td><a href='reading_mess.php?conversation_id=$conversation_Id'> $message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
+      echo "<tr><td><a href='reading_mess.php?conversation_id=$conversation_Id'> $formated_message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
   
       //display the message
       

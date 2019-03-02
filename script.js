@@ -7,10 +7,10 @@ $(document).ready(function(){
         c_id =  $.trim($("#conversation_id").val());
         //get new message every 2 second
         setInterval(function(){
-            $("td").load("get_message_ajax.php?c_id="+c_id);
+            $("").load("get_message_ajax.php?c_id="+c_id);
         }, 2000);
      
-        $("td").prop("scrollHeight");
+        $("").prop("scrollHeight");
 
 
     
@@ -34,6 +34,24 @@ $(document).ready(function(){
         }
     });
         
+      /*post message via ajax*/
+      $("#reponse").on("click", function(){
+        var message = $.trim($("#message").val()),
+            conversation_id = $.trim($("#conversation_id2").val()),
+            user_from = $.trim($("#user_from").val()),
+            user_to = $.trim($("#user_to").val()),
+            error = $("#error");
+    
+        if((message != "") && (conversation_id != "") && (user_from != "") && (user_to != "")){
+            error.text("Sending...");
+            $.post("post_message_ajax.php",{message:message,conversation_id:conversation_id,user_from:user_from,user_to:user_to}, function(data){
+                 error.text(data);
+                //clear the message box
+
+                $("#message").val("");
+            });
+        }
+    });
        
         
        
