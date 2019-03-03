@@ -33,18 +33,19 @@ $(document).ready(function(){
             });
         }
     });
-        
-      /*post message via ajax*/
-      $("#reponse").on("click", function(){
+
+       
+    /*post message via ajax*/
+    $("#response").on("click", function(){
         var message = $.trim($("#message").val()),
-            conversation_id = $.trim($("#conversation_id2").val()),
+            conversation_id = $.trim($("#conversation_id").val()),
             user_from = $.trim($("#user_from").val()),
             user_to = $.trim($("#user_to").val()),
             error = $("#error");
     
         if((message != "") && (conversation_id != "") && (user_from != "") && (user_to != "")){
             error.text("Sending...");
-            $.post("post_message_ajax.php",{message:message,conversation_id:conversation_id,user_from:user_from,user_to:user_to}, function(data){
+            $.post("reading_mess.php",{message:message,conversation_id:conversation_id,user_from:user_from,user_to:user_to}, function(data){
                  error.text(data);
                 //clear the message box
 
@@ -52,8 +53,9 @@ $(document).ready(function(){
             });
         }
     });
-       
         
+        
+      
        
     })
     

@@ -13,22 +13,11 @@
         $conversation_id = base64_decode($conversation_id);
         $user_from = base64_decode($user_from);
         $user_to = base64_decode($user_to);
-        
-        //Get date and time
-            
-        $now = new DateTime();
-        $nowDate = $now->format('Y-m-d');
-        $nowTime = $now->format('H:i:s');
-        $tiden= $nowDate." at ".$nowTime;
-   
-   
-
-
 
         //insert into `messages`
         
         $q = mysqli_query($link, "INSERT INTO `messages` 
-        VALUES ('','$conversation_id','$user_from','$user_to','$message',NOW(),'yes','no')");
+        VALUES ('','$conversation_id','$user_from','$user_to','$message',NOW(),'no')");
         
         if($q){
             echo "Posted";
@@ -38,5 +27,5 @@
         }
     }
 
-   
+  
 ?>
