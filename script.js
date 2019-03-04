@@ -1,16 +1,10 @@
 $(document).ready(function(){
     check();    
-
-   
-       
-        //get message
-        c_id =  $.trim($("#conversation_id").val());
-        //get new message every 2 second
-        setInterval(function(){
-            $("").load("get_message_ajax.php?c_id="+c_id);
-        }, 2000);
+    checkMessages();
+    setInterval(checkMessages(), 2000);
+        
      
-        $("").prop("scrollHeight");
+       
 
 
     
@@ -46,7 +40,7 @@ $(document).ready(function(){
         if((message != "") && (conversation_id != "") && (user_from != "") && (user_to != "")){
             error.text("Sending...");
             $.post("reading_mess.php",{message:message,conversation_id:conversation_id,user_from:user_from,user_to:user_to}, function(data){
-                 error.text(data);
+                 error.text(" Posted ");
                 //clear the message box
 
                 $("#message").val("");
@@ -59,6 +53,22 @@ $(document).ready(function(){
        
     })
     
+    
+       
+        //get message
+        
+        //get new message every 2 second
+       
+        function checkMessages() {
+            $user = $.trim($("#user_from").val());
+          $.get("get_message_ajax.php?user_id="+$user, function(data){
+              $("#mess").html(data);
+          })
+    
+    }
+
+        // login validation
+
         function check(){
        
         function isEmail(email){

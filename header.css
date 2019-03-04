@@ -67,13 +67,6 @@ nav ul li a {
 margin-left: 0.3%;
    
 }
-nav a i {
-   color: #fff;
-   font-size: 27px;
-   padding-top: 5px;
-   position: absolute;
-   right: 30%;
-}
 
 .username {
 position: absolute;
@@ -89,4 +82,36 @@ background-color: #EC191E;
    color: #fff;
 }
 
+.notification {
+   background-color: #fff;
+   color: #21398A;
+   font-weight: bold;
+   text-decoration: none;
+   padding: 7.1px 17px;
+   position: relative;
+   right: 5%;
+   top: -2px;
+   display: inline-block;
+   border-radius: 2px;
+ }
+ 
+ .notification:hover {
+   background: #EC191E;
+   color: #fff;
+   text-decoration: none;
+ }
+ 
+ .notification #mess {
+   position: absolute;
+   top: -10px;
+   right: -10px;
+   padding: 5px 10px;
+   border-radius: 50%;
+   background: red;
+   color: white;
+ }
 
+ .notification:hover #mess{
+     background-color: #4BB74C;
+ }
+ 

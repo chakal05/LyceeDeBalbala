@@ -16,15 +16,22 @@
 
         //insert into `messages`
         
-        $q = mysqli_query($link, "INSERT INTO `messages` 
+        $q = mysqli_query($link, "INSERT  INTO `messages` 
         VALUES ('','$conversation_id','$user_from','$user_to','$message',NOW(),'no')");
         
-        if($q){
+       
+         
+        if($q === TRUE){
+
+            //insert was successful
             echo "Posted";
-          
-        }else{
-            echo "Error";
-        }
+
+           } else {
+           
+              //insert failed
+              echo "Error";
+           
+           }
     }
 
   

@@ -21,24 +21,51 @@ html, body{
 }
 
 .left{
-    margin-left: -5%;
+    margin-left: -35%;
+    text-align: center;
 }
 
 h4{
-    font-size: 19px;
-    width: 50%;
+    font-size: 21px;
+    margin-top: 7px;
+    color: #21398A;
 }
 
 .left div {
-    
     background-color: #FFFFFF;
 }
 
-.functions{
-    margin-top: 15px;
+.left ul li {
+    list-style: none;
+}
+.left ul {
+    margin: 20px;
+}
+.left ul li {
+    margin: 3px;
+    color: #21398A;
+}
+.left ul li a {
+    color: #21398A;
+}
+.left ul li a:hover {
+    background-color:#21398A;
+    color: #fff;
 }
 
 .display-message{
     width: 100%; 
 }
 
+.pim .recu a{
+    background-color:#21398A;
+    color: #fff;
+    
+}
+table{
+    text-align: center;
+}
+thead{
+    background-color: #21398A;
+    color: #fff;
+}

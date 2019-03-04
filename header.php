@@ -58,19 +58,21 @@
             
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="#">Questions frequentes</a>
-                <a class="dropdown-item" href="#">Une autre forme d'aide</a>  </div>
+                <a class="dropdown-item" href="#">Une autre forme d'aide</a> 
+             </div>
             </div>
         </li>
 
         <li>
 
-            <a href="pm_list.php"><i class="fas fa-envelope"></i></a>
-          
+        <a href="pm_list.php" class="notification">
+           <span>Inbox</span>
+           <span id="mess">3</span>
+         </a>  
+
         </li>
         <li>
-            
-               <a class="dropdown-item" href="index.php?logout=1">LOG OUT</a>
-               
+        <a class="dropdown-item" href="index.php?logout=1">LOG OUT</a>
         </li>
         <li>
                 <div class="dropdown username">
@@ -80,7 +82,8 @@
                     
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="index.php?logout=1">LOG OUT</a>
-                        <a class="dropdown-item" href="#">Une autre forme d'aide</a>  </div>
+                        <a class="dropdown-item" href="#">Une autre forme d'aide</a> 
+                    </div>
                     </div>
                 </li>
     </ul>
@@ -93,6 +96,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
- <script src="jquery.js"></script>
+ <script src="jquery.min.js"></script>
+ <script src="script.js"></script>
 </body>
 </html>

@@ -23,32 +23,33 @@ session_start();
     
     <div class= "container">
         
-      <div class="left">
-          <div class="pim">
-          <h4>PIM</h4>
-          <hr>
-          <p><a href="new_pm.php">Envoyer un message</a></p>
-          <p><a href="#">Recus</a></p>
-          <p><a href="#">Envoyes</a></p>
-          
-          
-          </div>
-          
-          <div class="functions">
-              <h4>Outils</h4>
-              <hr>
-            <p><a href="#">Forward message</a></p>
-            <p><a href="#">Delete message</a></p>
-            <p><a href="#">Marquer non lu</a></p>
-              
-          </div>
-      </div>
+    <div class="left">
+            <div class="pim">
+                <h4> PIM</h4>
+            <ul class="nav flex-column">
+           
+            <li class="nav-item"><a class="nav-link" href="new_pm.php">Envoyer un message</a></li>
+            <li class="nav-item recu "><a class="nav-link" href="#">Recus</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Envoyes</a></ki>
+            </ul>
+            
+            </div>
+            
+            <div class="functions">
+                <h4>OUTILS</h4>
+               <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link" href="#">Forward message</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Delete message</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Marquer non lu</a></li>
+                </ul>
+            </div>
+        </div>
         
         <div class="display-message">
         <table class="table table-bordered">
-    <thead class="thead-light">
+    <thead >
     <tr>
-
+    <th scope="col">#</th>
       <th scope="col">Message</th>
       <th scope="col">Auteur</th>
       <th scope="col">Date</th>
@@ -83,7 +84,7 @@ while ($m = mysqli_fetch_array($result)) {
     $user_fetch = mysqli_fetch_assoc($user);
     $user_from_username = $user_fetch['username'];
   
-    echo "<tr class='table-primary'><td><a href='reading_mess.php?conversation_id=$conversation_Id'> $formated_message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
+    echo "<tr class='table-primary'><th scope='row'><input type='checkbox'></th><td><a href='reading_mess.php?conversation_id=$conversation_Id'> $formated_message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
     //display the message
     
       }
@@ -105,7 +106,7 @@ while ($m = mysqli_fetch_array($result)) {
       $user_fetch = mysqli_fetch_assoc($user);
       $user_from_username = $user_fetch['username'];
     
-      echo "<tr><td><a href='reading_mess.php?conversation_id=$conversation_Id'> $formated_message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
+      echo "<tr><th scope='row'><input type='checkbox'></th><td><a href='reading_mess.php?conversation_id=$conversation_Id'> $formated_message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
   
       //display the message
       
