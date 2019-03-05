@@ -67,7 +67,7 @@
 
         <a href="pm_list.php" class="notification">
            <span>Inbox</span>
-           <span id="mess">3</span>
+           <span id="mess"></span>
          </a>  
 
         </li>

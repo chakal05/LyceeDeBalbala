@@ -71,20 +71,20 @@
             $receiver =  $row['username'];
                 
             }
-            
-                //check $user_id and $user_two has conversation or not if no start one
-                $conver = mysqli_query($link, "SELECT * FROM `conversation` WHERE (user_one='$user_id' AND user_two='$user_to') OR (user_one='$user_to' AND user_two='$user_id')");
+    
+        //check $user_id and $user_two has conversation or not if no start one
+        $conver = mysqli_query($link, "SELECT * FROM `conversation` WHERE (user_one='$user_id' AND user_two='$user_to') OR (user_one='$user_to' AND user_two='$user_id')");
 
-                //they have a conversation
-                if(mysqli_num_rows($conver) == 1){
-                    //fetch the converstaion id
-                    $fetch = mysqli_fetch_assoc($conver);
-                    $conversation_id = $fetch['id'];
-                }else{ //they do not have a conversation
-                    //start a new converstaion and fetch its id
-                    $q = mysqli_query($link, "INSERT INTO `conversation` VALUES ('','$user_id','$user_to')");
-                    $conversation_id = mysqli_insert_id($link);
-                }
+        //they have a conversation
+        if(mysqli_num_rows($conver) == 1){
+            //fetch the converstaion id
+            $fetch = mysqli_fetch_assoc($conver);
+            $conversation_id = $fetch['id'];
+        }else{ //they do not have a conversation
+            //start a new converstaion and fetch its id
+            $q = mysqli_query($link, "INSERT INTO `conversation` VALUES ('','$user_id','$user_to')");
+            $conversation_id = mysqli_insert_id($link);
+        }
                 
         }   else {
             die ("INVALID id");

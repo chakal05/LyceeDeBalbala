@@ -1,26 +1,22 @@
 <?php
-
 require_once("connection.php");
 session_start();
-
     //post message
     if(isset($_POST['message'])){
         $message = mysqli_real_escape_string($link, $_POST['message']);
         $conversation_id = mysqli_real_escape_string($link, $_POST['conversation_id']);
         $user_from = mysqli_real_escape_string($link, $_POST['user_from']);
         $user_to = mysqli_real_escape_string($link, $_POST['user_to']);
-
         //decrypt the conversation_id,user_from,user_to
         $conversation_id = base64_decode($conversation_id);
         $user_from = base64_decode($user_from); //  user_id
         $user_to = base64_decode($user_to); // user_from 
-
         //insert into `messages`
             $sql= "INSERT INTO `messages` 
             VALUES ('','$conversation_id','$user_from','$user_to','$message',NOW(),'no')";
             $q = mysqli_query($link,$sql);
          
-            if($q === TRUE){
+            if($q){
                 echo "Posted";
               
             }else{
@@ -28,11 +24,11 @@ session_start();
             }
         
     }
-?>
+    ?>
 
-<!DOCTYPE html>
-<html>
-<head>
+    <!DOCTYPE html>
+    <html>
+    <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>New Message</title>
@@ -40,9 +36,15 @@ session_start();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="">
 
+    <style>
+    .container{
+        padding: 1%;
+        box-shadow: 2px 3px gray ;
+    }
     
-</head>
-<body>
+    </style>
+    </head>
+    <body>
     
     <?php include("header.php");     ?>
     
@@ -60,7 +62,6 @@ session_start();
     if(isset($_GET['conversation_id'])){
         $conversation = $_GET['conversation_id'];
         // Get members of this conversation and  get user_two id
-
         $sql= "SELECT * FROM `conversation` WHERE id='$conversation'";
         $res = mysqli_query($link, $sql);
         
@@ -72,18 +73,12 @@ session_start();
                     $user_two = $ligne['user_one'];
                 }
             }
-
         }
-
-
         // Check if they have a conversation
-
        $query = "SELECT * FROM `messages` WHERE conversation_id='$conversation'";
        $result = mysqli_query($link, $query);
-
        if(mysqli_num_rows($result) > 0){
         // They have a conversation
-
         while ($row = mysqli_fetch_array($result)) {
             //format the message 
             $mess_id= $row['id'];
@@ -102,19 +97,22 @@ session_start();
             echo "
                 
               
-                <div class='text-con'>
-                <a href='#''>{$user_from_username}</a>
+                <div class='form-group'>
+                
+                <button type='button' class='btn btn-success btn-sm'> From :  {$user_from_username} </button> 
+                
                 <p>{$message}</p>
-                <p>{$time}</p>
-                    </div>
+
+               <p><b>{$time}</b></p>
+                
+              </div>
+              <hr>
             
             
             ";
            
             }
-
             // If user is receiver of a message, updtate to read message when message is read
-
             if($user_id == $user_to){
                 $sql= "UPDATE `messages` set user_to_read= 'yes' where id=$mess_id";
                 $query= mysqli_query($link, $sql);
@@ -136,17 +134,19 @@ session_start();
     
      <div>
         <div class="form-group">
-        
-        <textarea class="form-control" id="message" rows="3" name="message" placeholder="Reponse"></textarea>
+        <button type='button' class='btn btn-primary btn-sm'> To :  <?php echo $user_from_username;?></button> 
         </div>
+        <div> <textarea class="form-control" id="message" rows="3" name="message" placeholder="Reponse"></textarea></div>
+        
          <input type="hidden" id="conversation_id" name="conversation_id" value="<?php echo base64_encode($conversation); ?>">
                 <input type="hidden" id="user_from" name="user_from" value="<?php echo base64_encode($user_id); ?>">
                 <input type="hidden" id="user_to" name="user_to" value="<?php echo base64_encode($user_two); ?>">
-        
+                </div>
+
         <button type="button" class="btn btn-success" name= "response" id="response" value="response">Envoyer</button>
                  <span id="error"></span>
                  
-        </div>
+       
         </div>
 
 

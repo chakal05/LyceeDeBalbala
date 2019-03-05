@@ -15,13 +15,10 @@
         $user_to = base64_decode($user_to);
 
         //insert into `messages`
+        $sql= "INSERT  INTO `messages` VALUES ('','$conversation_id','$user_from','$user_to','$message',NOW(),'no')";
+        $q= mysqli_query($link,$sql);
         
-        $q = mysqli_query($link, "INSERT  INTO `messages` 
-        VALUES ('','$conversation_id','$user_from','$user_to','$message',NOW(),'no')");
-        
-       
-         
-        if($q === TRUE){
+        if($q){
 
             //insert was successful
             echo "Posted";
@@ -32,6 +29,7 @@
               echo "Error";
            
            }
+
     }
 
   

@@ -78,7 +78,7 @@ while ($m = mysqli_fetch_array($result)) {
     $message = $m['message'];
     $time = $m['time'];
     $format = strip_tags($message); 
-    $formated_message = substr($format, 0, 100); 
+    $formated_message = substr($format, 0, 100).("..."); 
     //get name and image of $user_form from `user` table
     $user = mysqli_query($link, "SELECT username FROM `class` WHERE id='$user_from'");
     $user_fetch = mysqli_fetch_assoc($user);
