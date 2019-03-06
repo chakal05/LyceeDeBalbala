@@ -71,9 +71,7 @@
          </a>  
 
         </li>
-        <li>
-        <a class="dropdown-item" href="index.php?logout=1">LOG OUT</a>
-        </li>
+       
         <li>
                 <div class="dropdown username">
                     <a class="btn dropdown-toggle" href="#" role="button" id="username" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

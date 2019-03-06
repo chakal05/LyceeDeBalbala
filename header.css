@@ -63,10 +63,6 @@ nav ul li a {
    background-color:#4BB74C;
 }
 
-.dropdown-item{
-margin-left: 0.3%;
-   
-}
 
 .username {
 position: absolute;
@@ -104,7 +100,7 @@ background-color: #EC191E;
  .notification #mess {
    position: absolute;
    top: -10px;
-   right: -10px;
+   right: -12px;
    padding: 5px 10px;
    border-radius: 50%;
    background: red;

@@ -15,7 +15,12 @@ session_start();
                $x++;
            }
             // Output the counter
-            echo $x;
+            if($x > 0){
+                echo $x;
+            }else{
+                echo 0;
+            }
+            
         }
     } else {
         echo "session_id not set";
