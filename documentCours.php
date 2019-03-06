@@ -51,7 +51,10 @@ if(!isset($_SESSION['id'])){
      
     </tr>
     <tr>
-     <td><a href="#">literrature comparee par Abdourahman Yacin</a></td>
+    <?php   
+     $file = "files/mur.jpg";
+     echo "<td><a href='download.php?name=".$file."'>literrature comparee par Abdourahman Yacin </a></td>";
+    ?>
       <td>120 KB</td>
      
     </tr>
