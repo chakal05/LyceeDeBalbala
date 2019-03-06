@@ -27,12 +27,15 @@
      <li>
       <div class="dropdown">
             <a class="btn dropdown-toggle green" href="#" role="button"id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Activites
+            Mes activités
             </a>
             
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#">Une action</a>
-                <a class="dropdown-item" href="#">une autre action</a>
+                <a class="dropdown-item" href="literaturefr.php">Littérature française</a>
+                <a class="dropdown-item" href="#">Littérature comparée</a>
+                <a class="dropdown-item" href="#">Linguistique générale</a>
+                <a class="dropdown-item" href="#">Méthodologie de l'écrit</a>
+                <a class="dropdown-item" href="#">Langue choisie: anglais</a>
             </div>
             </div>
         </li>
