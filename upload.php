@@ -15,10 +15,8 @@ $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 $allowedMimeTypes = array( 
     'application/msword',
-    'text/pdf',
-    'text/doc',
-    'text/docx',
-    'text/txt'
+    'application/pdf',
+    'text/plain'
   );
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
@@ -29,8 +27,6 @@ if(isset($_POST["submit"])) {
     } else if(in_array( $file["type"], $allowedMimeTypes ) ) {
         echo "File is text document.";
         $uploadOk = 1;
-    }else{
-        $uploadOk= 0;
     }
 }
 // Check if file already exists
@@ -40,7 +36,7 @@ if ($file["size"] > 500000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
-// Allow certain file formats
+// Allow certain file formats (not working fix it)
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" && $imageFileType != "pdf" && $imageFileType != "txt" && $imageFileType != "doc" && $imageFileType != "docx" ) {
     echo "Sorry, only JPG, JPEG, PNG, PDF, TXT, DOC, DOCX & GIF files are allowed.";

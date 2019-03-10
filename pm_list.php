@@ -1,8 +1,7 @@
 <?php
     require_once("connection.php");
 session_start();
-   
- 
+
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +18,8 @@ session_start();
 </head>
 <body>
     
-    <?php include("header.php");   ?>
-    
+
+
     <div class= "container">
         
     <div class="left">
@@ -34,17 +33,18 @@ session_start();
             </ul>
             
             </div>
-            
+            <form action="delete.php" method="post">
             <div class="functions">
                 <h4>OUTILS</h4>
                <ul class="nav flex-column">
-              <li class="nav-item"><a class="nav-link" href="#">Forward message</a></li>
+              <li class="nav-item"><a class="nav-link" href="#"><button type="submit" name="submit">Forward message</button></a></li>
               <li class="nav-item"><a class="nav-link" href="#">Delete message</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Marquer non lu</a></li>
                 </ul>
             </div>
         </div>
-        
+
+
         <div class="display-message">
         <table class="table table-bordered">
     <thead >
@@ -72,6 +72,7 @@ $result1 = mysqli_query($link,$sql2);
 if(mysqli_num_rows($result) > 0){
 while ($m = mysqli_fetch_array($result)) {
     //format the message and display it to the user
+    $message_id= $m['id'];
     $conversation_Id = $m['conversation_id'];
     $user_from = $m['user_from'];
     $user_to = $m['user_to'];
@@ -83,16 +84,18 @@ while ($m = mysqli_fetch_array($result)) {
     $user = mysqli_query($link, "SELECT username FROM `class` WHERE id='$user_from'");
     $user_fetch = mysqli_fetch_assoc($user);
     $user_from_username = $user_fetch['username'];
-  
-    echo "<tr class='table-primary'><th scope='row'><input type='checkbox'></th><td><a href='reading_mess.php?conversation_id=$conversation_Id'> $formated_message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
+    
+    echo "<tr class='table'><th scope='row'><input type='checkbox' name='checkbox[]' value='".$message_id."'></th><td><b><a href='reading_mess.php?conversation_id=$conversation_Id'> $formated_message </a></b></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
     //display the message
     
       }
       echo "</table";
   } 
+
   if (mysqli_num_rows($result1) > 0){
     while ($m = mysqli_fetch_array($result1)) {
       //format the message and display it to the user
+      $message_id= $m['id'];
       $conversation_Id = $m['conversation_id'];
       $user_from = $m['user_from'];
       $user_to = $m['user_to'];
@@ -106,8 +109,8 @@ while ($m = mysqli_fetch_array($result)) {
       $user_fetch = mysqli_fetch_assoc($user);
       $user_from_username = $user_fetch['username'];
     
-      echo "<tr><th scope='row'><input type='checkbox'></th><td><a href='reading_mess.php?conversation_id=$conversation_Id'> $formated_message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
-  
+      echo "<tr><th scope='row'><input type='checkbox' name='checkbox[]' value='".$message_id."'></th><td><a href='reading_mess.php?conversation_id=$conversation_Id'> $formated_message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
+
       //display the message
       
         }
@@ -115,9 +118,9 @@ while ($m = mysqli_fetch_array($result)) {
  }
   ?>
    
-  </tbody>
-</table>
-          
+    </tbody>
+    </table>
+    </form> 
           
          
         </div>
@@ -128,6 +131,18 @@ while ($m = mysqli_fetch_array($result)) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
- <script src=""></script>
+ <script >
+ 
+ $('input').click(function(){
+
+  $('.functions ul li a ').css(
+    {"background-color":"red", "color":"#fff"}
+    );
+ })
+ 
+
+ 
+ 
+ </script>
 </body>
 </html>

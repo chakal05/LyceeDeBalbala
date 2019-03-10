@@ -44,7 +44,15 @@ if(mysqli_num_rows($result) > 0){
     while($row= mysqli_fetch_array($result)){
         $fileName = $row["file_name"];
         $path= $row['file_path'];
-        echo "<a href='uploads/{$path}'>$fileName</a><br>";
+       // echo "<a href='uploads/{$path}'>$fileName</a><br>";
+      echo "
+      <ul class='list-group'>
+     
+      <li class='list-group-item'> <div class='form-check form-check-inline'>
+      <input class='form-check-input' type='checkbox' id='inlineCheckbox1' value='checked'>
+    </div><a href='uploads/{$path}'>$fileName</a><br></li>
+      
+    </ul>";
     }
 
 }
@@ -59,7 +67,7 @@ if(mysqli_num_rows($result) > 0){
     <ul>
         <li><a href="linkToUpload.html">charger un document</a></li>
         <li><a href="#">supprimer un document </a></li>
-        <li><a href="#">telecharger un document </a></li>
+        
     </ul>
 </div>
 
