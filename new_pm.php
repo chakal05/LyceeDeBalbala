@@ -9,6 +9,43 @@
         $receiver = "";
     }
     
+    
+    //post message
+
+    if(isset($_POST['message'])){
+
+       
+      
+        $message = mysqli_real_escape_string($link, $_POST['message']);
+        $conversation_id = mysqli_real_escape_string($link, $_POST['conversation_id']);
+        $user_from = mysqli_real_escape_string($link, $_POST['user_from']);
+        $user_to = mysqli_real_escape_string($link, $_POST['user_to']);
+
+        //decrypt the conversation_id,user_from,user_to
+        $conversation_id = base64_decode($conversation_id);
+        $user_from = base64_decode($user_from);
+        $user_to = base64_decode($user_to);
+
+        //insert into `messages`
+        $sql= "INSERT  INTO `messages` VALUES ('','$conversation_id','$user_from','$user_to','$message',NOW(),'no')";
+        $q= mysqli_query($link,$sql);
+        
+        if($q){
+
+            //insert was successful
+            echo "Posted";
+
+           } else {
+           
+              //insert failed
+              echo "Error";
+           
+           }
+        
+
+    }
+
+  
    
 
 ?>
@@ -29,7 +66,6 @@
 </head>
 <body>
     
-    <?php include("header.php");     ?>
     
     <div class="container">
         
@@ -97,10 +133,10 @@
                   
         <!-- store conversation_id, user_from, user_to so that we can send send this values to post_message_ajax.php -->
               
-           
+           <form method="post">
             <div class="form-group">
     <label for="receiver">Destinataire</label>
-    <input type="email" class="form-control" id="receiver" name="receiver" placeholder="Choose a contact from left"  value= "<?php echo  $receiver; ?>" >
+    <input type="text" class="form-control" id="receiver" name="receiver" placeholder="Choose a contact from left"  value= "<?php echo  $receiver; ?>" >
   </div>
                 <div class="form-group">
         <label for="message">Message</label>
@@ -109,11 +145,11 @@
          <input type="hidden" id="conversation_id" name="conversation_id" value="<?php echo base64_encode($conversation_id); ?>">
                 <input type="hidden" id="user_from" name="user_from" value="<?php echo base64_encode($user_id); ?>">
                 <input type="hidden" id="user_to" name="user_to" value="<?php echo base64_encode($user_to); ?>">
-        <button type="button" class="btn btn-success" name= "send" id="send">Envoyer</button>
+        <button type="submit" class="btn btn-success" name= "send" id="send">Envoyer</button>
                  <span id="error"></span>
                  
         </div>
-        
+        </form>
     </div>
     
 

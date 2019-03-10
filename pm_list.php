@@ -18,7 +18,7 @@ session_start();
 </head>
 <body>
     
-
+<?php // When added, cannot submit and delete. Search if better alternativ exist or a better way to use --- include('header.php'); ---  ?> 
 
     <div class= "container">
         
@@ -29,7 +29,7 @@ session_start();
            
             <li class="nav-item"><a class="nav-link" href="new_pm.php">Envoyer un message</a></li>
             <li class="nav-item recu "><a class="nav-link" href="#">Recus</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Envoyes</a></ki>
+            <li class="nav-item"><a class="nav-link" href="sent.php">Envoyes</a></ki>
             </ul>
             
             </div>
@@ -37,9 +37,9 @@ session_start();
             <div class="functions">
                 <h4>OUTILS</h4>
                <ul class="nav flex-column">
-              <li class="nav-item"><a class="nav-link" href="#"><button type="submit" name="submit">Forward message</button></a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Delete message</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Marquer non lu</a></li>
+              <li class="nav-item"><a class="nav-link" href="#"><button type="submit" name="forward" formaction="forward.php">Forward message</button></a></li>
+              <li class="nav-item"><a class="nav-link" href="#"><button type="submit" name="submit">Delete message</button></a></li>
+              <li class="nav-item"><a class="nav-link" href="#"><button type="submit" name="unread" formaction="update.php">Marquer non lu</button></a></li>
                 </ul>
             </div>
         </div>

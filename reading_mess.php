@@ -46,7 +46,6 @@ session_start();
     </head>
     <body>
     
-    <?php include("header.php");     ?>
     
     <div class="container">
         
@@ -130,7 +129,7 @@ session_start();
 
         </div>
 
-    
+    <form method="post">
      <div>
         <div class="form-group">
         <button type='button' class='btn btn-primary btn-sm'> To :  <?php echo $user_from_username;?></button> 
@@ -142,10 +141,10 @@ session_start();
                 <input type="hidden" id="user_to" name="user_to" value="<?php echo base64_encode($user_two); ?>">
                 </div>
 
-        <button type="button" class="btn btn-success" name= "response" id="response" value="response">Envoyer</button>
+        <button type="submit" class="btn btn-success" name= "response" id="response" value="response">Envoyer</button>
                  <span id="error"></span>
-                 
-       
+</div>
+                 </form>
         </div>
 
 
