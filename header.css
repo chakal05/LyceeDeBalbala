@@ -9,23 +9,6 @@ html, body{
     padding: 0;
 }
 
-.tout{
-   margin-bottom: 31px;
-} 
-.logo {
-   width: 100%;
-   text-align:left;
-   margin-bottom: 1%;
-   margin-top: 1%;
-  }
-  
-  
-.logo img {
-   height: 91px;
-    margin-left: 17%;
-}
-  
-  
   
 nav{
    width: 100%;
@@ -42,7 +25,7 @@ list-style-type: none;
 }
 
 nav ul li {
-   float: left;
+float: right;
    
 }
 

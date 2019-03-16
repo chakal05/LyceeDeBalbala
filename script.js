@@ -1,53 +1,25 @@
 $(document).ready(function(){
     check();    
-    checkMessages();
-    setInterval(checkMessages(), 2000);
-        
-     
-$('nav ul li .dropdown').hover(function() {
-    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-  }, function() {
-    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
-  });
-  
 })
        
-        //get message
-        
-        //get new message every 2 second
-       
-        function checkMessages() {
-            $user = $.trim($("#user_from").val());
-          $.get("get_message_ajax.php?user_id="+$user, function(data){
-             
-            let x = data;
-            
-            if(x == 0){
-                $(".notification #mess").hide();
-            } else{
-                $(".notification #mess").show().html(x);
-            }
-       
-          })
-    
-    }
 
     // 
 
         // login validation
 
+        function isEmail(email){
+            var regex=/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return regex.test(email);
+            
+            }
+
         function check(){
        
-        function isEmail(email){
-        var regex=/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        return regex.test(email);
-        
-        }
     
         
         $("form").submit(function(e){
-    
-             e.preventDefault();
+            
+            e.preventDefault();
              let errorMessage = "";
              let missingFields ="";
        
@@ -60,9 +32,7 @@ $('nav ul li .dropdown').hover(function() {
         
         if($("#email").val() === ""){
              missingFields += "<br>Il vous manque un email";
-         }
-        
-         if($("#password").val() === ""){
+         } else if($("#password").val() === ""){
             missingFields += "<br>Il vous manque le mot de passe";
         }
            
@@ -74,7 +44,7 @@ $('nav ul li .dropdown').hover(function() {
            $("#errorMessage").html('<div class="alert alert-danger" role="alert">' + errorMessage + '</div>');
        }else{
            
-              $("form").unbind("submit").submit();
+             $("form").submit();
               
            }
     

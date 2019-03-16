@@ -69,3 +69,7 @@ thead{
     background-color: #21398A;
     color: #fff;
 }
+
+.left .functions button{
+    background-color: green;
+}

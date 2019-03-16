@@ -38,7 +38,7 @@ session_start();
     }
     if($error != "") {
       
-        $error = '<div class="alert alert-danger" role="alert"><p>PHP CODE Il y a des erreurs dans votre formulaire </p>' . $error . '</div>';
+        $error = '<div class="alert alert-danger" role="alert"><p> Il y a des erreurs dans votre formulaire </p>' . $error . '</div>';
         
     } else {
         
@@ -82,40 +82,57 @@ session_start();
 <body>
    
     
-   <div class="bild">
-       
-       <img src="logo_devise.jpg">
-       
+
+<div class="content">
+    <div class="logo">
+   <img src="logo_devise.jpg">
    </div>
+
+     </div>
    
-    <div class="container">
-        
+     <div class= "container">
+      
+
     <h1> Université de Djibouti</h1>
     
     <div id="errorMessage"> <?php echo $error ?> </div>
     
     <form method="POST" action="index.php">
         
-     <div class="form-group">
-         
-            
-             <input type="email" class="form-control" id="email" placeholder="Votre Email " name="email">
-           </div>
-
-           <div class="form-group">
-                <input type="password" class="form-control" id="password" placeholder="Votre mot de passe" name="password">
-              </div>
-
-              <button type="submit" class="btn btn-success"  name="submit">Se connecter</button>
-
-        </form>
+    <div class="form-group">
+        
+        
+    <input type="email" class="form-control" id="email" placeholder="Votre Email " name="email">
     </div>
-  
 
+            <div class="form-group">
+                <input type="password" class="form-control" id="password" placeholder="Votre mot de passe" name="password">
+                </div>
+
+                <button type="submit" class="btn btn-success"  name="submit">Se connecter</button>
+
+                </form>
+
+                <footer>
+
+                    <ul>
+        <li class="left"><b><i class="far fa-copyright">2018 Université de Djibouti</i></b></li>
+        <li class="left">Campus de Balbala</li>
+        <li class="left">Croisement RN2-RN5 BP 1904</li>
+        <li class="left">TEL:(+253)21 31 55 55</li><br>
+        <li class="row"><a href="#"><i class="fas fa-envelope"></i></a></li>
+        <li class="row"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+        <li class="row"><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+        <li class="row"><a href="#"><i class="fab fa-youtube"></i></a></li>
+        
+                    </ul>
+
+                </footer>
+            </div>
+        
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
  <script src="jquery.js"></script>
- <script src=""></script>
 </body>
 </html>

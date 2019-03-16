@@ -26,11 +26,9 @@ if(!isset($_SESSION['id'])){
 </head>
 <body>
 
-<div>
-
-</div>
-
-
+<?php
+include('header.php');
+?>
 <div class="container">
 <form action="delete.php" method="post">
 <div class="left">
@@ -67,7 +65,7 @@ if(mysqli_num_rows($result) > 0){
 <div class="right">
     <ul>
         <li><button type="button"><a href="linkToUpload.html">charger un document</a></button></li>
-        <li><input type="submit" name="delete" class="btn"></li>
+        <li><input type="submit" value="charger" name="delete" class="btn"></li>
         
     </ul>
 </div>

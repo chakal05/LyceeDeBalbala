@@ -18,7 +18,8 @@ session_start();
 </head>
 <body>
     
-<?php // When added, cannot submit and delete. Search if better alternativ exist or a better way to use --- include('header.php'); ---  ?> 
+    <?php   include('header.php');  ?> 
+
 
     <div class= "container">
         
@@ -37,7 +38,6 @@ session_start();
             <div class="functions">
                 <h4>OUTILS</h4>
                <ul class="nav flex-column">
-              <li class="nav-item"><a class="nav-link" href="#"><button type="submit" name="forward" formaction="forward.php">Forward message</button></a></li>
               <li class="nav-item"><a class="nav-link" href="#"><button type="submit" name="submit">Delete message</button></a></li>
               <li class="nav-item"><a class="nav-link" href="#"><button type="submit" name="unread" formaction="update.php">Marquer non lu</button></a></li>
                 </ul>
