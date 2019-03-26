@@ -70,5 +70,7 @@ if(!isset($_SESSION['id'])){
 
     </div>
     </div>
+
+    <?php include('footer.php');  ?>
 </body>
 </html>

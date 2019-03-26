@@ -117,7 +117,7 @@ session_start();
                 <footer>
 
                     <ul>
-        <li class="left"><b><i class="far fa-copyright">2018 Université de Djibouti</i></b></li>
+        <li class="left"><b><i class="far fa-copyright">2019 Université de Djibouti</i></b></li>
         <li class="left">Campus de Balbala</li>
         <li class="left">Croisement RN2-RN5 BP 1904</li>
         <li class="left">TEL:(+253)21 31 55 55</li><br>

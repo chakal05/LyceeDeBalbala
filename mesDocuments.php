@@ -29,6 +29,7 @@ if(!isset($_SESSION['id'])){
 <?php
 include('header.php');
 ?>
+
 <div class="container">
 <form action="delete.php" method="post">
 <div class="left">
@@ -36,7 +37,7 @@ include('header.php');
     <?php 
 $sql = "SELECT * FROM `uloaded` WHERE user='$user'";
 $result = mysqli_query($link,$sql);
-//check their are any messages
+//check their are any files
 if(mysqli_num_rows($result) > 0){
 
     // format and display
@@ -55,6 +56,8 @@ if(mysqli_num_rows($result) > 0){
     </ul>";
     }
 
+}else{
+    echo "<p>Vous n'avez pas encore charger de documents</p>";
 }
 
 
@@ -74,7 +77,7 @@ if(mysqli_num_rows($result) > 0){
 </div>
 
 
-
+<?php include('footer.php');  ?>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>

@@ -1,89 +1,79 @@
-
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" media="screen" href="header.css">
 
 
-<div class="tout">
-    <div class="logo">
-   <img src="logo_devise.jpg">
-   </div>
-
 <?php 
 $_user = $_SESSION['username'];
 echo "
-<nav>
 
-    <ul>
- <li>
-  <div class='dropdown'>
-<a class= 'btn dropdown-toggle green' href='#' role='button' id='dropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-Activites
-</a>
-        
-<div   class='dropdown-menu' aria-labelledby='dropdownMenuLink'>
-    <a class='dropdown-item' href='loggedinpage.php'>Acceuil</a>
-    <a class='dropdown-item' href='literaturefr.php'>Littérature française</a>
-    <a class='dropdown-item' href='#'>Littérature comparée</a>
-    <a class='dropdown-item' href='#'>Linguistique générale</a>
-    <a class='dropdown-item' href='#'>Méthodologie de l'écrit</a>
-    <a class='dropdown-item' href='#'>Langue choisie: anglais</a>
-</div>
-</div>
-    </li>
+<div class='content'>
+    <div class='logo'>
+   <img src='logo_devise.jpg'>
+   </div>
 
-<li>
-<div class='dropdown'>
-<a class='btn  dropdown-toggle green' href='#' role='button' id='dropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-Mes documents
-</a>
+   <nav class='navbar navbar-expand-lg'>
+        <button class='navbar-toggler navbar-light bg-light ' type='button' data-toggle='collapse' data-target='#navbarTogglerDemo03' aria-controls='navbarTogglerDemo03' aria-expanded='false' aria-label='Toggle navigation'>
+          <span class='navbar-toggler-icon'></span>
+        </button>
+        <a class='navbar-brand' href='#'>$_user</a>
+      
+        <div class='collapse navbar-collapse' id='navbarTogglerDemo03'>
+          <ul class='navbar-nav mr-auto mt-2 mt-lg-0'>
+           
 
-<div class='dropdown-menu' aria-labelledby='dropdownMenuLink'>
-    <a class='dropdown-item' href='mesDocuments.php'>Voir/telecharger des documents</a>
+                <div class='btn-group'>
+                        <button type='button' class='btn dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                                Activites
+                        </button>
+                        <div class='dropdown-menu'>
+                                <a class='dropdown-item' href='loggedinpage.php'>Acceuil</a>
+                                <a class='dropdown-item' href='literaturefr.php'>Littérature française</a>
+                                <a class='dropdown-item' href='#'>Littérature comparée</a>
+                                <a class='dropdown-item' href='#'>Linguistique générale</a>
+                                <a class='dropdown-item' href='#'>Méthodologie de l'écrit</a>
+                                <a class='dropdown-item' href='#'>Langue choisie: anglais</a>
+                             </div>
+                      </div>
+                      <div class='btn-group'>
+                            <button type='button' class='btn dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                                    Documents
+                            </button>
+                            <div class='dropdown-menu'>
+                                    <a class='dropdown-item' href='mesDocuments.php'>Mes documents</a>
+                                </div>
+                          </div>
 
-</div>
-</div>
-    </li>
+             <div class='btn-group'>
+                        <button type='button' class='btn dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                                Aide/Soutein 
+                        </button>
+                        <div class='dropdown-menu'>
+                                <a class='dropdown-item' href='#'>Questions frequentes</a>
+                                <a class='dropdown-item' href='#'>Une autre forme d'aide</a> 
+                     </div>
+                      </div>
+          </ul>
+
+               
+          <button type='button' class='btn btn-success'>
+          <a href='pm_list.php'>Messagerie </a> <span class='badge badge-light'></span>
+          </button>
     
-    <li>
-    <div class='dropdown'>
-    <a class='btn dropdown-toggle green' href='#' role='button' id='dropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-        Aide/soutien 
-    </a>
-        
-    <div   class='dropdown-menu' aria-labelledby='dropdownMenuLink'>
-        <a class='dropdown-item' href='#'>Questions frequentes</a>
-        <a class='dropdown-item' href='#'>Une autre forme d'aide</a> 
+              <div class='btn-group'>
+                    <button type='button' class='btn btn-danger dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                     $_user
+                    </button>
+                    <div class='dropdown-menu'> <a class='dropdown-item' href='index.php?logout=1'>LOG OUT</a>
+                        <a class='dropdown-item' href='#'>Profile</a> 
+                      </div>
+                  </div>
         </div>
-    </div>
-    </li>
-
-    <li>
-
-    <a href='pm_list.php' class='notification'>
-       <span>Inbox</span>
-       <span id='mess'></span>
-     </a>  
-
-    </li>
-   
-    <li>
-<div class='dropdown username'>
-    <a class='btn dropdown-toggle' href='#' role='button' id='username' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-    $_user
-    </a>
-    
-    <div class='dropdown-menu' aria-labelledby='dropdownMenuLink'>
-        <a class='dropdown-item' href='index.php?logout=1'>LOG OUT</a>
-        <a class='dropdown-item' href='#'>Une autre forme d'aide</a> 
-    </div>
-    </div>
-</li>
-</ul>
-
-
-</nav>
- 
+      </nav>
+</div>
 
 ";
 

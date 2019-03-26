@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  shown();
 checkMessages();
 setInterval(checkMessages(), 2000);
     $('nav ul li .dropdown').hover(function() {
@@ -21,11 +22,32 @@ setInterval(checkMessages(), 2000);
             let x = data;
             
             if(x == 0){
-                $(".notification #mess").hide();
+                $(".btn-success .badge").hide();
             } else{
-                $(".notification #mess").show().html(x);
+                $("btn-success .badge").show().html(x);
             }
        
           })
     
+    }
+    
+
+    function shown(){
+      $('.btn-group').click(function(){
+        $('.dropdown-item ').css("color","#21398A");
+      });
+
+      $('.navbar-toggler').click(function(){
+        $('.btn-danger ').html("A faire");
+      })
+
+
+    }
+    
+    function hidden(){
+      $('.fa-bars').click(function(){
+        $('.dropdown').hide(shown());
+      
+      }
+     )
     }
