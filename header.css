@@ -89,12 +89,6 @@
 
   @media (min-width: 768px) { 
 
-    .logo{
-      width: 70%;
-      margin: 0 auto;
-      background-color: #FFFFFF;
-    }
-   
 .btn-danger{
   position: absolute;
  right:-200%;
@@ -110,17 +104,22 @@
 
    /* Large devices (desktops, 992px and up)*/
    @media screen and (min-width: 992px) { 
-     
+     .logo{
+       width: 70%;
+       margin: 0 auto;
+     }
     .content{
     background-color: #FFFFFF;
     width: 96%;
   }
   
   .navbar{
-    height: 73px;
+    height: 63px;
   }
   
-
+  .navbar-nav{
+    margin-left: -2%;
+  }
   .navbar-brand{
     display: none;
     }
@@ -132,10 +131,12 @@
 
  .dropdown-toggle{
    border-radius: 5%;
+   font-size: 15px;
  }
 
  .btn-success{
   margin-top: 0;
+  font-size: 15px;
  }
 
  .btn-danger{
