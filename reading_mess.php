@@ -26,16 +26,17 @@ session_start();
     }
     ?>
 
-    <!DOCTYPE html>
-    <html>
-    <head>
+<!DOCTYPE html>
+<html>
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>New Message</title>
+    <title>Envoyer un message </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="jquery-ui.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="">
-
     <style>
     .container{
         padding: 1%;
@@ -45,7 +46,8 @@ session_start();
     </style>
     </head>
     <body>
-    
+
+    <?php include('header.php');  ?>
     
     <div class="container">
         
@@ -73,6 +75,11 @@ session_start();
                 }
             }
         }
+         // Determine second member of the conversation and fetch his name
+         $sql = mysqli_query($link, "SELECT username FROM `class` WHERE id='$user_two'");
+         $result = mysqli_fetch_assoc($sql);
+         $user_to_username = $result['username'];
+
         // Check if they have a conversation
        $query = "SELECT * FROM `messages` WHERE conversation_id='$conversation'";
        $result = mysqli_query($link, $query);
@@ -92,6 +99,7 @@ session_start();
             $user = mysqli_query($link, "SELECT username FROM `class` WHERE id='$user_from'");
             $user_fetch = mysqli_fetch_assoc($user);
             $user_from_username = $user_fetch['username'];
+
           
             echo "
                 
@@ -132,7 +140,7 @@ session_start();
     <form method="post">
      <div>
         <div class="form-group">
-        <button type='button' class='btn btn-primary btn-sm'> To :  <?php echo $user_from_username;?></button> 
+       <button type='button' class='btn btn-primary btn-sm'> To :  <?php echo $user_to_username; ?></button> 
         </div>
         <div> <textarea class="form-control" id="message" rows="3" name="message" placeholder="Reponse"></textarea></div>
         
@@ -147,11 +155,14 @@ session_start();
                  </form>
         </div>
 
+        <?php include('footer.php');  ?>
 
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
- <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+<script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
  <script src=""></script>
 </body>
 </html>

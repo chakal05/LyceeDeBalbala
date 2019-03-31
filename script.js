@@ -1,5 +1,14 @@
 $(document).ready(function(){
-    check();    
+    check();   
+    
+   
+
+ $('input').click(function(){
+
+ //   $('.functions ul li a ').css(
+   //   {"background-color":"red", "color":"#fff"}
+     // );
+   })
 })
        
 

@@ -1,19 +1,11 @@
-html, body{
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
 
   img{
     width: 100%;
   }
 
-
   .content{
-    width: 93%;
+    width: 95%;
     margin: 0 auto;
-    margin-bottom: 5%;
     }
   
     .navbar{
@@ -27,41 +19,47 @@ html, body{
       display: block;
       color: #fff;
     }
-  
-   nav ul li a {
-      color: #fff;
-    }
-  
-    .btn{
-      color: #fff;
-    }
-  
+
     .btn-group{
      margin-bottom: 2%;
-     margin-left: 7%;
+     margin-left: 3%;
+     border-radius: 3px;
     }
-  
+
+    .dropdown-toggle{
+      color: #fff;
+    }
+
     .btn-danger{
-    margin-top: 0.5rem;
-  
+      margin-top: 5%;
+      position: relative;
+    }
+    .btn .btn-danger:hover {
+      color: red;
     }
     .btn-success{
-      margin-top: 2%;
       color: #fff;
     }
   
     .btn-success:hover span{
      color: #4BB74C;
     }
+
+    .btn-success:hover .notification{
+      text-decoration: none;
+      color: #fff;
+    }
+
     .btn-success:hover .badge{
       background-color: #4BB74C;
       color: #fff;
     }
+
     .notification{
       color: #fff;
     }
   
-    .btn:hover{
+    .dropdown-toggle:hover{
       background-color: #fff;
       color: #21398A;
     }
@@ -82,7 +80,7 @@ html, body{
 
   .btn-danger{
     position: absolute;
-   right:-200%;
+   right:-100%;
   }
  }
 
@@ -91,13 +89,19 @@ html, body{
 
   @media (min-width: 768px) { 
 
+    .logo{
+      width: 70%;
+      margin: 0 auto;
+      background-color: #FFFFFF;
+    }
+   
 .btn-danger{
   position: absolute;
- right:-400%;
+ right:-200%;
 }
 
 .btn-group{
-  margin-left: 11%;
+  margin-left: 5%;
 }
 
    }
@@ -110,34 +114,24 @@ html, body{
     .content{
     background-color: #FFFFFF;
     width: 96%;
-    margin-bottom: 2%;
   }
   
-  .logo{
-    width: 70%;
-    margin: 0 auto;
-    background-color: #FFFFFF;
-  }
- 
- .btn{
-   border-radius: 5px;
-   margin-left: 0;
-  }
-
   .navbar{
-    height: 50px;
+    height: 73px;
   }
+  
 
   .navbar-brand{
-  display: none;
-  }
-
- .navbar-nav{
-   margin-left: -3.3%;
- }
+    display: none;
+    }
+  
  
  .btn-group{
-  padding-top: 2%;
+ margin-top: 2%;
+ }
+
+ .dropdown-toggle{
+   border-radius: 5%;
  }
 
  .btn-success{

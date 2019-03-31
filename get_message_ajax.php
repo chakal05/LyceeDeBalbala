@@ -1,6 +1,7 @@
 <?php
-    require_once("connection.php");
+include("connection.php");
 session_start();
+
     if(isset($_SESSION['id'])){
         $user = $_SESSION['id'];
         
@@ -8,19 +9,9 @@ session_start();
         $sql = "SELECT * FROM `messages` WHERE user_to='$user' AND user_to_read ='no'";
         $result = mysqli_query($link,$sql);
         //check their are any messages
-        if(mysqli_num_rows($result) > 0){
-            // Count the messages 
-            $x= 0;
-           while(mysqli_fetch_array($result)){
-               $x++;
-           }
-            // Output the counter
-            if($x > 0){
-                echo $x;
-            }else{
-                echo 0;
-            }
-            
+        if($row = mysqli_num_rows($result)){
+            // Count the messages and output it
+            echo $row;
         }
     } else {
         echo "session_id not set";

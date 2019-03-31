@@ -1,7 +1,9 @@
 html, body{
-    width: 100%;
-    height: 100%;
-   
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color:rgb(243, 243, 243);
 }
 
 *{
@@ -10,10 +12,64 @@ html, body{
     box-sizing: border-box;
 }
 
+.container-fluid{
+    width: 95%;
+  }
+  
+  .left{
+  }
+  h4{
+    font-size: 21px;
+    margin-top: 7px;
+    color: #21398A;
+    font-weight: bold;
+  }
+  
+  .navbar-nav{
+  text-align: center;
+  }
+  
+  .left .btn{
+    background-color: #21398A;
+    color: #fff;
+  }
+  
+  .left .btn:hover{
+    border-color: #21398A;
+    color: #21398A;
+    font-weight: bold;
+  }
 
+  .left .recu .btn{
+      background-color: #fff;
+    color: #21398A;
+    border-color: #21398A;
+  }
+  
+  .left .recu .btn:hover{
+    background-color: #21398A;
+    color: #fff
+  }
+
+.display-message{
+    width: 100%; 
+    margin-top: 10%;
+}
+
+table{
+    text-align: center;
+}
+thead{
+    background-color: #21398A;
+    color: #fff;
+}
+
+
+   /* Large devices (desktops, 992px and up)
+   @media screen and (min-width: 992px) { 
+     
 .container{
-    width: 100%;
-    padding:0;
+    width: 96%;
    display: grid;
     grid-template-columns: 1fr 3fr;
    grid-template-rows: auto;
@@ -21,7 +77,6 @@ html, body{
 }
 
 .left{
-    margin-left: -35%;
     text-align: center;
 }
 
@@ -70,6 +125,4 @@ thead{
     color: #fff;
 }
 
-.left .functions button{
-    background-color: green;
-}
+   }

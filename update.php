@@ -2,8 +2,8 @@
 session_start();
 require_once("connection.php");
 $user ="";
-if(isset($_POST['id'])){
-    $user= $_POST['id'];
+if(isset($_SESSION['id'])){
+    $user = $_SESSION['id'];
 }
 
 // Update checked messages to unread
