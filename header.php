@@ -74,4 +74,4 @@ echo "
 ?>
 
 
-
+<script src="header.js"></script>

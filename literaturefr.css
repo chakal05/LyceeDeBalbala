@@ -11,20 +11,90 @@ html, body{
       padding: 0;
       box-sizing: border-box;
   }
-  
-h2{
+  .mitten{
+      text-align: center;
+  }
+
+    h2{
     font-size: 19px;
     text-transform: uppercase;
-    margin-left: 23%;
     margin-top: 3%;
+    font-weight: bold;
+    color: #21398A;
 }
 
-.container .left,
-.container .right{
+h4{
+    color: #21398A;
+}
+.bleu{
+   background-color: #21398A;
+   border-color: #ffffff;
+    color: #ffffff;
+    display: none;
+    margin-bottom: 2%;
+}
+
+.bleu:hover{
+    background-color: #fff;
+    color: #21398A;
+}
+.gauche{
+   display: none;
+}
+
+.gauche,
+.right{
     background-color: #ffffff;
     padding: 3%;
+    border-radius: 3px;
 }
 
-.container .right{
+.right{
     margin-top: 3%;
+}
+
+.gauche  a{
+text-decoration: none;
+color: #21398A;
+}
+
+
+@media (min-width: 576px) {
+
+
+
+}
+
+@media screen and (min-width: 992px){
+
+    .container-fluid{
+    width: 98%;
+   display: grid;
+   grid-template-columns: 1fr 2fr;
+   grid-template-rows:  auto;
+   grid-gap: 5px;
+   margin-bottom: 5%;
+    }
+
+    .gauche{
+        display: block;
+        grid-column: 1/2;
+        padding: 5%;
+    
+    }
+
+    .right{
+        grid-column: 2/-1;
+        margin-top: -0.3px;
+    }
+
+    .mitten{
+        text-align: left;
+    }
+
+    h2{
+        margin-left: 3%;
+        margin-top: 1.5%;
+    }
+
 }

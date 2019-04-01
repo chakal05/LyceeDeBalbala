@@ -24,23 +24,25 @@ if(!isset($_SESSION['id'])){
   
 </head>
 <body>
+
     <?php include('header.php'); ?>
 
- 
-    <h2>Littérature française</h2>
-    <div class="container">
-    
-    <div class="left">
-   <div>
+ <div class="mitten">
+      <h2>Littérature française</h2>
+    <button type="button" class="btn bleu">Montrer le menu </button>
+</div>
+
+    <div class="container-fluid">
+    <div class="gauche">
    <ul>
    <li><i class="fas fa-angle-double-right"></i> <a href="#">Bienvenu au cours </a></li>
    <li><i class="fas fa-angle-double-right"></i> <a href="documentCours.php">Documents pour le cours</a></li>
    </ul>
-   </div>
     </div>
     
     <div class="right">
-        <p> <b>Välkommen till kursen Anläggningsprojektering, 25 yhp!</b><br>
+
+        <p> <h4>Välkommen till kursen Anläggningsprojektering, 25 yhp!</h4><br>
 Detta är din kursaktivitet för kursen Anläggningsprojektering - PGBPEH17.
 
 Kursen är på totalt 25 YH-poäng.
@@ -69,5 +71,6 @@ Examination sker genom skriftlig tentamen samt eventuella inlämningsuppgifter, 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

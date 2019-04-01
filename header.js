@@ -2,7 +2,7 @@ $(document).ready(function(){
         //get new message every 3 second
     NewMess();
     //Is creating to many connection to the port; You'll have to increase the number of port  
-    // setTimeout(NewMess(),3000);
+  setTimeout(NewMess(),3000);
    
 })
 
@@ -19,7 +19,7 @@ $(document).ready(function(){
           $(".badge").html(data);
          },
          complete:function(data){
-          //setTimeout(NewMess(),3000);
+          setTimeout(NewMess(),3000);
          }
         });
        }
