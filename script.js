@@ -1,7 +1,5 @@
 $(document).ready(function(){
     check();   
-    showUp();
-    blo();
 })
     
 function showUp(){

@@ -11,31 +11,21 @@ html, body{
       padding: 0;
       box-sizing: border-box;
   }
-  .mitten{
-      text-align: center;
+  
+.up{
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    color: #21398A;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .up h4{
+    font-weight: bold;
   }
 
-    h2{
-    font-size: 19px;
-    text-transform: uppercase;
-    margin-top: 3%;
-    font-weight: bold;
-    color: #21398A;
-}
-
 h4{
-    color: #21398A;
-}
-.bleu{
-   background-color: #21398A;
-   border-color: #ffffff;
-    color: #ffffff;
-    display: none;
-    margin-bottom: 2%;
-}
-
-.bleu:hover{
-    background-color: #fff;
     color: #21398A;
 }
 .gauche{
@@ -51,6 +41,7 @@ h4{
 
 .right{
     margin-top: 3%;
+    color: #21398A;
 }
 
 .gauche  a{
@@ -80,21 +71,25 @@ color: #21398A;
         display: block;
         grid-column: 1/2;
         padding: 5%;
+        height: 200px;
     
     }
 
+    .container-fluid .gauche ul{
+        padding-top: 10%;
+    }
+
+    .container-fluid .gauche a {
+        font-weight: bold;
+    }
     .right{
         grid-column: 2/-1;
         margin-top: -0.3px;
     }
 
-    .mitten{
-        text-align: left;
-    }
-
-    h2{
-        margin-left: 3%;
-        margin-top: 1.5%;
-    }
-
+    
+   .up{
+    margin-top: 1%;
+  margin-bottom: 1%;
+}
 }

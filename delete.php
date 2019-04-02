@@ -8,11 +8,12 @@
             $user = $_SESSION['id'];
         }
 
-        
+        // Delete message
+
         if(isset($_POST['submit'])){
             $checked = $_POST['checkbox'];
         foreach ($checked as $id) {
-            $sql = "DELETE FROM `messages` WHERE id='$id'";
+            $sql = "DELETE * FROM `messages` WHERE id='$id' AND user='$user'";
             $query = mysqli_query($link, $sql);
         // This part working. Add button success to inform user of the success of the operation
             if(!$query){
@@ -24,23 +25,24 @@
         
         }
 
-        
+        // Delete uploaded files 
+
         if(isset($_POST['delete'])){
 
             $checked = $_POST['checkbox'];
-        foreach ($checked as $name) {
-           $fileDel = unlink($target_dir.$name);
-            $sql = "DELETE FROM `uloaded` WHERE file_path='$name' AND user='$user'";
-            $query = mysqli_query($link, $sql);
-        // This part working. Add button success to inform user of the success of the operation
-            if(!$query && !$fileDel){
-                echo "SORRY something went wrong";
-            }else{
-              //  header("Location: mesdocuments.php");
-              echo $name." was deleted"."<br>";
-            }
- 
+    foreach ($checked as $name) {
+       $fileDel = unlink($target_dir.$name);
+        $sql = "DELETE FROM `uloaded` WHERE file_path='$name' AND user='$user'";
+        $query = mysqli_query($link, $sql);
+    // This part working. Add button success to inform user of the success of the operation
+        if(!$query && !$fileDel){
+            echo "SORRY something went wrong";
+        }else{
+          //  header("Location: mesdocuments.php");
+          echo $name." was deleted"."<br>";
         }
+
+    }
         
         }
 

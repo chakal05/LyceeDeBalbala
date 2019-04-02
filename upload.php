@@ -8,6 +8,7 @@ if(!isset($_SESSION['id'])){
     $user= $_SESSION['id'];
 }
 
+$sucess = "<button type='button' class='btn btn-secondary btn-lg btn-block'>Votre document est charger</button>";
 $target_dir = "uploads/";
 $file = $_FILES["fileToUpload"];
 $target_file = $target_dir . basename($file["name"]);
@@ -22,10 +23,8 @@ $allowedMimeTypes = array(
 if(isset($_POST["submit"])) {
     $check = getimagesize($file["tmp_name"]);
     if($check !== false) {
-       echo "File is an image - " . $check["mime"] . "."."<br>";
         $uploadOk = 1;
     } else if(in_array( $file["type"], $allowedMimeTypes ) ) {
-        echo "File is text document.";
         $uploadOk = 1;
     }
 }
@@ -55,24 +54,20 @@ if ($uploadOk == 0) {
     $name = $file["name"];
     $target_file = $target_dir.$pathName;
     if (move_uploaded_file($file["tmp_name"], $target_file)) {
-        echo "The file ". basename( $file["name"]). " has been uploaded.<br>";
-        echo "name in database is ".$pathName."<br>";
-        // Insert in database
+  // Insert in database
         $sql = "INSERT INTO `uloaded` VALUES ('','$user','$name','$pathName')";
         $query= mysqli_query($link,$sql);
         
         if($query){
 
             //insert was successful
-            echo "Posted";
-
-           } else {
-           
+          header("Location: mesDocuments.php");     
+          echo $sucess; // find a way to pass this variable to mesDoc.php to alert user of succes    
+        } else {
               //insert failed
               echo "Error";
            
            }
-       echo "<a href='mesDocuments.php'>Go back</a>";
     } else {
         echo "Sorry, there was an error uploading your file.";
     }

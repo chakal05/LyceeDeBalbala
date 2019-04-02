@@ -6,6 +6,7 @@
   .content{
     width: 95%;
     margin: 0 auto;
+    text-align: center;
     }
   
     .navbar{
@@ -19,7 +20,21 @@
       display: block;
       color: #fff;
     }
+    
+.content .bleu{
+  background-color: #21398A;
+  border-color: #ffffff;
+   color: #ffffff;
+   display: none;
+   margin-top: 1.3%;
+   margin-bottom: 2%;
+   font-weight: bold;
+}
 
+.content .bleu:hover{
+   background-color: #fff;
+   color: #21398A;
+}
     .btn-group{
      margin-bottom: 2%;
      margin-left: 3%;
@@ -31,8 +46,7 @@
     }
 
     .btn-danger{
-      margin-top: 5%;
-      position: relative;
+    margin-top: 8.5%;      
     }
     .btn .btn-danger:hover {
       color: red;
@@ -79,9 +93,8 @@
   }
 
   .btn-danger{
-    position: absolute;
-   right:-100%;
-  }
+    margin-top: 10%;      
+    }
  }
 
   
@@ -89,14 +102,14 @@
 
   @media (min-width: 768px) { 
 
-.btn-danger{
-  position: absolute;
- right:-200%;
-}
 
 .btn-group{
   margin-left: 5%;
 }
+
+.btn-danger{
+  margin-top: 15%;      
+  }
 
    }
 
@@ -112,7 +125,9 @@
     background-color: #FFFFFF;
     width: 96%;
   }
-  
+  .content .bleu{
+    background: none;
+  }
   .navbar{
     height: 63px;
   }
@@ -139,12 +154,10 @@
   font-size: 15px;
  }
 
- .btn-danger{
- position: absolute;
- right: 3%;
- margin-top: 1%;
-}
 
+ .btn-danger{
+  margin-top: 1%;      
+  }
 }
    
    /*

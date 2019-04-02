@@ -13,21 +13,28 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="pm_list.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="header.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="footer.css">
+  
 </head>
 <body>
     
     <?php   include('header.php');  ?> 
 
+    <div class= "up">
+    <h4> Questions/Réponses </h4>
+   </div>
+   
     <div class="container-fluid">
-  <div class="left">
+
+  <div class="gauche">
     <div class="pim">
         <h4> PIM</h4>
         <hr>
     <ul class="navbar-nav">
-   
-    <li class="nav-item"><a class="nav-link" href="new_pm.php"><button class="btn">Envoyer un message</button></a></li>
-    <li class="nav-item recu "><a class="nav-link" href="#"><button class="btn">Recus</button></a></li>
-    <li class="nav-item"><a class="nav-link" href="sent.php"><button class="btn">Envoyes</button></a></li>
+    <li class="nav-item"><a class="nav-link" href="new_pm.php"><button class="btn btn-sm btn-block">Envoyer un message</button></a></li>
+    <li class="nav-item recu"><a class="nav-link" href="#"><button class="btn btn-sm btn-block">Recus</button></a></li>
+    <li class="nav-item"><a class="nav-link" href="sent.php"><button class="btn btn-sm btn-block">Envoyes</button></a></li>
     </ul>
     
 </div>
@@ -37,8 +44,8 @@ session_start();
         <h4>OUTILS</h4>
         <hr>
        <ul class="navbar-nav">
-      <li class="nav-item"><a href="#"><button type="submit" name="submit" class="btn" >Supprimer</button></a></li>
-      <li class="nav-item"><a href="#"><button type="submit" name="unread" class="btn" formaction="update.php">Marquer non lu</button></a></li>
+      <li class="nav-item"><a href="#"><button type="submit" name="submit" class="btn btn-sm btn-block" >Supprimer</button></a></li>
+      <li class="nav-item"><a href="#"><button type="submit" name="unread" class="btn btn-sm btn-block" formaction="update.php">Marquer non lu</button></a></li>
         </ul>
     </div>
 </div>
@@ -131,6 +138,6 @@ while ($m = mysqli_fetch_array($result)) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
-<script src="script.js" ></script>
+<script src="header.js" ></script>
 </body>
 </html>

@@ -1,5 +1,117 @@
-.container{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 50px auto;
+html, body{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: rgb(245, 245, 245);
+  }
+  
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  .container-fluid{
+      width: 96%;
+  }
+
+  .up{
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    color: #21398A;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .up h4{
+    font-weight: bold;
+  }
+  .move{
+      text-align: center;
+  }
+  .move button{
+      height: 40px;
+      margin-top: 7%;
+  }
+  .bas{
+      font-weight: bold;
+  }
+  .container-fluid .gauche .bleu{
+      background-color: #21398A;
+      color: #fff;
+  }
+
+  .container-fluid .gauche .clair{
+   background-color: rgb(100, 124, 201);
+      color: #fff;
+  }
+  
+  .container-fluid .gauche{
+      display: none;
+    background-color: rgb(255, 255, 255);
 }
+
+  .righti{
+    margin-top: 3%;
+    background-color:  rgb(240, 240, 240);
+  }
+  
+  .list-group-item{
+    border: 1px solid #21398A;
+}
+.list-group-item a{
+    color: #21398A;
+}
+  .btn-info{
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+  @media screen and (min-width: 992px){
+
+      .container-fluid{
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          grid-template-rows: auto;
+          grid-gap: 3%;
+      }
+
+      .up{
+        margin-top: 1%;
+      margin-bottom: 1%;
+    }
+      .container-fluid .gauche{
+          display: block;
+          grid-column: 1/2;
+          height: 200px;
+      }
+
+      .righti{
+          grid-column: 2/-1;
+          margin-top: 0;
+      }
+      
+      .btn-info{
+        margin-bottom: 2%;
+        margin-top: 6%;
+    }
+    
+    .list-group{
+        margin-top: 0;
+        margin-bottom: 1%;
+    }
+
+      .bas{
+          background-color: gray;
+          color: #fff;
+          margin-bottom: 3%;
+          margin-top: 8%;
+          margin-left: 30%;
+      }
+
+      .bas:hover{
+          color: #fff;
+      }
+  }

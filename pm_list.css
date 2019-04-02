@@ -3,7 +3,7 @@ html, body{
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
-  background-color:rgb(243, 243, 243);
+  background-color:rgb(245, 245, 245);
 }
 
 *{
@@ -16,41 +16,56 @@ html, body{
     width: 95%;
   }
   
-  .left{
+  .container-fluid .gauche{
+display: none;
   }
-  h4{
-    font-size: 21px;
-    margin-top: 7px;
+
+  .up{
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 2%;
     color: #21398A;
+    text-transform: uppercase;
     font-weight: bold;
   }
   
+  .up h4{
+    font-weight: bold;
+  }
+
+  h4{
+    color: #21398A;
+    text-align: center;
+  }
   .navbar-nav{
-  text-align: center;
+      text-align: center;
+  }
+  .pim .navbar-nav a{
+    margin-top: -4.5%;
+  }
+  .navbar-nav .btn{
+      margin-top: 1.5%;
   }
   
-  .left .btn{
+  .container-fluid .gauche .btn{
     background-color: #21398A;
     color: #fff;
   }
   
-  .left .btn:hover{
-    border-color: #21398A;
-    color: #21398A;
-    font-weight: bold;
-  }
 
-  .left .recu .btn{
+  .container-fluid .gauche .recu .btn{
       background-color: #fff;
     color: #21398A;
     border-color: #21398A;
   }
   
-  .left .recu .btn:hover{
+  .container-fluid .gauche .recu .btn:hover{
     background-color: #21398A;
     color: #fff
   }
-
+  .container-fluid .gauche .functions{
+      margin-top: 3%;
+  }
 .display-message{
     width: 100%; 
     margin-top: 10%;
@@ -64,54 +79,40 @@ thead{
     color: #fff;
 }
 
+td{
+    font-size: 15px;
+}
 
-   /* Large devices (desktops, 992px and up)
+   /* Large devices (desktops, 992px and up)*/
    @media screen and (min-width: 992px) { 
      
-.container{
-    width: 96%;
-   display: grid;
-    grid-template-columns: 1fr 3fr;
-   grid-template-rows: auto;
-   grid-gap: 15px;
-}
-
-.left{
-    text-align: center;
-}
-
-h4{
-    font-size: 21px;
-    margin-top: 7px;
-    color: #21398A;
-}
-
-.left div {
-    background-color: #FFFFFF;
-}
-
-.left ul li {
-    list-style: none;
-}
-.left ul {
-    margin: 20px;
-}
-.left ul li {
-    margin: 3px;
-    color: #21398A;
-}
-.left ul li a {
-    color: #21398A;
-}
-.left ul li a:hover {
-    background-color:#21398A;
-    color: #fff;
-}
-
-.display-message{
-    width: 100%; 
-}
-
+    .container-fluid{
+        width: 98%;
+       display: grid;
+       grid-template-columns: 1fr 2fr;
+       grid-template-rows:  auto;
+       grid-gap: 5px;
+       margin-bottom: 5%;
+        }
+    
+        .container-fluid .gauche{
+            display: block;
+            grid-column: 1/2;
+            padding-top: 5px;
+            height: auto;
+        }
+        .container-fluid .gauche .pim .nav-item{
+            margin-top: 3%;
+        }
+        
+      .container-fluid .display-message{
+        grid-column: 2/-1;
+        margin-top: 0.4%;
+    }
+       .up{
+        margin-top: 1%;
+      margin-bottom: 1%;
+    }
 .pim .recu a{
     background-color:#21398A;
     color: #fff;
