@@ -38,37 +38,39 @@ html, body{
   .bas{
       font-weight: bold;
   }
-  .container-fluid .gauche .bleu{
-      background-color: #21398A;
-      color: #fff;
+  .container-fluid .gauche .bleu,
+  .container-fluid .gauche .clair {
+     font-weight: bold;
+      color: #21398A;
+      text-align: left;
   }
 
-  .container-fluid .gauche .clair{
-   background-color: rgb(100, 124, 201);
-      color: #fff;
-  }
   
+  .container-fluid .gauche .bleu i,
+    .container-fluid .gauche .clair i{
+      margin-left: 9%;
+    }
+    .container-fluid .gauche .bleu:hover,
+    .container-fluid .gauche .clair:hover{
+      text-decoration: underline;
+  }
+ 
   .container-fluid .gauche{
       display: none;
-    background-color: rgb(255, 255, 255);
+      background-color: rgb(252, 252, 252);
 }
 
   .righti{
     margin-top: 3%;
-    background-color:  rgb(240, 240, 240);
   }
   
-  .list-group-item{
-    border: 1px solid #21398A;
+.sas {
+  background-color: #21398A;
+  color: #fff;
 }
-.list-group-item a{
-    color: #21398A;
+tr{
+  background-color: #fff;
 }
-  .btn-info{
-    margin-bottom: 3%;
-    margin-top: 3%;
-}
-
   @media screen and (min-width: 992px){
 
       .container-fluid{
@@ -85,22 +87,20 @@ html, body{
       .container-fluid .gauche{
           display: block;
           grid-column: 1/2;
-          height: 200px;
+          height: 180px;
       }
-
+      .container-fluid .gauche .btn{
+        margin-top: 0;
+        margin-bottom: 5%;
+      }
       .righti{
           grid-column: 2/-1;
           margin-top: 0;
       }
-      
-      .btn-info{
-        margin-bottom: 2%;
-        margin-top: 6%;
-    }
     
     .list-group{
         margin-top: 0;
-        margin-bottom: 1%;
+      
     }
 
       .bas{

@@ -1,8 +1,9 @@
 <?php
-
-require_once("connection.php");
+    require_once("connection.php");
 session_start();
+
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,16 +11,47 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Messages</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="">
+    <link rel="stylesheet" type="text/css" media="screen" href="pm_list.css">
     <link rel="stylesheet" type="text/css" media="screen" href="header.css">
     <link rel="stylesheet" type="text/css" media="screen" href="footer.css">
+  
 </head>
 <body>
     
-<?php
-include('header.php');
-?>
+    <?php   include('header.php');  ?> 
+
+    <div class= "up">
+    <h4> Messages envoyés  </h4>
+   </div>
+   
+    <div class="container-fluid">
+
+  <div class="gauche">
+    <div class="pim">
+        <h4> PIM</h4>
+        <hr>
+    <ul class="navbar-nav">
+    <li class="nav-item"><button class="btn btn-sm btn-block"><a class="nav-link" href="new_pm.php"><i class="fas fa-angle-double-right"></i> Envoyer un message</a></button></li>
+    <li class="nav-item recu"><button class="btn btn-sm btn-block"><a class="nav-link" href="#"><i class="fas fa-angle-double-right"></i> Message recus</a></button></li>
+    <li class="nav-item"><button class="btn btn-sm btn-block"><a class="nav-link" href="sent.php"><i class="fas fa-angle-double-right"></i> Envoyes</a></button></li>
+    </ul>
+    
+</div>
+
+    <form action="delete.php" method="post">
+    <div class="functions">
+        <h4>OUTILS</h4>
+        <hr>
+       <ul class="navbar-nav">
+      <li class="nav-item"><a href="#"><button type="submit" name="submit" class="btn btn-sm btn-block" ><i class="fas fa-trash-alt"></i> Supprimer</button></a></li>
+      <li class="nav-item"><a href="#"><button type="submit" name="unread" class="btn btn-sm btn-block" formaction="update.php"> <i class="fas fa-upload"></i> Marquer non lu</button></a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="right">
 <form>
 <table class="table table-bordered">
     <thead >
@@ -73,6 +105,8 @@ if(isset($_SESSION['id'])){
 </tbody>
     </table>
     </form> 
+    </div>
+</div>
 
     <?php
 include('footer.php');

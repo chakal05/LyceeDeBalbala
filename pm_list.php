@@ -11,6 +11,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Messages</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="pm_list.css">
     <link rel="stylesheet" type="text/css" media="screen" href="header.css">
@@ -22,7 +23,7 @@ session_start();
     <?php   include('header.php');  ?> 
 
     <div class= "up">
-    <h4> Questions/Réponses </h4>
+    <h4> Messages réçus </h4>
    </div>
    
     <div class="container-fluid">
@@ -32,9 +33,9 @@ session_start();
         <h4> PIM</h4>
         <hr>
     <ul class="navbar-nav">
-    <li class="nav-item"><a class="nav-link" href="new_pm.php"><button class="btn btn-sm btn-block">Envoyer un message</button></a></li>
-    <li class="nav-item recu"><a class="nav-link" href="#"><button class="btn btn-sm btn-block">Recus</button></a></li>
-    <li class="nav-item"><a class="nav-link" href="sent.php"><button class="btn btn-sm btn-block">Envoyes</button></a></li>
+    <li class="nav-item"><button class="btn btn-sm btn-block"><a class="nav-link" href="new_pm.php"><i class="fas fa-angle-double-right"></i> Envoyer un message</a></button></li>
+    <li class="nav-item recu"><button class="btn btn-sm btn-block"><a class="nav-link" href="#"><i class="fas fa-angle-double-right"></i> Message recus</a></button></li>
+    <li class="nav-item"><button class="btn btn-sm btn-block"><a class="nav-link" href="sent.php"><i class="fas fa-angle-double-right"></i> Envoyes</a></button></li>
     </ul>
     
 </div>
@@ -44,8 +45,8 @@ session_start();
         <h4>OUTILS</h4>
         <hr>
        <ul class="navbar-nav">
-      <li class="nav-item"><a href="#"><button type="submit" name="submit" class="btn btn-sm btn-block" >Supprimer</button></a></li>
-      <li class="nav-item"><a href="#"><button type="submit" name="unread" class="btn btn-sm btn-block" formaction="update.php">Marquer non lu</button></a></li>
+      <li class="nav-item"><a href="#"><button type="submit" name="submit" class="btn btn-sm btn-block" ><i class="fas fa-trash-alt"></i> Supprimer</button></a></li>
+      <li class="nav-item"><a href="#"><button type="submit" name="unread" class="btn btn-sm btn-block" formaction="update.php"> <i class="fas fa-upload"></i> Marquer non lu</button></a></li>
         </ul>
     </div>
 </div>

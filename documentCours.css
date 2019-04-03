@@ -31,7 +31,7 @@ html, body{
 
   .container-fluid .gauche{
       display: none;
-      background-color: #fff;
+      background-color: rgb(252, 252, 252);
       padding: 3%;
     border-radius: 3px;
   }

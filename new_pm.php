@@ -74,9 +74,9 @@
     <div class="container-fluid">
         
         <div class="gauche">
+            <h4>Contacts</h4>
             <ul class="list-group">
                 
-
         <?php
             //show all the users expect me
             
@@ -139,12 +139,12 @@
               
            <form method="post">
             <div class="form-group">
-    <label for="receiver">Destinataire</label>
-    <input type="text" class="form-control" id="receiver" name="receiver" placeholder="Choose a contact from left"  value= "<?php echo  $receiver; ?>" >
+    <label for="receiver"><b>Destinataire</b></label>
+    <input type="text" class="form-control" id="receiver" name="receiver" placeholder="Choisissez un contact"  value= "<?php echo  $receiver; ?>" >
   </div>
                 <div class="form-group">
-        <label for="message">Message</label>
-        <textarea class="form-control" id="message" rows="3" name="message" placeholder="Enter Your Message"></textarea>
+        <label for="message"><b>Message</b></label>
+        <textarea class="form-control" id="message" rows="3" name="message" placeholder="Tappez votre message ici"></textarea>
         </div>
          <input type="hidden" id="conversation_id" name="conversation_id" value="<?php echo base64_encode($conversation_id); ?>">
                 <input type="hidden" id="user_from" name="user_from" value="<?php echo base64_encode($user_id); ?>">

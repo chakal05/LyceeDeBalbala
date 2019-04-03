@@ -1,0 +1,90 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color:rgb(245, 245, 245);
+  }
+  
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  
+  .container-fluid{
+      width: 95%;
+    }
+    
+    .container-fluid .gauche{
+  display: none;
+  background-color: rgb(252, 252, 252);
+  height: 270px;
+    }
+  
+    .up{
+      text-align: center;
+      margin-bottom: 5%;
+      margin-top: 2%;
+      color: #21398A;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    
+    .up h4{
+      font-weight: bold;
+    }
+  
+    h4{
+      color: #21398A;
+      text-align: center;
+    }
+  
+    hr{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .navbar-nav a {
+      text-decoration: none;
+      color: #21398A;
+    }
+  
+    
+    .navbar-nav a{
+      margin-top: -4.5%;
+    }
+    .container-fluid .gauche .btn{
+      color: #21398A;
+      font-weight: bold;
+    }
+    
+   
+    .container-fluid .gauche .recu .btn{
+        text-transform: uppercase;
+      color: #21398A;
+    }
+    
+    .container-fluid .gauche .btn:hover{
+        text-decoration: underline;
+    }
+    .container-fluid .gauche .functions h4{
+  margin-top: -1%;
+    }
+    
+    .container-fluid .right{
+    width: 100%; 
+    margin-top: 30%;
+}
+
+table{
+    text-align: center;
+}
+thead{
+    background-color: #21398A;
+    color: #fff;
+}
+
+tbody{
+    font-size: 15px;
+    background-color: #fff;
+}

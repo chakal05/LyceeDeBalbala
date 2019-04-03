@@ -120,9 +120,9 @@
      .logo{
        width: 70%;
        margin: 0 auto;
+       background-color: #FFFFFF;
      }
     .content{
-    background-color: #FFFFFF;
     width: 96%;
   }
   .content .bleu{

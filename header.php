@@ -1,9 +1,9 @@
 <?php
+$user ="";
         if(isset($_SESSION['id'])){
                 $user = $_SESSION['username'];
             }
    
-
  echo "
  <div class='content'>
      <div class='logo'>

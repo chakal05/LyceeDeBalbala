@@ -9,13 +9,15 @@
         }
 
         // Delete message
+// This part working. Add button success to inform user of the success of the operation
 
         if(isset($_POST['submit'])){
-            $checked = $_POST['checkbox'];
-        foreach ($checked as $id) {
-            $sql = "DELETE * FROM `messages` WHERE id='$id' AND user='$user'";
+           
+            $checked = $_POST['checkbox']; 
+      foreach ($checked as $id) {
+    
+            $sql = "DELETE FROM `messages` WHERE id='$id' AND user_to='$user'";
             $query = mysqli_query($link, $sql);
-        // This part working. Add button success to inform user of the success of the operation
             if(!$query){
                 echo "SORRY something went wrong";
             }else{

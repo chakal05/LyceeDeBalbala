@@ -51,13 +51,13 @@ include('header.php');
 <form action="delete.php" method="post">
     <div class="move">
         <ul>
-<li><button type="submit" class="btn btn-sm btn-block bleu" name="delete"> Supprimer</button></li>
-<li><button class="btn btn-sm btn-block clair" > Telecharger</button></li>
+<li><button type="submit" class="btn btn-sm btn-block bleu" name="delete"><i class="fas fa-trash-alt"></i>  Supprimer</button></li>
+<li><button class="btn btn-sm btn-block clair"><i class="fas fa-download"></i>  Telecharger</button></li>
 </ul>
 </div>
 </div>
 
-<div class="righti">
+<div class="righti">  
 <?php 
 
 
@@ -66,24 +66,23 @@ $result = mysqli_query($link, $sql);
 //check if their are any files
 
 if(mysqli_num_rows($result) > 0){
-
+echo "<table class='table table-bordered'>
+<thead >
+<tr class='sas'>
+<th scope='col'>#</th>
+  <th scope='col'>Nom</th>
+ 
+</tr>
+</thead>
+<tbody>";
     // format and display
 
     while($row= mysqli_fetch_array($result)){
         $fileName = $row["file_name"];
         $path= $row['file_path'];
-      echo "
-      <ul class='list-group'>
-     
-      <li class='list-group-item'> 
-      <div class='form-check form-check-inline'>
-      <input class='form-check-input' type='checkbox' id='inlineCheckbox1' name='checkbox[]' value='$path'>
-    </div>
-    <a href='uploads/{$path}'>$fileName</a></li>
-      
-    </ul>
     
-    ";
+    echo "<tr class='table'><th scope='row'><input type='checkbox' name='checkbox[]' value='".$path."'></th><td><a href='uploads/{$path}'>$fileName</a></tr>";
+    echo "</table";
     }
 
 }else{

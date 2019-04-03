@@ -31,9 +31,11 @@ html, body{
 
   .gauche{
     display: none;
+    background-color: rgb(252, 252, 252);
+    padding: 3%;
+    border-radius: 3px;
  }
  
- .gauche,
  .right{
      background-color: #ffffff;
      padding: 3%;
