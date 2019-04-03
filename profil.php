@@ -1,7 +1,11 @@
 <?php
     require_once("connection.php");
 session_start();
-
+if(isset($_SESSION['id'])){
+    $user = $_SESSION['id'];
+}else{
+    header('Location: index.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +26,25 @@ session_start();
     <?php   include('header.php');  ?> 
 
     <div class="container-fluid">
+    <div class="gauche">
+    <div class="card" style="width: 18rem;">
+    
+    <img src="student.jpg" class="card-img-top">
+  <div class="card-body">
+   <a href="#" class="btn btn-primary"><?php echo $user;  ?></a>
+  </div>
+</div>
+    </div>
+        <div class="right">
+            <p>Ces informations ont ete fournies par l'administration</p>
+        <ul>
+            <li>Email :</li>
+            <li>Telephone :</li>
+            <li>Adresse :</li>
+            <li>City :</li>
+           
+        </ul>
+        </div>
 </div>
     
 

@@ -35,15 +35,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="jquery-ui.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="">
-    <style>
-    .container{
-        padding: 1%;
-        box-shadow: 2px 3px gray ;
-    }
-    
-    </style>
+    <link rel="stylesheet" type="text/css" media="screen" href="read.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="header.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="footer.css">
     </head>
     <body>
 
@@ -51,7 +45,7 @@ session_start();
     
     <div class="container">
         
-    <div class="display">
+    <div class="gauche">
     
   <?php
     
@@ -137,7 +131,7 @@ session_start();
 
         </div>
 
-    <form method="post">
+        <div class="right">
      <div>
         <div class="form-group">
        <button type='button' class='btn btn-primary btn-sm'> To :  <?php echo $user_to_username; ?></button> 
@@ -153,6 +147,7 @@ session_start();
                  <span id="error"></span>
 </div>
                  </form>
+                 </div>
         </div>
 
         <?php include('footer.php');  ?>
@@ -163,6 +158,6 @@ session_start();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
- <script src=""></script>
+ <script src="header.js"></script>
 </body>
 </html>
