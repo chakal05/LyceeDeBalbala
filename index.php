@@ -60,6 +60,8 @@ session_start();
          }
         
     } 
+
+    
     
     }
    
@@ -81,12 +83,6 @@ session_start();
     
 </head>
 <body>
-   
-    
-
-
-
-     
    
      <div class= "container">
       
@@ -117,7 +113,7 @@ session_start();
                 <footer>
 
                     <ul>
-        <li class="left"><b><i class="far fa-copyright">2019 Université de Djibouti</i></b></li>
+        <li class="left"><i class="far fa-copyright"> <?php echo date("Y");?> Université de Djibouti</i></li>
         <li class="left">Campus de Balbala</li>
         <li class="left">Croisement RN2-RN5 BP 1904</li>
         <li class="left">TEL:(+253)21 31 55 55</li><br>
@@ -134,6 +130,6 @@ session_start();
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
- <script src="jquery.js"></script>
+ <script src="jquery.min.js"></script>
 </body>
 </html>

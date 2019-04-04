@@ -1,40 +1,6 @@
 $(document).ready(function(){
     check();   
 })
-    
-function showUp(){
-    
-   
-    $('.navbar-toggler').click(function(){
-        $(".collapse").hide();
-        $(".bleu").show(hidden());
-          $(".container-fluid .gauche").show(hidden());
-})
-}
-
-function blo(){
-    
-    $('.bleu').click(function(){
-        $('.collapse').show(blos());
-        $('.bleu').html("Cacher le menu");
-        $(".container-fluid .gauche").hide(blos());
-        })
-}
-
-function blos(){
-    $('.bleu').click(function(){
-        $('.collapse').hide(blo());
-        $('.bleu').html("Montrer le menu");
-        $(".container-fluid .gauche").show(blo());
-        })
-}
-function hidden(){
-    
-    $('.navbar-toggler').click(function(){
-        $(".bleu").hide(showUp());
-          $(".container-fluid .gauche").hide(showUp());
-         });      
-}
     // 
 
         // login validation

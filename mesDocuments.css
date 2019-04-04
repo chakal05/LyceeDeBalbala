@@ -59,7 +59,9 @@ html, body{
       display: none;
       background-color: rgb(252, 252, 252);
 }
-
+.gauche ul li{
+  list-style: none;
+  }
   .righti{
     margin-top: 3%;
   }

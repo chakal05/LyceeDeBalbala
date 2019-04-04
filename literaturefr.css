@@ -35,6 +35,9 @@ h4{
    border-radius: 3px;
 }
 
+    .gauche ul li{
+    list-style: none;
+    }
 
 .right{
     background-color: #ffffff;

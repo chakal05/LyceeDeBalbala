@@ -45,6 +45,11 @@ html, body{
      padding-left: 5%;
      padding-top: 7%;
  }
+
+ .gauche ul li{
+  list-style: none;
+  }
+
  .gauche ul li a {
      font-weight: bold;
      margin-left: 3%;
@@ -66,7 +71,7 @@ html, body{
    grid-template-columns: 1fr 2fr;
    grid-template-rows:  auto;
    grid-gap: 5px;
-   margin-bottom: 5%;
+   margin-bottom: 3%;
     }
 
     .container-fluid .gauche{

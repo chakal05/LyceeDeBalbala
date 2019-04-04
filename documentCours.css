@@ -35,7 +35,9 @@ html, body{
       padding: 3%;
     border-radius: 3px;
   }
-  
+  .gauche ul li{
+    list-style: none;
+    }
   .container-fluid .gauche a{
     color: #21398A;
     text-decoration: none;

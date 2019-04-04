@@ -67,11 +67,12 @@ footer{
  list-style-type: none;
  margin-top: 3%;
  }
- 
+ .fa-copyright{
+   font-weight: bold;
+ }
  footer ul li {
  display: block;
  font-size: 13px;
- font-weight: bold;
  margin-right: 3%;
  margin-top: 3%;
  }
