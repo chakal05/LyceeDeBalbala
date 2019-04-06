@@ -1,11 +1,13 @@
 $(document).ready(function(){
     showUp();
     blo();
+    $(".pmb").fadeOut(3000);
  //       //get new message every 3 second
- //   NewMess();
+
+   NewMess();
+
  //   //Is creating to many connection to the port; You'll have to increase the number of port  
- //setTimeout(NewMess(),3000);
-   
+setTimeout(NewMess(), 3000);
 })
 
 
@@ -35,6 +37,7 @@ function showUp(){
         $(".collapse").hide();
         $(".bleu").show(hidden());
           $(".container-fluid .gauche").show(hidden());
+        
 })
 }
 

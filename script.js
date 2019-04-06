@@ -17,7 +17,6 @@ $(document).ready(function(){
         
         $("form").submit(function(e){
             
-            e.preventDefault();
              let errorMessage = "";
              let missingFields ="";
        
@@ -30,21 +29,21 @@ $(document).ready(function(){
         
         if($("#email").val() === ""){
              missingFields += "<br>Il vous manque un email";
-         } else if($("#password").val() === ""){
+         } 
+         
+         if($("#password").val() === ""){
             missingFields += "<br>Il vous manque le mot de passe";
         }
            
         if(missingFields !== ""){
-            errorMessage+= " JS Code  Les espaces suivants sont manquants :" + missingFields;
+            errorMessage+= " Les espaces suivants sont manquants :" + missingFields;
        }
     
        if(errorMessage !== ""){
            $("#errorMessage").html('<div class="alert alert-danger" role="alert">' + errorMessage + '</div>');
-       }else{
+           e.preventDefault();
+       }
            
-             $("form").submit();
-              
-           }
     
     })
     

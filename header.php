@@ -59,7 +59,7 @@ $user ="";
         $user
         </button>
         <div class='dropdown-menu'> <a class='dropdown-item' href='index.php?logout=1'>LOG OUT</a>
-                <a class='dropdown-item' href='profil.php'>Profile</a> 
+                <a class='dropdown-item' href='profil.php'>PROFILE</a> 
         </div>
         </div>
                 </div> 

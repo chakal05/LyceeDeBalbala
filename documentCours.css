@@ -41,6 +41,7 @@ html, body{
   .container-fluid .gauche a{
     color: #21398A;
     text-decoration: none;
+    font-weight: bold;
   }
 
   .container-fluid .right a {
@@ -76,11 +77,11 @@ html, body{
     }
     
     .container-fluid .gauche ul{
-      padding-top: 10%;
+      margin-top: 7%;
   }
 
-  .container-fluid .gauche a {
-      font-weight: bold;
+  .container-fluid .gauche ul li  {
+    margin-top: 5%;
   }
   
   .container-fluid .right{

@@ -27,6 +27,24 @@
         
         }
 
+        // Delete sent messages
+
+        if(isset($_POST['bort'])){
+           
+            $checked = $_POST['checkbox']; 
+      foreach ($checked as $id) {
+    
+            $sql = "DELETE FROM `messages` WHERE id='$id' AND user_from='$user'";
+            $query = mysqli_query($link, $sql);
+            if(!$query){
+                echo "SORRY something went wrong";
+            }else{
+                header("Location: sent.php");
+            }
+        }
+        
+        }
+
         // Delete uploaded files 
 
         if(isset($_POST['delete'])){

@@ -50,6 +50,7 @@ h4{
 .gauche  a{
 text-decoration: none;
 color: #21398A;
+font-weight: bold;
 }
 
 
@@ -79,11 +80,11 @@ color: #21398A;
     }
 
     .container-fluid .gauche ul{
-        padding-top: 10%;
+       margin-top: 7%;
     }
 
-    .container-fluid .gauche a {
-        font-weight: bold;
+    .container-fluid .gauche ul li    {
+      margin-top: 3%;
     }
     .right{
         grid-column: 2/-1;

@@ -58,6 +58,14 @@ html, body{
   .container-fluid .gauche{
       display: none;
       background-color: rgb(252, 252, 252);
+      text-align: center;
+}
+
+.gauche .btn-primary,
+.btn-outline-secondary{
+  background-color: #21398A;
+  color: #fff;
+  border-color: #21398A;
 }
 .gauche ul li{
   list-style: none;
@@ -80,6 +88,7 @@ tr{
           grid-template-columns: 1fr 2fr;
           grid-template-rows: auto;
           grid-gap: 3%;
+    
       }
 
       .up{
@@ -90,10 +99,14 @@ tr{
           display: block;
           grid-column: 1/2;
           height: 180px;
+          text-align: left;
       }
       .container-fluid .gauche .btn{
         margin-top: 0;
         margin-bottom: 5%;
+      }
+      .gauche .btn-primary{
+        margin-left: 10%;
       }
       .righti{
           grid-column: 2/-1;

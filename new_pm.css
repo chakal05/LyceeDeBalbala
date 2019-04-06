@@ -55,10 +55,14 @@ html, body{
         margin-top: 1%;
     }
 
-    .container-fluid .right .btn{
+   .pmb{
+        margin-bottom: 2%;
+    }
+    #send{
         margin-bottom: 1.5%;
         background-color: #21398A;
         border-color: #21398A;
+
     }
 
     
@@ -85,6 +89,7 @@ html, body{
         grid-column: 2/-1;
         margin-top: 0;
         border: none;
+        text-align: center;
     }
     .container-fluid .right .btn{
         margin-left: 5%;
@@ -98,6 +103,7 @@ html, body{
         margin-top: 7%;
         margin-left: 3%;
     }
+    .pmb, .dmb,
     .container-fluid .right .form-control,
     .container-fluid .right label{
       width: 90%;

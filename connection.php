@@ -1,7 +1,7 @@
 <?php
 
 
-$link = mysqli_connect("127.0.0.1", "root", "", "etudiants");
+$link = mysqli_connect("localhost:3306", "root", "", "etudiants");
 
 
 ?>

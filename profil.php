@@ -6,6 +6,46 @@ if(isset($_SESSION['id'])){
 }else{
     header('Location: index.php');
 }
+
+$sql = "SELECT * FROM `userpic` WHERE user='$user' ORDER BY file_id DESC LIMIT 1 ";
+$result = mysqli_query($link, $sql);
+$path ="";
+//check if they have loaded a profil pic
+
+if(mysqli_num_rows($result) > 0){
+
+    // Display user pic
+
+    while($row= mysqli_fetch_array($result)){
+        $fileName = $row["file_name"];
+        $path= $row['file_path'];
+    
+    }
+
+}else{ 
+    // Display default icon pic 
+
+    $path = "userIcon.png";
+}
+
+// Fetch ad display user info
+
+$sql1 = "SELECT * FROM `class` WHERE id='$user' ";
+$result1 = mysqli_query($link, $sql1);
+
+if(mysqli_num_rows($result1) > 0){
+
+  while($row= mysqli_fetch_array($result1)){
+    $email = $row["email"];
+    $telephone= $row['telephone'];
+    $adress = $row['adress'] ;
+    $filiere = $row['Filiere'] ;
+    $promo = $row['promotion'] ;
+  }
+
+}else{
+  echo "no";
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,22 +65,63 @@ if(isset($_SESSION['id'])){
     <?php   include('header.php');  ?> 
 
     <div class="container-fluid">
+
     <div class="gauche">
     <div class="card" style="width: 18rem;">
+    <img src="userPic/<?php echo $path; ?>" class="card-img-top">
+    <div class="card-body">
+   <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+ Changer la photo de profil
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mes photos </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+ <form action="upload.php" method="post" enctype="multipart/form-data">
+
+ <div class="input-group mb-3">
+ <div class="input-group">
+  <div class="custom-file">
+    <input type="file" name="profilPic" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+    <label class="custom-file-label" for="inputGroupFile04">Choisir photo </label>
+  </div>
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="submit"  name="profil"  id="inputGroupFileAddon04">Charger</button>
+  </div>
+</div>
+</form>
+</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+      
+    </div>
     
-    <img src="student.jpg" class="card-img-top">
-  <div class="card-body">
-   <a href="#" class="btn btn-primary"><?php echo $user;  ?></a>
+</div>
   </div>
 </div>
     </div>
+</div>
+    </div>
+
         <div class="right">
-            <p>Ces informations ont ete fournies par l'administration</p>
+            <p>Ces informations ont été fournies par l'administration</p>
         <ul>
-            <li>Email :</li>
-            <li>Telephone :</li>
-            <li>Adresse :</li>
-            <li>City :</li>
+            <li>Email :     <?php echo $email; ?> </li>
+            <li>Telephone : <?php echo $telephone; ?> </li>
+            <li>Adresse :   <?php echo $adress; ?> </li>
+            <li>Filière :   <?php echo $filiere; ?>  </li>
+            <li>Promotion : <?php echo $promo; ?>  </li>
            
         </ul>
         </div>

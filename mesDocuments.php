@@ -33,20 +33,46 @@ include('header.php');
 <div class="container-fluid">
 
 <div class="gauche">
+
 <form action="upload.php" method="post" enctype="multipart/form-data">
-    
-<div class="input-group mb-3">
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Charger un document 
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mes documents </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form action="upload.php" method="post" enctype="multipart/form-data">
+
+ <div class="input-group mb-3">
+ <div class="input-group">
   <div class="custom-file">
-    <input type="file" name="fileToUpload" class="custom-file-input" id="inputGroupFile02">
-    <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choisir un document</label>
+    <input type="file" name="fileToUpload" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+    <label class="custom-file-label" for="inputGroupFile04">Choisir photo </label>
   </div>
   <div class="input-group-append">
-    <input type="submit" value="CHARGER" name="submit" class="input-group-text" id="inputGroupFileAddon02">
+    <button class="btn btn-outline-secondary" type="submit"  name="submit"  id="inputGroupFileAddon04">Charger</button>
+  </div>
+</div>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         </div>
+    </div>
   </div>
 </div>
 
-</form>
-
+</div>
 <form action="delete.php" method="post">
     <div class="move">
         <ul>

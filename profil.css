@@ -18,12 +18,32 @@ html, body{
     
     .container-fluid .gauche{
     text-align: center;
+  
     }
   
     .container-fluid .right{
     margin-top: 5%;
+    border: 1px solid;
+    color: #21398A;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-bottom: 3%;
+    background-color: rgb(255, 255, 255);
     }
-  
+    .container-fluid .right p{
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .container-fluid .right ul{
+        margin-top: 5%;
+    }
+    .container-fluid .right li{
+        list-style: none;
+        margin-top: 1%;
+        margin-left: 5%;
+
+    }
     .card{
         margin-left: 10%;
         margin-top: 3%;
@@ -34,7 +54,9 @@ html, body{
         border-color: #21398A;
     }
 
-
+    .custom-file{
+        width: 100%;
+    }
     
 
    /* Large devices (desktops, 992px and up)*/
@@ -53,12 +75,31 @@ html, body{
         .container-fluid .gauche{
             display: block;
             grid-column: 1/2;
-            padding-top: 5px;
         }
        
       .container-fluid .right{
         grid-column: 2/-1;
+    margin-top: 1.6%;
+    margin-bottom: 0;
+    height: 379px;
+    }
+    .card img{
         margin-top: 0;
+        height: 300px;
     }
 
+    .container-fluid .right p{
+        text-align: center;
+        margin-top: 3%;
+   
+    }
+    .container-fluid .right ul{
+        margin-top: 6%;
+    }
+    .container-fluid .right li{
+        list-style: none;
+        margin-top: 3%;
+        margin-left: 11%;
+
+    }
 }

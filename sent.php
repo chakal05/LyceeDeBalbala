@@ -34,7 +34,7 @@ session_start();
         <hr>
     <ul class="navbar-nav">
     <li class="nav-item"><button class="btn btn-sm btn-block"><a class="nav-link" href="new_pm.php"><i class="fas fa-angle-double-right"></i> Envoyer un message</a></button></li>
-    <li class="nav-item recu"><button class="btn btn-sm btn-block"><a class="nav-link" href="#"><i class="fas fa-angle-double-right"></i> Message recus</a></button></li>
+    <li class="nav-item recu"><button class="btn btn-sm btn-block"><a class="nav-link" href="pm_list.php"><i class="fas fa-angle-double-right"></i> Message recus</a></button></li>
     <li class="nav-item"><button class="btn btn-sm btn-block"><a class="nav-link" href="sent.php"><i class="fas fa-angle-double-right"></i> Envoyes</a></button></li>
     </ul>
     
@@ -45,9 +45,8 @@ session_start();
         <h4>OUTILS</h4>
         <hr>
        <ul class="navbar-nav">
-      <li class="nav-item"><a href="#"><button type="submit" name="submit" class="btn btn-sm btn-block" ><i class="fas fa-trash-alt"></i> Supprimer</button></a></li>
-      <li class="nav-item"><a href="#"><button type="submit" name="unread" class="btn btn-sm btn-block" formaction="update.php"> <i class="fas fa-upload"></i> Marquer non lu</button></a></li>
-        </ul>
+      <li class="nav-item"><a href="#"><button type="submit" name="bort" class="btn btn-sm btn-block" ><i class="fas fa-trash-alt"></i> Supprimer</button></a></li>
+      </ul>
     </div>
 </div>
 
@@ -108,10 +107,6 @@ if(isset($_SESSION['id'])){
     </div>
 </div>
 
-    <?php
-include('footer.php');
-?>
-    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
