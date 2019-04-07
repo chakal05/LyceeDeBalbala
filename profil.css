@@ -1,26 +1,26 @@
-html, body{
+    html, body{
     height: 100%;
     width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
     background-color:rgb(245, 245, 245);
-  }
-  
-  *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
-  
-  .container-fluid{
-      width: 95%;
     }
-    
+
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    .container-fluid{
+    width: 95%;
+    }
+
     .container-fluid .gauche{
     text-align: center;
-  
+    display:none;
     }
-  
+
     .container-fluid .right{
     margin-top: 5%;
     border: 1px solid;
@@ -30,76 +30,79 @@ html, body{
     margin-bottom: 3%;
     background-color: rgb(255, 255, 255);
     }
+
     .container-fluid .right p{
-        text-align: center;
-        text-transform: uppercase;
+    text-align: center;
+    text-transform: uppercase;
     }
 
     .container-fluid .right ul{
-        margin-top: 5%;
+    margin-top: 5%;
     }
-    .container-fluid .right li{
-        list-style: none;
-        margin-top: 1%;
-        margin-left: 5%;
 
+    .container-fluid .right li{
+    list-style: none;
+    margin-top: 1%;
+    margin-left: 5%;
     }
+
     .card{
-        margin-left: 10%;
-        margin-top: 3%;
-        background: none;
+    margin-left: 10%;
+    margin-top: 3%;
+    background: none;
     }
+
     .card .btn{
-        background-color: #21398A;
-        border-color: #21398A;
+    background-color: #21398A;
+    border-color: #21398A;
     }
 
     .custom-file{
-        width: 100%;
+    width: 100%;
     }
-    
 
-   /* Large devices (desktops, 992px and up)*/
-   @media screen and (min-width: 992px) { 
-     
+    /* Large devices (desktops, 992px and up)*/
+    @media screen and (min-width: 992px) { 
+
     .container-fluid{
-        width: 98%;
-       display: grid;
-       grid-template-columns: 1fr 2fr;
-       grid-template-rows:  auto;
-       grid-gap: 10px;
-       margin-top: 0.5%;
-       margin-bottom: 1%;
-        }
-    
-        .container-fluid .gauche{
-            display: block;
-            grid-column: 1/2;
-        }
-       
-      .container-fluid .right{
-        grid-column: 2/-1;
+    width: 98%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows:  auto;
+    grid-gap: 10px;
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+    }
+
+    .container-fluid .gauche{
+    display: block;
+    grid-column: 1/2;
+    }
+
+    .container-fluid .right{
+    grid-column: 2/-1;
     margin-top: 1.6%;
     margin-bottom: 0;
     height: 379px;
     }
+
     .card img{
-        margin-top: 0;
-        height: 300px;
+    margin-top: 0;
+    height: 300px;
     }
 
     .container-fluid .right p{
-        text-align: center;
-        margin-top: 3%;
-   
+    text-align: center;
+    margin-top: 3%;
     }
-    .container-fluid .right ul{
-        margin-top: 6%;
-    }
-    .container-fluid .right li{
-        list-style: none;
-        margin-top: 3%;
-        margin-left: 11%;
 
+    .container-fluid .right ul{
+    margin-top: 6%;
     }
-}
+
+    .container-fluid .right li{
+    list-style: none;
+    margin-top: 3%;
+    margin-left: 11%;
+    }
+    }
