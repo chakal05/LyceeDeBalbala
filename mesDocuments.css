@@ -1,132 +1,131 @@
-html, body{
+    html, body{
     height: 100%;
     width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
     background-color: rgb(245, 245, 245);
-  }
-  
-  *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
+    }
 
-  .container-fluid{
-      width: 96%;
-  }
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
 
-  .up{
+    .container-fluid{
+    width: 96%;
+    }
+
+    .up{
     text-align: center;
     margin-bottom: 5%;
     margin-top: 2%;
     color: #21398A;
     text-transform: uppercase;
     font-weight: bold;
-  }
-  
-  .up h4{
+    }
+
+    .up h4{
     font-weight: bold;
-  }
-  .move{
-      text-align: center;
-  }
-  .move button{
-      height: 40px;
-      margin-top: 7%;
-  }
-  .bas{
-      font-weight: bold;
-  }
-  .container-fluid .gauche .bleu,
-  .container-fluid .gauche .clair {
-     font-weight: bold;
-      color: #21398A;
-      text-align: left;
-  }
-
-  
-  .container-fluid .gauche .bleu i,
-    .container-fluid .gauche .clair i{
-      margin-left: 9%;
     }
-    .container-fluid .gauche .bleu:hover,
-    .container-fluid .gauche .clair:hover{
-      text-decoration: underline;
-  }
- 
-  .container-fluid .gauche{
-      display: none;
-      background-color: rgb(252, 252, 252);
-      text-align: center;
-}
 
-.gauche .btn-primary,
-.btn-outline-secondary{
-  background-color: #21398A;
-  color: #fff;
-  border-color: #21398A;
-}
-.gauche ul li{
-  list-style: none;
-  }
-  .righti{
+    .move button{
+    height: 40px;
+    margin-top: 7%;
+    text-align: center;
+    }
+
+    .bas{
+    font-weight: bold;
+    }
+
+    .container-fluid .gauche .bleu {
+    font-weight: bold;
+    color: #21398A;
+    }
+
+    .container-fluid .gauche .bleu:hover{
+    text-decoration: underline;
+    }
+
+    .container-fluid .gauche{
+    display: none;
+    background-color: rgb(252, 252, 252);
+    text-align: center;
+    }
+
+    .gauche .btn-primary,
+    .btn-outline-secondary{
+    background-color: #21398A;
+    color: #fff;
+    border-color: #21398A;
+    }
+
+    .gauche ul li{
+    list-style: none;
+    }
+    .righti{
     margin-top: 3%;
-  }
-  
-.sas {
-  background-color: #21398A;
-  color: #fff;
-}
-tr{
-  background-color: #fff;
-}
-  @media screen and (min-width: 992px){
-
-      .container-fluid{
-          display: grid;
-          grid-template-columns: 1fr 2fr;
-          grid-template-rows: auto;
-          grid-gap: 3%;
-    
-      }
-
-      .up{
-        margin-top: 1%;
-      margin-bottom: 1%;
     }
-      .container-fluid .gauche{
-          display: block;
-          grid-column: 1/2;
-          height: 180px;
-          text-align: left;
-      }
-      .container-fluid .gauche .btn{
+
+    .righti a {
+    color: #21398A;
+    }
+
+    /*Table row */
+    .trow {
+    background-color: #21398A;
+    color: #fff;
+    }
+
+    tr{
+    background-color: #fff;
+    }
+
+    @media screen and (min-width: 992px){
+
+    .container-fluid{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto;
+        grid-gap: 3%;
+
+    }
+
+    .up{
+      margin-top: 1%;
+    margin-bottom: 1%;
+    }
+
+    .container-fluid .gauche{
+        display: block;
+        grid-column: 1/2;
+        height: 180px;
+        text-align: center;
+    }
+
+    .container-fluid .gauche .bleu{
+      margin-top: 20%;
+    }
+    .righti{
+        grid-column: 2/-1;
         margin-top: 0;
-        margin-bottom: 5%;
-      }
-      .gauche .btn-primary{
-        margin-left: 10%;
-      }
-      .righti{
-          grid-column: 2/-1;
-          margin-top: 0;
-      }
-    
+    }
+
     .list-group{
-        margin-top: 0;
-      
+      margin-top: 0;
+
+    }
+    
+    .bas{
+        background-color: gray;
+        color: #fff;
+        margin-bottom: 3%;
+        margin-top: 8%;
+        margin-left: 30%;
     }
 
-      .bas{
-          background-color: gray;
-          color: #fff;
-          margin-bottom: 3%;
-          margin-top: 8%;
-          margin-left: 30%;
-      }
-
-      .bas:hover{
-          color: #fff;
-      }
-  }
+    .bas:hover{
+        color: #fff;
+    }
+    }

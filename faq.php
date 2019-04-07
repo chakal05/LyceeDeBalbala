@@ -34,28 +34,24 @@ session_start();
 
     <div class="right">
     <p>
-        
-Under Innehåll hittar du alla sidor och rubriker som din lärare har skapat för aktiviteten du deltar i. Sidorna kan innehålla bland annat text, bild, film och ljud. Innehållet kan även bestå av tester, enkäter och inlämningsuppgifter som din lärare har skapat. För att läsa mer om hur dessa fungerar kan du klicka dig vidare in på respektive hjälpsida. . 
+  <b> 1 - Je souhaite m’inscrire à l’Université de Djibouti mais je n’y parviens pas ?</b> <br>
+Avant tout, assurez-vous que la campagne d'inscription est bien ouverte. Pour cela, consultez le calendrier des inscriptions.
 
-Olika typer av innehåll 
-Innehållet kan vara av olika typer beroende på vad din lärare har valt att skapa. Läs mer om de olika innehållstyperna nedan genom att klicka på respektive hjälpsida.
+Étudiants en réinscription : Pour les étudiants qui n'ont pas été admis à la 1ère session, vous devez attendre que les résultats de la 2ème session soient publiés, même si vous ne vous n'y avez pas assisté.
+Étudiants en première inscription à  l’Université de Djibouti : vous devez avoir reçu un avis favorable suite à votre demande d'admission  pour pouvoir vous inscrire.
+<br>
+ <b> 2 - Quel est mon identifiant de connexion et mon mot de passe pour une première inscription à l’Université de Djibouti ?</b> <br>
+Votre identifiant est email et le mot de passe vous sera fourni par l'administration.
 
- Sida: En sida kan fyllas med olika typer av texter samt media i form av till exempel bild och film. Om din lärare har lagt in ljud- och/eller videofiler så kommer en mediaspelare att visas.
- Mapp: Mappar används för att gruppera och nivåindela sidorna.
- Test: Ett test kan bestå av en eller flera sidor som innehåller poängsatta frågor som din lärare vill att du ska besvara.
- Enkät: En enkät kan bestå av en eller flera sidor som innehåller frågor som inte har någon poängsättning.  
- Inlämningsuppgift: Din lärare kan skapa en inlämningsuppgift för att samla in, granska och bedöma individuella eller gruppvisa inlämningar.
- Länk: Din lärare kan lägga upp en sidtyp som består av en eller flera länkar för att visa dig information från en extern webbsida. 
- Filarkiv: I filarkivet hittar du de filer som din lärare har lagt upp för dig.
-Navigera, redigera, spara, markera och skriva ut
-Du hittar de upplagda innehållssidorna under Innehåll i menyn till vänster, se området inom gulmarkeringen. Genom att klicka på rubrikerna kan du öppna sidorna. Du kan gå fram och tillbaka mellan sidorna genom att klicka på Föregående och Nästa som syns överst och underst i den valda innehållssidan.
+<br>
 
-skärmavbild av innehållssidevyn
+<b> 3 - Je me réinscris, quel est mon identifiant et mot de passe de connexion ?</b> <br>
+Votre identifiant de connexion au serveur de réinscription est votre email.
 
-Det kan även vara så att din lärare har gett dig behörighet att redigera dokumentet. I så fall hittar du knappen Redigera i höjd med navigeringsknapparna. Där hittar du även knappar för att exempelvis söka i innehållet eller spara innehållet som PDF, om din lärare har valt att aktivera dessa funktioner. Om innehållssidan innehåller extra viktig information eller kräver uppföljning kan du välja att Markera sidan i den övre menyn. Då dyker det upp en färgad flagga bredvid innehållssidans namn i vänstermenyn vilket gör att den blir mer framträdande och lättidentifierad.
+Votre mot de passe vous sera communiqué par l'administration. <br>
 
-
-    </p>
+<b> 4 - Déjà étudiant à l’Université de Djibouti, je souhaite changer de filière, comment faire ?</b> <br>
+Pour changer de filière, vous devez obligatoirement effectuer une demande d’admission préalable selon le calendrier et les modalités établis dans l’offre de formation de l'université (Attention, le calendrier peut différé selon les filières).
     </div>
     
     </div>

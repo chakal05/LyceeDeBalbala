@@ -45,6 +45,7 @@
         
         }
 
+        
         // Delete uploaded files 
 
         if(isset($_POST['delete'])){
@@ -54,12 +55,11 @@
        $fileDel = unlink($target_dir.$name);
         $sql = "DELETE FROM `uloaded` WHERE file_path='$name' AND user='$user'";
         $query = mysqli_query($link, $sql);
-    // This part working. Add button success to inform user of the success of the operation
+
         if(!$query && !$fileDel){
             echo "SORRY something went wrong";
         }else{
-          //  header("Location: mesdocuments.php");
-          echo $name." was deleted"."<br>";
+            header("Location: mesdocuments.php");
         }
 
     }

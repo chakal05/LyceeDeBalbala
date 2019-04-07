@@ -10,96 +10,108 @@ if(isset($_SESSION['id'])){
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Messages</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="mesdocuments.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="header.css">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Messages</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" media="screen" href="mesdocuments.css">
+<link rel="stylesheet" type="text/css" media="screen" href="header.css">
 </head>
 <body>
 
-<?php
-include('header.php');
-?>
+  <?php
+  include('header.php');
+  ?>
 
-<div class= "up">
-    <h4>Mes documents</h4>
+  <div class= "up">
+      <h4>Mes documents</h4>
 
-   </div>
+    </div>
 
-<div class="container-fluid">
+  <div class="container-fluid">
 
-<div class="gauche">
+  <div class="gauche">
 
-<form action="upload.php" method="post" enctype="multipart/form-data">
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Charger un document 
-</button>
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+      <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Charger un document 
+  </button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Mes documents </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <form action="upload.php" method="post" enctype="multipart/form-data">
+    <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Mes documents </h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
 
- <div class="input-group mb-3">
- <div class="input-group">
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+
+  <div class="input-group mb-3">
+  <div class="input-group">
   <div class="custom-file">
+
     <input type="file" name="fileToUpload" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
     <label class="custom-file-label" for="inputGroupFile04">Choisir photo </label>
+
   </div>
+
   <div class="input-group-append">
     <button class="btn btn-outline-secondary" type="submit"  name="submit"  id="inputGroupFileAddon04">Charger</button>
   </div>
-</div>
-</form>
-      </div>
+  </div>
+  </form>
+
+  </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-         </div>
-    </div>
-  </div>
-</div>
+      </div>
+       </div>
+       </div>
+      </div>
 
-</div>
-<form action="delete.php" method="post">
-    <div class="move">
-        <ul>
-<li><button type="submit" class="btn btn-sm btn-block bleu" name="delete"><i class="fas fa-trash-alt"></i>  Supprimer</button></li>
-<li><button class="btn btn-sm btn-block clair"><i class="fas fa-download"></i>  Telecharger</button></li>
-</ul>
-</div>
-</div>
+      </div>
+          
+    <form action="delete.php" method="post">
+
+        <div class="move">
+            <ul>
+
+    <li><button type="submit" class="btn btn-sm btn-block bleu" name="delete"><i class="fas fa-trash-alt"></i>  Supprimer</button></li>
+   
+
+    </ul>
+
+    </div>
+    </div>
 
 <div class="righti">  
 <?php 
 
 
-$sql = "SELECT * FROM `uloaded` WHERE user='$id'";
-$result = mysqli_query($link, $sql);
-//check if their are any files
+    $sql = "SELECT * FROM `uloaded` WHERE user='$id'";
+    $result = mysqli_query($link, $sql);
+    //check if their are any files
 
-if(mysqli_num_rows($result) > 0){
-echo "<table class='table table-bordered'>
-<thead >
-<tr class='sas'>
-<th scope='col'>#</th>
-  <th scope='col'>Nom</th>
- 
-</tr>
-</thead>
-<tbody>";
+    if(mysqli_num_rows($result) > 0){
+    echo "<table class='table table-bordered'>
+    <thead >
+    <tr class='trow'>
+    <th scope='col'>#</th>
+      <th scope='col'>Nom</th>
+    
+    </tr>
+    </thead>
+    <tbody>";
+
     // format and display
 
     while($row= mysqli_fetch_array($result)){
@@ -110,17 +122,17 @@ echo "<table class='table table-bordered'>
     echo "</table";
     }
 
-}else{
-    echo "
-    <button type='button' class='btn bas'>Vous n'avez pas encore charger de documents</button>";
-}
+    }else{
+        echo "
+        <button type='button' class='btn bas'>Vous n'avez pas encore charger de documents</button>";
+    }
 
 
 
- ?>
- </form>
-</div>
-</div>
+    ?>
+    </form>
+    </div>
+    </div>
 
 
 
@@ -129,6 +141,5 @@ echo "<table class='table table-bordered'>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
  <script src="jquery.min.js"></script>
  <script src="header.js"></script>
- <script src="doc.js"></script>
 </body>
 </html>

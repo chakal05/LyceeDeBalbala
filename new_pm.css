@@ -1,45 +1,48 @@
-html, body{
+    html, body{
     height: 100%;
     width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
     background-color:rgb(245, 245, 245);
-  }
-  
-  *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
-  
-  .container-fluid{
-      width:100%;
-    }
-    
-    .container-fluid .gauche{
-  display: none;
-  background-color: rgb(252, 252, 252);
-  padding-bottom: 3%;
-  border-radius: 3px;
-    }
-    .container-fluid .gauche h4{
-        color: #21398A;
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 19px;
-        font-weight: bold;
-        padding-top: 3px;
     }
 
-    .container-fluid .gauche a {
-        text-decoration: none;
-        color: #21398A;
-        margin-top: 2px;
-        margin-bottom: 3px;
-        font-weight: bold;
-        margin-left: 5%;
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     }
-  
+
+    .container-fluid{
+    width:100%;
+    }
+
+    .container-fluid .gauche{
+    display: none;
+    background-color: rgb(252, 252, 252);
+    padding-bottom: 3%;
+    border-radius: 3px;
+    }
+    .container-fluid .gauche h4{
+    color: #21398A;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+    padding-top: 3px;
+    }
+
+    .container-fluid .gauche li{
+        list-style:none;
+    }
+    .container-fluid .gauche a {
+    text-decoration: none;
+    color: #21398A;
+    margin-top: 2px;
+    margin-bottom: 3px;
+    font-weight: bold;
+    margin-left: 5%;
+    }
+
     .container-fluid .right{
     margin-top: 3%;
     background-color: #ffffff;
@@ -47,67 +50,70 @@ html, body{
     text-align: center;
     border-radius: 3px;
     }
+
     .container-fluid .right .form-control{
-        background-color: rgb(252, 252, 252);
+    background-color: rgb(252, 252, 252);
     }
+
     .container-fluid .right label{
-        color: #21398A;
-        margin-top: 1%;
+    color: #21398A;
+    margin-top: 1%;
     }
 
-   .pmb{
-        margin-bottom: 2%;
+    .succes{
+    margin-bottom: 2%;
     }
+
     #send{
-        margin-bottom: 1.5%;
-        background-color: #21398A;
-        border-color: #21398A;
+    margin-bottom: 1.5%;
+    background-color: #21398A;
+    border-color: #21398A;
 
     }
 
-    
-   /* Large devices (desktops, 992px and up)*/
-   @media screen and (min-width: 992px) { 
-     
+
+    /* Large devices (desktops, 992px and up)*/
+    @media screen and (min-width: 992px) { 
+
     .container-fluid{
-        width: 98%;
-       display: grid;
-       grid-template-columns: 1fr 2fr;
-       grid-template-rows:  auto;
-       grid-gap: 10px;
-       margin-top: 2%;
-        }
-    
-        .container-fluid .gauche{
-            display: block;
-            grid-column: 1/2;
-            padding-top: 5px;
-            height: 310px;
-        }
-       
-      .container-fluid .right{
-        grid-column: 2/-1;
-        margin-top: 0;
-        border: none;
-        text-align: center;
+    width: 98%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows:  auto;
+    grid-gap: 10px;
+    margin-top: 2%;
+    }
+
+    .container-fluid .gauche{
+    display: block;
+    grid-column: 1/2;
+    padding-top: 5px;
+    height: 310px;
+    }
+
+    .container-fluid .right{
+    grid-column: 2/-1;
+    margin-top: 0;
+    border: none;
+    text-align: center;
     }
     .container-fluid .right .btn{
-        margin-left: 5%;
+    margin-left: 5%;
     }
 
     .container-fluid .gauche h4{
-        margin-top: 3%;
+    margin-top: 3%;
     }
 
     .container-fluid .gauche .list-group{
-        margin-top: 7%;
-        margin-left: 3%;
+    margin-top: 7%;
+    margin-left: 3%;
     }
-    .pmb, .dmb,
+    .succes, .btn-warning,
     .container-fluid .right .form-control,
     .container-fluid .right label{
-      width: 90%;
-      margin-left: 5%;
+    width: 90%;
+    margin-left: 5%;
     }
 
-   }
+    }

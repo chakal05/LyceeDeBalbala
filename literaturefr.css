@@ -25,44 +25,37 @@ html, body{
     font-weight: bold;
   }
 
-h4{
-    color: #21398A;
-}
-.gauche{
-   display: none;
-   background-color: rgb(252, 252, 252);
-   padding: 3%;
-   border-radius: 3px;
-}
+  h4{
+      color: #21398A;
+  }
+  .gauche{
+     display: none;
+     background-color: rgb(252, 252, 252);
+     padding: 3%;
+     border-radius: 3px;
+  }
 
     .gauche ul li{
     list-style: none;
     }
 
-.right{
-    background-color: #ffffff;
-    padding: 3%;
-    border-radius: 3px;
-    margin-top: 3%;
+    .right{
+        background-color: #ffffff;
+        padding: 3%;
+        border-radius: 3px;
+        margin-top: 3%;
+        color: #21398A;
+    }
+
+    .gauche  a{
+    text-decoration: none;
     color: #21398A;
-}
-
-.gauche  a{
-text-decoration: none;
-color: #21398A;
-font-weight: bold;
-}
-
-
-@media (min-width: 576px) {
-
-
-
-}
+    font-weight: bold;
+    }
 
 @media screen and (min-width: 992px){
 
-    .container-fluid{
+  .container-fluid{
     width: 98%;
    display: grid;
    grid-template-columns: 1fr 2fr;
@@ -71,29 +64,29 @@ font-weight: bold;
    margin-bottom: 5%;
     }
 
-    .gauche{
-        display: block;
-        grid-column: 1/2;
-        padding: 5%;
-        height: 200px;
-    
+  .gauche{
+      display: block;
+      grid-column: 1/2;
+      padding: 5%;
+      height: 200px;
+  
     }
 
-    .container-fluid .gauche ul{
-       margin-top: 7%;
-    }
+  .container-fluid .gauche ul{
+      margin-top: 7%;
+  }
 
-    .container-fluid .gauche ul li    {
-      margin-top: 3%;
-    }
-    .right{
-        grid-column: 2/-1;
-        margin-top: -0.3px;
-    }
+  .container-fluid .gauche ul li    {
+    margin-top: 3%;
+  }
+  .right{
+      grid-column: 2/-1;
+      margin-top: -0.3px;
+  }
 
-    
    .up{
-    margin-top: 1%;
+
+  margin-top: 1%;
   margin-bottom: 1%;
-}
+  }
 }

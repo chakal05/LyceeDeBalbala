@@ -9,48 +9,49 @@
     }
     
     
-    //post message
+    //Post response
+
     $receiver ="";
     $success = "";
     if(isset($_POST['message']) && $_POST['message'] !== ''){
 
-        $message = mysqli_real_escape_string($link, $_POST['message']);
-        $conversation_id = mysqli_real_escape_string($link, $_POST['conversation_id']);
-        $user_from = mysqli_real_escape_string($link, $_POST['user_from']);
-        $user_to = mysqli_real_escape_string($link, $_POST['user_to']);
+    $message = mysqli_real_escape_string($link, $_POST['message']);
+    $conversation_id = mysqli_real_escape_string($link, $_POST['conversation_id']);
+    $user_from = mysqli_real_escape_string($link, $_POST['user_from']);
+    $user_to = mysqli_real_escape_string($link, $_POST['user_to']);
 
-        //decrypt the conversation_id,user_from,user_to
-        $conversation_id = base64_decode($conversation_id);
-        $user_from = base64_decode($user_from);
-        $user_to = base64_decode($user_to);
+    //decrypt the conversation_id,user_from,user_to
+    $conversation_id = base64_decode($conversation_id);
+    $user_from = base64_decode($user_from);
+    $user_to = base64_decode($user_to);
 
-        //insert into `messages`
+    //insert into `messages`
 
-            $sql= "INSERT  INTO `messages` VALUES ('','$conversation_id','$user_from','$user_to','$message',NOW(),'no')";
-            $q= mysqli_query($link,$sql);
-            
-            if($q){
+    $sql= "INSERT  INTO `messages` VALUES ('','$conversation_id','$user_from','$user_to','$message',NOW(),'no')";
+    $q= mysqli_query($link,$sql);
 
-                //insert was successful
-                $success = "<button type='button' class='btn btn-success btn-sm btn-block pmb'>Message vide</button>";
-    
-               } else {
-               
-                  //insert failed
-                  echo "Error";
-               
-               }
+    if($q){
+
+    //insert was successful
+    $success = "<button type='button' class='btn btn-success btn-sm btn-block succes'>Votre message a été posté.</button>";
+
+    } else {
+
+        //insert failed
+        echo "Error";
+
+    }
         
 
     }
     
+    // Warning if messaging area empty
+
     if(isset($_POST['message']) && $_POST['message'] === ''){
-        $success = "<button type='button' class='btn btn-warning btn-sm btn-block dmb'>Espace message vide</button>";
+        $success = "<button type='button' class='btn btn-warning btn-sm btn-block '>Espace message vide.</button>";
     
     }
-
-  
-   
+ 
 
 ?>
 
@@ -70,64 +71,67 @@
     
 </head>
 <body>
+
     <?php
     include('header.php');
     ?>
     
     <div class="container-fluid">
         
-        <div class="gauche">
-            <h4>Contacts</h4>
-            <ul class="list-group">
-                
-        <?php
-            //show all the users expect me
-            
-            $q = mysqli_query($link, "SELECT * FROM `class` WHERE id!='$user_id'");
-            //display all the results
-            
-            while($row = mysqli_fetch_assoc($q)){
-                
-                echo "<a href='new_pm.php?id={$row['id']}'><li>{$row['username']}</li></a>";
-                
-            }
-        ?>
+    <div class="gauche">
+    <h4>Contacts</h4>
+    <ul class="list-group">
+
+    <?php
+
+    //show all the users expect logged in user
+
+    $q = mysqli_query($link, "SELECT * FROM `class` WHERE id!='$user_id'");
+
+    //display all the results
+
+    while($row = mysqli_fetch_assoc($q)){
+
+    echo "<a href='new_pm.php?id={$row['id']}'><li>{$row['username']}</li></a>";
+
+    }
+    ?>
     </ul>
-</div>
+    </div>
 
 
-<div class="right">
+    <div class="right">
     
     <?php 
     
     if(isset($_GET['id'])) {
-        //Check if user 2 is valid
-        
-        $user_to = trim(mysqli_real_escape_string($link, $_GET['id']));
-        $query = mysqli_query($link, "SELECT * FROM `class` WHERE id='$user_to' AND id!='$user_id'");
-        
-        if(mysqli_num_rows($query) > 0) {
+    //Check if user 2 is valid
 
-            // display in Destinataire field if user 2 valid
-            
-        while($row = mysqli_fetch_assoc($query)){
-            $receiver =  $row['username'];
-                
-            }
-    
-        //check $user_id and $user_two has conversation or not if no start one
-        $conver = mysqli_query($link, "SELECT * FROM `conversation` WHERE (user_one='$user_id' AND user_two='$user_to') OR (user_one='$user_to' AND user_two='$user_id')");
+    $user_to = trim(mysqli_real_escape_string($link, $_GET['id']));
+    $query = mysqli_query($link, "SELECT * FROM `class` WHERE id='$user_to' AND id!='$user_id'");
 
-        //they have a conversation
-        if(mysqli_num_rows($conver) == 1){
-            //fetch the converstaion id
-            $fetch = mysqli_fetch_assoc($conver);
-            $conversation_id = $fetch['id'];
-        }else{ //they do not have a conversation
-            //start a new converstaion and fetch its id
-            $q = mysqli_query($link, "INSERT INTO `conversation` VALUES ('','$user_id','$user_to')");
-            $conversation_id = mysqli_insert_id($link);
-        }
+    if(mysqli_num_rows($query) > 0) {
+
+    // display in Destinataire field if user 2 valid
+
+    while($row = mysqli_fetch_assoc($query)){
+    $receiver =  $row['username'];
+        
+    }
+
+    //check $user_id and $user_two has conversation or not. If not start one
+    $conver = mysqli_query($link, "SELECT * FROM `conversation` WHERE (user_one='$user_id' AND user_two='$user_to') OR (user_one='$user_to' AND user_two='$user_id')");
+
+    //they have a conversation
+    if(mysqli_num_rows($conver) == 1){
+    //fetch the converstaion id
+    $fetch = mysqli_fetch_assoc($conver);
+    $conversation_id = $fetch['id'];
+    }else{ //they do not have a conversation
+    //start a new converstaion and fetch its id
+    $q = mysqli_query($link, "INSERT INTO `conversation` VALUES ('','$user_id','$user_to')");
+    $conversation_id = mysqli_insert_id($link);
+    }
                 
         }   else {
             die ("INVALID id");
@@ -138,26 +142,26 @@
     ?>
                   
                   
-        <!-- store conversation_id, user_from, user_to so that we can send send this values to post_message_ajax.php -->
-              
-           <form method="post">
-            <div class="form-group">
-                <?php echo $success; ?>
+    <!-- store conversation_id, user_from, user_to so that we can send send this values to post_message_ajax.php -->
+
+    <form method="post">
+    <div class="form-group">
+    <?php echo $success; ?>
     <label for="receiver"><b>Destinataire</b></label>
     <input type="text" class="form-control" id="receiver" name="receiver" placeholder="Choisissez un contact"  value= "<?php echo  $receiver; ?>" >
-  </div>
-                <div class="form-group">
-        <label for="message"><b>Message</b></label>
-        <textarea class="form-control" id="message" rows="3" name="message" placeholder="Tappez votre message ici"></textarea>
-        </div>
-         <input type="hidden" id="conversation_id" name="conversation_id" value="<?php echo base64_encode($conversation_id); ?>">
-                <input type="hidden" id="user_from" name="user_from" value="<?php echo base64_encode($user_id); ?>">
-                <input type="hidden" id="user_to" name="user_to" value="<?php echo base64_encode($user_to); ?>">
-        <button type="submit" class="btn btn-success" name= "send" id="send">Envoyer</button>
-                 <span id="error"></span>
-                 
-        </div>
-        </form>
+    </div>
+    <div class="form-group">
+    <label for="message"><b>Message</b></label>
+    <textarea class="form-control" id="message" rows="3" name="message" placeholder="Tappez votre message ici"></textarea>
+    </div>
+    <input type="hidden" id="conversation_id" name="conversation_id" value="<?php echo base64_encode($conversation_id); ?>">
+    <input type="hidden" id="user_from" name="user_from" value="<?php echo base64_encode($user_id); ?>">
+    <input type="hidden" id="user_to" name="user_to" value="<?php echo base64_encode($user_to); ?>">
+    <button type="submit" class="btn btn-success" name= "send" id="send">Envoyer</button>
+    <span id="error"></span>
+
+    </div>
+    </form>
     </div>
     
 

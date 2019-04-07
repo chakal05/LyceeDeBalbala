@@ -23,7 +23,7 @@ if(!isset($_SESSION['id'])){
     <?php include('header.php');   ?>
 
     <div class= "up">
-    <h4> Documents </h4>
+    <h4> Documents à télécharger  </h4>
    </div>
    
     <div class="container-fluid">
@@ -50,22 +50,24 @@ if(!isset($_SESSION['id'])){
     <tr>
      <?php   
      $file = "files/litterature.pdf";
-     echo "<td><a href='download.php?name=".$file."'>literrature francaise du 21 eme siecle </a></td>";
+     echo "<td><a href='download.php?name=".$file."'>Littérature française du 21 eme siecle </a></td>";
     ?>
       <td>123 KB</td>
      
     </tr>
     <tr>
     <?php   
-     $file = "files/mur.jpg";
-     echo "<td><a href='download.php?name=".$file."'>literrature comparee par Abdourahman Yacin </a></td>";
+     $file = "files/hlf.pdf";
+     echo "<td><a href='download.php?name=".$file."'>Une histoire de la littérature française </a></td>";
     ?>
       <td>120 KB</td>
      
     </tr>
     <tr>
-     
-      <td><a href="#">Linguistique: recherche par Noor Farah</a></td>
+    <?php   
+     $file = "files/syllabus1.pdf";
+     echo "<td><a href='download.php?name=".$file."'> La littérature française du moyen age </a></td>";
+    ?>
       <td>150 KB</td>
      
 

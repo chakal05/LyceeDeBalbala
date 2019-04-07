@@ -30,24 +30,26 @@ session_start();
     <div class="pim">
         <h4> PIM</h4>
         <hr>
+
     <ul class="navbar-nav">
     <li class="nav-item"><button class="btn btn-sm btn-block"><a class="nav-link" href="new_pm.php"><i class="fas fa-angle-double-right"></i> Envoyer un message</a></button></li>
     <li class="nav-item recu"><button class="btn btn-sm btn-block"><a class="nav-link" href="pm_list.php"><i class="fas fa-angle-double-right"></i> Message recus</a></button></li>
     <li class="nav-item"><button class="btn btn-sm btn-block"><a class="nav-link" href="sent.php"><i class="fas fa-angle-double-right"></i> Envoyes</a></button></li>
     </ul>
     
-</div>
+   </div>
 
     <form action="delete.php" method="post">
     <div class="functions">
         <h4>OUTILS</h4>
         <hr>
+
        <ul class="navbar-nav">
       <li class="nav-item"><a href="#"><button type="submit" name="submit" class="btn btn-sm btn-block" ><i class="fas fa-trash-alt"></i> Supprimer</button></a></li>
       <li class="nav-item"><a href="#"><button type="submit" name="unread" class="btn btn-sm btn-block" formaction="update.php"> <i class="fas fa-upload"></i> Marquer non lu</button></a></li>
         </ul>
+     </div>
     </div>
-</div>
 
         <div class="display-message">
         <table class="table table-bordered">
@@ -63,18 +65,23 @@ session_start();
 
   
     <?php 
- if(isset($_SESSION['id'])){
-  $user = $_SESSION['id'];
-  //get the session id and
-//fetch all the unread messages of $user_id(loggedin user) and $user_two from their conversation
-$sql1 = "SELECT * FROM `messages` WHERE user_to='$user' AND user_to_read ='no' ORDER BY id DESC";
-// query for read messages
-$sql2 = "SELECT * FROM `messages` WHERE user_to='$user' AND user_to_read ='yes' ORDER BY id DESC";
-$result = mysqli_query($link,$sql1);
-$result1 = mysqli_query($link,$sql2);
-//check their are any messages
-if(mysqli_num_rows($result) > 0){
-while ($m = mysqli_fetch_array($result)) {
+    if(isset($_SESSION['id'])){
+      $user = $_SESSION['id'];
+   
+    //fetch all the unread messages
+
+    $sql1 = "SELECT * FROM `messages` WHERE user_to='$user' AND user_to_read ='no' ORDER BY id DESC";
+    $result = mysqli_query($link,$sql1);
+
+   // query for read messages
+
+   $sql2 = "SELECT * FROM `messages` WHERE user_to='$user' AND user_to_read ='yes' ORDER BY id DESC";
+   $result1 = mysqli_query($link,$sql2);
+   
+    //check their are any messages
+
+    if(mysqli_num_rows($result) > 0){
+    while ($m = mysqli_fetch_array($result)) {
     //format the message and display it to the user
     $message_id= $m['id'];
     $conversation_Id = $m['conversation_id'];
@@ -84,20 +91,22 @@ while ($m = mysqli_fetch_array($result)) {
     $time = $m['time'];
     $format = strip_tags($message); 
     $formated_message = substr($format, 0, 100).("..."); 
-    //get name and image of $user_form from `user` table
+
+    //get name  of the sender table
     $user = mysqli_query($link, "SELECT username FROM `class` WHERE id='$user_from'");
     $user_fetch = mysqli_fetch_assoc($user);
     $user_from_username = $user_fetch['username'];
     
+     //display the message
     echo "<tr class='table'><th scope='row'><input type='checkbox' name='checkbox[]' value='".$message_id."'></th><td><b><a href='reading_mess.php?message_id= $message_id'> $formated_message </a></b></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
-    //display the message
-    
+   
       }
       echo "</table";
   } 
 
   if (mysqli_num_rows($result1) > 0){
     while ($m = mysqli_fetch_array($result1)) {
+
       //format the message and display it to the user
       $message_id= $m['id'];
       $conversation_Id = $m['conversation_id'];
@@ -108,7 +117,9 @@ while ($m = mysqli_fetch_array($result)) {
       
     $format = strip_tags($message); 
     $formated_message = substr($format, 0, 100); 
-      //get name  $user_form from `class` table
+
+      //get name of sender 
+
       $user = mysqli_query($link, "SELECT * FROM `class` WHERE id= $user_from ");
       $user_fetch = mysqli_fetch_assoc($user);
       $user_from_username = $user_fetch['username'];
@@ -117,9 +128,9 @@ while ($m = mysqli_fetch_array($result)) {
 
       echo "<tr><th scope='row'><input type='checkbox' name='checkbox[]' value='".$message_id."'></th><td><a href='reading_mess.php?message_id= $message_id'> $formated_message </a></td><td>".$user_from_username."</td><td>".$time."</td></tr>";
       
-        }
-  }
-}
+      }
+      }
+      }
   ?>
    
     </tbody>

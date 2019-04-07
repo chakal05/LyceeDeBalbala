@@ -1,10 +1,10 @@
 <?php
  session_start();
-if(!isset($_SESSION['id'])){
 
-    header('Location:index.php');
-    exit();
-}
+    if(!isset($_SESSION['id'])){
+        header('Location:index.php');
+        exit();
+    }
 
 
 ?>
@@ -41,23 +41,29 @@ if(!isset($_SESSION['id'])){
     
     <div class="right">
 
-        <p> <h4>Välkommen till kursen Anläggningsprojektering, 25 yhp!</h4><br>
-Detta är din kursaktivitet för kursen Anläggningsprojektering - PGBPEH17.
+        <p> <h4>Bienvenue au cours sur la litterature francaise!</h4><br>
 
-Kursen är på totalt 25 YH-poäng.
+        Des exercices écrits et oraux amèneront les étudiants à faire une lecture active des textes au programme. 
+        Le travail s’organisera autour de la thématique générale (Littérature et politique) et des œuvres complètes proposées dans chaque programme afin de favoriser les progrès méthodologiques en matière d’argumentation écrite 
+        et orale et d’améliorer la qualité de la langue utilisée tant à l’écrit qu’à l’oral.
+       <b> Objectifs</b><br>
+        Formation à la recherche en littérature française et francophone.
+        Intérêt spécifique porté aux littératures francophones dans le monde et aux dialogues interculturels.
+        Prépare aux métiers de la recherche et de l’enseignement ; aux métiers de la francophonie et de la culture.<br>
+        <b>Savoir-faire et compétences</b><br>
+        Mobiliser des connaissances en littérature,  théories littéraires et esthétiques   dans une perspective critique ou créative.
+        Interpréter des textes littéraires complexes à la lumière d'un savoir esthétique, historique, rhétorique, linguistique et culturel.
+        Identifier et/ou mettre à jour des sources pertinentes d’information, en s’appuyant sur les technologies numériques.
+        Analyser et dégager des concepts ou des problématiques littéraires ou culturelles ; transférer des concepts d’une discipline à une autre.
+        Comparer des œuvres appartenant à des aires culturelles ou linguistiques diverses selon des critères pertinents ; rapprocher créations littéraires et artistiques.
+        Concevoir et mener à bien un projet de recherche en littérature. 
+        Concevoir et réaliser un projet innovant dans le domaine culturel.
+        Élaborer un écrit de synthèse sur un phénomène complexe.
+        Rédiger et transmettre des informations et des savoirs adaptés à des destinataires multiples.
+        Participer à une recherche collective dans le domaine littéraire ou culturel ou l'impulser.
+        Maîtriser les supports numériques dans une perspective de recherche, constitutions de données, de création ou de communication.
+        Maîtriser une langue étrangère dans un but professionnel.</p>
 
-Huvudansvarig utbildare för i kursen är Roy Svanlund.
-
-I navigeringsfältet till vänster ser du dina olika uppgifter och det aktuella innehållet i kursen.
-
-Kort information om kursmål
-Den studerande skall efter genomgången kurs kunna ha en grundläggande förståelse för hur anläggningsprojektering går till. Den studerande ska även kunna utföra isometriritningar och känna till olika processer och hur de i stora drag fungerar. Ytterligare mål är att den studerande ska känna till de olika typer av dokument som används och vad de har för funktion och känna till de komponenter som används i rörsystem. Slutligen ska den studerande ha god förståelse för rörstöd, typer av rörstöd dess konstruktion och placering. Kunna göra tillverkningsritningar för rörsystem.
-
-Information om schema
-Här anges om schema finns i bifogad fil, i kalendern eller i externt system.
-
-Information om examination
-Examination sker genom skriftlig tentamen samt eventuella inlämningsuppgifter, individuella eller i grupp.</p>
     </div>
     
     
