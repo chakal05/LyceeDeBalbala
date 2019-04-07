@@ -1,8 +1,7 @@
 $(document).ready(function(){
     check();   
 })
-    // 
-
+    
         // login validation
 
         function isEmail(email){

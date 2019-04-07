@@ -2,6 +2,9 @@
 session_start();
   $error = "";
   $missing = "";
+
+  // Logging out the user
+
   if (array_key_exists('logout', $_GET) == '1') {
         header("location: index.php");
         session_unset();
@@ -10,8 +13,6 @@ session_start();
     } 
     
     if (isset( $_SESSION['id'])) {
-        
-    // If the user is already logged in send them home
     
     header("Location: loggedinpage.php");
     
@@ -49,11 +50,12 @@ session_start();
     $row =  mysqli_fetch_array($result);
     
     if (isset($row)) {
-        
-         $_SESSION['id']=$row['id'];
-          $_SESSION['username']=$row['username'];
-          header("Location: loggedinpage.php");
-          exit;
+
+    $_SESSION['id']=$row['id'];
+    $_SESSION['username']=$row['username'];
+    header("Location: loggedinpage.php");
+    exit;
+
     } else {
                    $error = '<div class="alert alert-danger" role="alert"><p>Email et/ou mot de passe non reconnu. Controllez svp</p></div>';
         
@@ -61,10 +63,7 @@ session_start();
         
     } 
 
-    
-    
     }
-   
    
 ?>
 
@@ -103,29 +102,31 @@ session_start();
     </div>
 
     <div class="form-group">
-        <input type="password" class="form-control" id="password" placeholder="Votre mot de passe" name="password">
-        </div>
 
-        <button type="submit" class="btn btn-success"  name="submit">Se connecter</button>
+    <input type="password" class="form-control" id="password" placeholder="Votre mot de passe" name="password">
+    </div>
 
-        </form>
+    <button type="submit" class="btn btn-success"  name="submit">Se connecter</button>
 
-        <footer>
+    </form>
 
-                    <ul>
-        <li class="left"><i class="far fa-copyright"> <?php echo date("Y");?> Université de Djibouti</i></li>
-        <li class="left">Campus de Balbala</li>
-        <li class="left">Croisement RN2-RN5 BP 1904</li>
-        <li class="left">TEL:(+253)21 31 55 55</li><br>
-        <li class="row"><a href="#"><i class="fas fa-envelope"></i></a></li>
-        <li class="row"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-        <li class="row"><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-        <li class="row"><a href="#"><i class="fab fa-youtube"></i></a></li>
-        
-                    </ul>
+    <footer>
 
-                </footer>
-            </div>
+     <ul>
+
+    <li class="left"><i class="far fa-copyright"> <?php echo date("Y");?> Université de Djibouti</i></li>
+    <li class="left">Campus de Balbala</li>
+    <li class="left">Croisement RN2-RN5 BP 1904</li>
+    <li class="left">TEL:(+253)21 31 55 55</li><br>
+    <li class="row"><a href="#"><i class="fas fa-envelope"></i></a></li>
+    <li class="row"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+    <li class="row"><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+    <li class="row"><a href="#"><i class="fab fa-youtube"></i></a></li>
+    
+    </ul>
+
+    </footer>
+    </div>
         
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
