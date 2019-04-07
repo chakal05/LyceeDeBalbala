@@ -75,6 +75,7 @@ if ($uploadOk == 0) {
 }
 
      // Uploading profil picture 
+     // adapt it to this part now its copied
 
 
      $target_dir = "userPic/";

@@ -12,21 +12,98 @@ html, body{
       box-sizing: border-box;
   }      
   
-  .container{
-
-  }
   
   .container .gauche{
     margin-top: 3%;
     background-color: #fff;
+    padding: 3%;
+    border-radius: 3px;
   }
 
   .container .btn{
     border: 1px solid #21398A;
+    margin-bottom: 1%;
+    color: #21398A;
   }
 
+  .gauche i{
+    font-size: 51px;
+    float: left;
+    margin-right: 3%;
+    padding-top: 2%;
+  }
+
+  .gauche .btn-success{
+    color: #fff;
+  }
+
+  .tre{
+    text-align: center;
+    color: #21398A;
+  }
+
+  h5{
+    margin-left: 1%;
+    color: #21398A;
+  }
+  .gauche .right{
+    float: right;
+  }
   .back{
     width: 100%;
     font-size: 17px;
     background-color: #fff;
+    height: 40px;
+    border-radius: 3px;
   }
+
+  .back a {
+    color: #21398A;
+  }
+
+  .back i{
+    margin-left: 3%;
+    padding-top: 3%;
+  }
+
+  .container .droite{
+  display: none;
+  margin-top: 5%;
+  
+  }
+
+  .container .droite .btn-success{
+    margin-top: 3%;
+    color: #fff;
+  }
+
+
+
+  /* Medium devices (tablets, 768px and up)*/
+
+  @media (min-width: 768px) {
+
+    .container {
+      width: 80%;
+    }
+
+    .container .gauche{
+      margin-bottom: 3%;
+    }
+
+    .container .btn{
+      margin-bottom: 0;
+    }
+  .back i{
+    padding-top: 1.5%;
+  }
+  }
+
+  
+   /* Large devices (desktops, 992px and up)*/
+   @media screen and (min-width: 992px) { 
+     
+  .back i{
+    padding-bottom: 3%;
+  }
+   }

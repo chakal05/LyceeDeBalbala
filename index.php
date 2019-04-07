@@ -11,7 +11,7 @@ session_start();
     
     if (isset( $_SESSION['id'])) {
         
-    // If the user is already logged in send to home
+    // If the user is already logged in send them home
     
     header("Location: loggedinpage.php");
     
@@ -102,15 +102,15 @@ session_start();
     <input type="email" class="form-control" id="email" placeholder="Votre Email " name="email">
     </div>
 
-            <div class="form-group">
-                <input type="password" class="form-control" id="password" placeholder="Votre mot de passe" name="password">
-                </div>
+    <div class="form-group">
+        <input type="password" class="form-control" id="password" placeholder="Votre mot de passe" name="password">
+        </div>
 
-                <button type="submit" class="btn btn-success"  name="submit">Se connecter</button>
+        <button type="submit" class="btn btn-success"  name="submit">Se connecter</button>
 
-                </form>
+        </form>
 
-                <footer>
+        <footer>
 
                     <ul>
         <li class="left"><i class="far fa-copyright"> <?php echo date("Y");?> Université de Djibouti</i></li>

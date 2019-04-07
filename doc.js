@@ -1,8 +1,9 @@
 $(document).ready(function(){
-    showUpi();
-   // blo();
-    $('.form-check-input').click(function(){
-        $('.lefti .bleu').show();
+   
+    $('.svar').click(function(){
+        $('.container .gauche').hide();
+        $('.container .droite').show();
+
     })
 
 })

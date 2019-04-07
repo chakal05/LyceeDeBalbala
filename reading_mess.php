@@ -2,6 +2,8 @@
 require_once("connection.php");
 session_start();
     //post message
+
+    $success = "";
     if(isset($_POST['message'])){
         $message = mysqli_real_escape_string($link, $_POST['message']);
         $conversation_id = mysqli_real_escape_string($link, $_POST['conversation_id']);
@@ -11,16 +13,18 @@ session_start();
         $conversation_id = base64_decode($conversation_id);
         $user_from = base64_decode($user_from); //  user_id
         $user_to = base64_decode($user_to); // user_from 
+
         //insert into `messages`
+
             $sql= "INSERT INTO `messages` 
             VALUES ('','$conversation_id','$user_from','$user_to','$message',NOW(),'no')";
             $q = mysqli_query($link,$sql);
          
             if($q){
-                echo "Posted";
-              
+                $success = "<button class='btn btn-success btn-sm btn-block'> Votre message a été posté. </button>";
             }else{
-                echo "Error";
+                echo "nO No";
+                header("Location: pm_list.php");
             }
         
     }
@@ -41,12 +45,13 @@ session_start();
     <body>
 
     <?php include('header.php');  ?>
-    <div><h3>Lire le message </h3></div>
+    <div class="tre"><h3>Lire le message </h3></div>
     <div class="container">
     <div class="back"><a href="pm_list.php"><i class="fas fa-angle-double-left"></i> Retour</a>
   </div>
      <div class="gauche">
    <h5>Message </h5>
+   <?php echo $success;  ?>
    <hr>
   <?php
     
@@ -60,18 +65,19 @@ session_start();
 
   // Get members of this conversation and  get user_two id
 
-    //    $sql= "SELECT * FROM `messages` WHERE id='$message'";
-    //    $res = mysqli_query($link, $sql);
-    //    
-    //    if(mysqli_num_rows($res) > 0){
-    //        while($ligne =mysqli_fetch_array($res)) {
-    //            if($user_id == $ligne['user_one']){
-    //                $user_two = $ligne['user_two'];
-    //            }else if($user_id == $ligne['user_two']){
-    //                $user_two = $ligne['user_one'];
-    //            }
-    //        }
-    //    }
+        $sql= "SELECT * FROM `messages` WHERE id='$message'";
+        $res = mysqli_query($link, $sql);
+        
+        if(mysqli_num_rows($res) > 0){
+            while($ligne =mysqli_fetch_array($res)) {
+                if($user_id == $ligne['user_from']){
+                    $user_two = $ligne['user_to'];
+                }else if($user_id == $ligne['user_to']){
+                    $user_two = $ligne['user_from'];
+                }
+            }
+            
+        }
     //     // Determine second member of the conversation and fetch his name
     //     $sql = mysqli_query($link, "SELECT username FROM `class` WHERE id='$user_two'");
     //     $result = mysqli_fetch_assoc($sql);
@@ -89,6 +95,7 @@ session_start();
             $user_to = $row['user_to'];
             $message = $row['message'];
             $time = $row['time'];
+            $conversation = $row['conversation_id'];
         
             //Check if user has right to see the message and then display it 
             if($user_id == $user_from or $user_id == $user_to){
@@ -102,13 +109,12 @@ session_start();
                 
               
                 <div class='form-group'>
-                
-                <p> Écrit par :  <b>{$user_from_username}</b> le <b>{$time}</b></p>
+                <p><b>{$user_from_username}</b>  écrit</p>
               </div>
               <hr>
-              <p>{$message}</p>
-              <button class='btn'> Repondre</button>  <button class='btn '>Supprimer</button>
-            
+              <i class='far fa-user'></i> <p>{$message}</p> <br>
+              <p><b>Le {$time}</b></p>
+              
             ";
            
             }
@@ -123,18 +129,19 @@ session_start();
            // Notify if there are no messages
            echo "no discussion found";
        }
-    }else{
-        echo "conversation id not found";
     }
     }
     ?>
-
+<button  class='btn svar'> Repondre</button>  <button class='btn right'>Supprimer</button>
+            
 </div>
-<!--
-        <div class="right">
+
+        <div class="droite">
+           
      <div>
+         <form method="POST" action="reading_mess.php">
         <div class="form-group">
-       <button type='button' class='btn btn-primary btn-sm'> To :  <?php echo $user_to_username; ?></button> 
+       <p > Destinataire :  <b><?php echo $user_from_username; ?></b></p> 
         </div>
         <div> <textarea class="form-control" id="message" rows="3" name="message" placeholder="Reponse"></textarea></div>
         
@@ -148,7 +155,7 @@ session_start();
 </div>
                  </form>
                  </div>
--->
+
         </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -156,5 +163,6 @@ session_start();
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 <script src="jquery-ui-1.12.1/external/jquery/jquery.js"></script>
  <script src="header.js"></script>
+ <script src="doc.js"></script>
 </body>
 </html>

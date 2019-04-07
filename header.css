@@ -82,8 +82,7 @@
 /*Small devices (landscape phones, 576px and up)  */
 
 @media (min-width: 576px) { 
-  /*header.php*/
-
+  
   .content{
     width: 95%;
   }
