@@ -2,32 +2,41 @@ $(document).ready(function(){
     showUp();
     blo();
     $(".pmb").fadeOut(3000);
- //       //get new message every 3 second
+    
+  $('.svar').click(function(){
+        $('.container .gauche').hide();
+        $('.container .droite').show();
 
-   NewMess();
+    })
+    
+    // For Edge browser. Click isnot working with the normal way
+    $('.btn-success').click(function(){
+        window.location.href = "pm_list.php";
+     });
+ 
+    //get new message every 3 second
 
- //   //Is creating to many connection to the port; You'll have to increase the number of port  
-setTimeout(NewMess(), 3000);
+    setTimeout(NewMess(), 3000);
 })
 
 
 
     function NewMess(){
-        $user = $.trim($("#user_from").val());
+    $user = $.trim($("#user_from").val());
 
-        $.ajax({
-         url: "get_message_ajax.php?user_id="+$user,
-         type: 'get',
-         success: function(data){
-          // Perform operation on return value
-          $(".badge").html(data);
-         },
-         complete:function(data){
-          setTimeout(NewMess(),3000);
-         }
-        });
-       }
-       
+    $.ajax({
+    url: "get_message_ajax.php?user_id="+$user,
+    type: 'get',
+    success: function(data){
+    // Perform operation on return value
+    $(".badge").html(data);
+    },
+    complete:function(data){
+    setTimeout(NewMess(),3000);
+    }
+    });
+    }
+
    
     
 function showUp(){
@@ -63,4 +72,6 @@ function hidden(){
         $(".bleu").hide(showUp());
           $(".container-fluid .gauche").hide(showUp());
          });      
+
+       
 }

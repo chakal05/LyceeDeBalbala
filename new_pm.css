@@ -22,6 +22,7 @@
     padding-bottom: 3%;
     border-radius: 3px;
     }
+
     .container-fluid .gauche h4{
     color: #21398A;
     text-transform: uppercase;
@@ -43,6 +44,16 @@
     margin-left: 5%;
     }
 
+    .container-fluid .gauche .btn{
+        background-color: #21398A;
+        margin-top: 3%;
+        margin-left: 35%;
+        border: 1px solid #fff;
+    }
+
+    .container-fluid .gauche .btn a{
+        color: #fff;
+    }
     .container-fluid .right{
     margin-top: 3%;
     background-color: #ffffff;
@@ -60,6 +71,16 @@
     margin-top: 1%;
     }
 
+    #back{
+        margin-left: 43%;
+        margin-top: 5%;
+        color: #fff;
+        border-radius: 3px;
+        background-color: #21398A;
+        padding-right: 1%;
+        padding: 1%;
+    }
+
     .succes{
     margin-bottom: 2%;
     }
@@ -68,7 +89,6 @@
     margin-bottom: 1.5%;
     background-color: #21398A;
     border-color: #21398A;
-
     }
 
 
@@ -77,26 +97,32 @@
 
     .container-fluid{
     width: 98%;
+    display: -ms-grid;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows:  auto;
     grid-template-rows:  auto;
+    grid-template-areas: 
+    "left right right";
     grid-gap: 10px;
     margin-top: 2%;
     }
 
     .container-fluid .gauche{
     display: block;
-    grid-column: 1/2;
+    grid-area: left;
     padding-top: 5px;
     height: 310px;
     }
 
     .container-fluid .right{
-    grid-column: 2/-1;
+    grid-area: right;
     margin-top: 0;
     border: none;
     text-align: center;
     }
+
     .container-fluid .right .btn{
     margin-left: 5%;
     }
@@ -109,6 +135,7 @@
     margin-top: 7%;
     margin-left: 3%;
     }
+
     .succes, .btn-warning,
     .container-fluid .right .form-control,
     .container-fluid .right label{
@@ -117,3 +144,30 @@
     }
 
     }
+    @media screen and (min-width: 992px){ 
+
+    .container-fluid .gauche{
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    } 
+
+    .container-fluid .right{
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 3;
+    }
+
+    .container-fluid .gauche .list-group{
+        margin-bottom: 7%;
+    }
+    
+    #back{
+       margin-left: 39%;
+       background-color: #fff;
+       color: #21398A;
+    }
+
+    #send{
+        margin-top: 3.5%;
+    }
+}
