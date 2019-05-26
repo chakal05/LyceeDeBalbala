@@ -7,9 +7,9 @@ html, body{
   }
   
   *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   .up{
@@ -26,14 +26,14 @@ html, body{
   }
 
   .container-fluid{
-      width: 96%;
-      color: #21398A;
+    width: 96%;
+    color: #21398A;
   }
 
   .container-fluid .gauche{
-      display: none;
-      background-color: rgb(252, 252, 252);
-      padding: 3%;
+    display: none;
+    background-color: rgb(252, 252, 252);
+    padding: 3%;
     border-radius: 3px;
   }
 
@@ -58,8 +58,8 @@ html, body{
   }
 
   .thead{
-      background-color: #21398A;
-      color: #fff;
+    background-color: #21398A;
+    color: #fff;
   }
 
 
@@ -80,10 +80,10 @@ html, body{
     }
 
   .container-fluid .gauche{
-      display: block;
-      grid-area: left;
-      padding: 5%;
-      height: 200px;
+    display: block;
+    grid-area: left;
+    padding: 5%;
+    height: 200px;
   }
   
   .container-fluid .gauche ul{
@@ -96,7 +96,7 @@ html, body{
   
   .container-fluid .right{
     grid-area: right;
-  margin-top: -1px;
+   margin-top: -1px;
 }
 
    .up{
@@ -108,14 +108,14 @@ html, body{
 
   @media screen and (min-width: 992px){
 
-    .container-fluid .gauche{
-        -ms-grid-row: 1;
-        -ms-grid-column: 1;
-    }
+  .container-fluid .gauche{
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
 
-    .container-fluid .right{
-        -ms-grid-row: 1;
-        -ms-grid-column: 3;
-        -ms-grid-column-span: 3;
-    }
+  .container-fluid .right{
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 3;
+  }
 }

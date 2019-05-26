@@ -38,19 +38,18 @@ session_start();
     <div class="right">
     <p>
   
- <b> 1 - Quel est mon identifiant de connexion et mon mot de passe pour une première inscription au lycée Mandela ?</b> <br>
-Votre identifiant est email et le mot de passe vous sera fourni par l'administration.
-
-<br>
-
-<b> 2 - Je me réinscris, quel est mon identifiant et mot de passe de connexion ?</b> <br>
-Votre identifiant de connexion au serveur de réinscription est votre email.
-
-Votre mot de passe vous sera communiqué par l'administration. <br>
-
-<b> 3 - Déjà étudiant  au lycée Mandela, je souhaite changer de filière, comment faire ?</b> <br>
-Pour changer de filière, vous devez obligatoirement effectuer une demande d’admission préalable selon le calendrier et les modalités établis dans l’offre de formation de l'université (Attention, le calendrier peut différé selon les filières).
-    </div>
+   <b> 1 - Quel est mon identifiant de connexion et mon mot de passe pour une première inscription au lycée Mandela ?</b> <br>
+  Votre identifiant est email et le mot de passe vous sera fourni par l'administration.
+  
+  <br>
+  
+  <b> 2 - Je me réinscris, quel est mon identifiant et mot de passe de connexion ?</b> <br>
+  Votre identifiant de connexion au serveur de réinscription est votre email.
+  Votre mot de passe vous sera communiqué par l'administration. <br>
+  
+  <b> 3 - Déjà étudiant  au lycée Mandela, je souhaite changer de filière, comment faire ?</b> <br>
+  Pour changer de filière, vous devez obligatoirement effectuer une demande d’admission préalable selon le calendrier et les modalités établis dans l’offre de formation de l'université (Attention, le calendrier peut différé selon les filières).
+  </div>
     
     </div>
 
