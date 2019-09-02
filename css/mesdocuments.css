@@ -1,0 +1,169 @@
+    html, body{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: #fff;
+    }
+
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    .container-fluid{
+    width: 96%;
+    }
+
+    .up{
+    text-align: center;
+    color:  rgb(1, 20, 83);
+    text-transform: uppercase;
+    font-weight: bold;
+    }
+
+    .up h4{
+    font-weight: bold;
+    margin:2%;
+    }
+
+    .move button{
+    height: 40px;
+    margin-top:3%;
+    padding-bottom:5%;
+    text-align: center;
+    color: rgb(1, 20, 83);
+    }
+
+    .bas{
+    font-weight: bold;
+    color:  rgb(1, 20, 83);
+    }
+
+    .container-fluid .gauche .bleu {
+    font-weight: bold;
+     color: rgb(1, 20, 83);
+    }
+
+    .container-fluid .gauche .bleu:hover{
+    text-decoration: underline;
+    }
+
+    .container-fluid .gauche{
+    display: none;
+    background-color: rgb(251, 251, 251);
+    text-align: center;
+    }
+
+    .gauche .btn-primary,
+    .btn-outline-secondary{
+    background-color: #21398A;
+    color: #fff;
+    border-color: #21398A;
+    }
+
+    .gauche .btn-primary{
+        margin:3%;
+    }
+    .gauche ul li{
+    list-style: none;
+    }
+    .righti{
+    width:60%;
+    margin:0 auto;
+    margin-top: 3%;
+    text-align:center;
+    border-radius:2px;
+    
+    }
+
+    .righti a {
+    color: #21398A;
+    }
+
+    /*Table row */
+    .trow {
+    background-color: #21398A;
+    color: #fff;
+    }
+
+    tr{
+    background-color: #fff;
+    }
+
+    @media screen and (min-width: 992px){
+
+    .container-fluid{
+        width:97%;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 1fr 3% 1fr 3% 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      -ms-grid-rows:  auto;
+      grid-template-rows:  auto;
+      grid-template-areas: 
+      "left right right";
+        grid-gap: 3%;
+
+    }
+
+    .up{
+      margin-top: 1%;
+    margin-bottom: 1%;
+    }
+
+    .container-fluid .gauche{
+        display: block;
+        grid-area: left;
+        height: 180px;
+        text-align: center;
+    }
+    
+     .gauche .btn-primary{
+        margin:5%;
+    }
+    .container-fluid .gauche .bleu{
+        margin-top:7%;
+    }
+    .righti{
+        width:80%;
+        grid-area: right;
+        border:none;
+        text-align:center;
+    }
+
+    .list-group{
+      margin-top: 0;
+
+    }
+    
+    table{
+        margin-top:-2%;
+    }
+    .bas{
+        background-color: gray;
+        color: #fff;
+        margin-top:3%;
+    }
+
+    .bas:hover{
+        color: #fff;
+    }
+    }
+
+    @media screen and (min-width: 992px){
+
+    .container-fluid .gauche{
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+
+    }
+
+    .righti{
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+        -ms-grid-column-span: 3;
+
+    }
+}

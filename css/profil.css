@@ -1,0 +1,124 @@
+    html, body{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color:r#fff;
+    }
+
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    .container-fluid{
+    width: 95%;
+    }
+
+    .container-fluid .gauche{
+    display:none;
+    }
+
+    .container-fluid .right{
+    margin-top: 5%;
+    border: 1px solid;
+    color: #21398A;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-bottom: 3%;
+    background-color: rgb(255, 255, 255);
+    }
+
+    .container-fluid .right p{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top:5%;
+    padding: 5px;
+    }
+
+    .container-fluid .right ul{
+    margin-top: 5%;
+    padding:1%;
+    }
+
+    .container-fluid .right li{
+    list-style: none;
+    margin-top: 1%;
+    margin-left: 5%;
+    }
+
+    .card{
+   margin:0 auto;
+   background:none;
+   text-align:center;
+    }
+
+    .card .btn{
+    background-color: #21398A;
+    border-color: #21398A;
+    }
+
+    .custom-file{
+    width: 100%;
+    }
+ /* iphone 5 */
+ 
+     @media screen and (max-width: 320px){ 
+         .card{
+             margin-left:-3%;
+         }
+     }
+    
+    /*For ipad 768px*/
+    @media screen and (min-width:768px){
+        .container-fluid{
+    width: 97%;
+       display: -ms-grid;
+    display: grid;
+        -ms-grid-columns: 1fr 10px 2fr;
+        grid-template-columns: 1fr 2fr;
+        -ms-grid-rows:  auto;
+        grid-template-rows:  auto;
+            grid-template-areas: 
+        "left right";
+    grid-gap: 10px;
+    margin-top: 3%;
+    margin-bottom: 1%;
+    }
+
+    .container-fluid .gauche{
+    display: block;
+    grid-area: left;
+    width:80%;
+    margin:0 auto;
+    margin-top:3%;
+    }
+
+    .container-fluid .right{
+    grid-area: right;
+    position:relative;
+    top:2.5%;
+    height: 379px;
+    width:80%;
+    margin:0 auto;
+    }
+
+    .card img{
+    margin-top: 0;
+    height: 300px;
+    }
+
+    .container-fluid .right p{
+    text-align: center;
+    }
+
+    .container-fluid .right ul{
+    }
+
+    .container-fluid .right li{
+    list-style: none;
+    margin-left: 7%;
+    }
+    }
+    
