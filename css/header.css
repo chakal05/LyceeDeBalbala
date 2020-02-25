@@ -2,26 +2,6 @@
     padding:0;
     margin:0;
 }
-  img{
-    width: 100%;
-  }
-    
-  .content{
-    width: 95%;
-    margin: 0 auto;
-    text-align: center;
-    }
-     .logo{
-           background:#fff;
-            text-align:center;
-            margin:0 auto;
-            width:95%;
-       }
-     .logo img{
-           height:110px;
-           width:90%;
-     }
-   
     .navbar{
       background-color: #21398A;
     }
@@ -30,12 +10,11 @@
       padding: 7px;
     }
     .navbar-brand{
-      display: block;
       color: #fff;
     }
     
-.content .bleu{
-  background-color:#21398A ;
+   .top .bleu{
+     background-color:#21398A ;
   border-color: #ffffff;
    color: #ffffff;
    display: none;
@@ -44,9 +23,17 @@
    font-weight: bold;
 }
 
-.content .bleu:hover{
-   background-color: #fff;
+ .top .bleu:hover {
+     background-color: #fff;
    color: #21398A;
+}
+
+.navbar-brand{
+    margin-right: 2rem;
+}
+
+.navbar-brand:hover{
+    color:#fff;
 }
     .btn-group{
      margin-bottom: 2%;
@@ -95,18 +82,9 @@
 /*Small devices (landscape phones, 576px and up)  */
 
 @media (min-width: 576px) { 
-  .logo{
-           background:#fff;
-            text-align:center;
-            margin:0 auto;
-            width:95%;
-       }
-     .logo img{
-           height:120px;
-           width:50%;
-     }
+
      
-  .content{
+  .top {
     width: 95%;
   }
    
@@ -123,10 +101,7 @@
   /* Medium devices (tablets, 768px and up)*/
 
   @media (min-width: 768px) { 
- .logo img{
-           height:120px;
-           width:40%;
-     }
+
 
 .btn-group{
   margin-left: 5%;
@@ -142,21 +117,11 @@
 
    /* Large devices (desktops, 992px and up)*/
    @media screen and (min-width: 992px) { 
-       .logo{
-           background:#fff;
-            width: 96%;
-            text-align:center;
-            margin:0 auto;
-       }
-     .logo img{
-           height:130px;
-           width:30%;
-     }
-    .content{
-    width: 96%;
+
+  .top {
     background-color: #FFFFFF;
   }
-  .content .bleu{
+ .top .bleu{
     background: none;
   }
   .navbar{
@@ -166,10 +131,6 @@
   .navbar-nav{
     margin-left: -2%;
   }
-  .navbar-brand{
-    display: none;
-    }
-  
  
  .btn-group{
  margin-top: 2%;

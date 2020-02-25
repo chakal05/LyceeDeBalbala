@@ -29,13 +29,15 @@ session_start();
   <?php  include('header.php'); ?>
             
   </div>
-
-  <div class="container-fluid">
+ <div class="up">
+         <h4>Mes Activites</h4>
+      </div>
+  
+  <div class="container main">
         
   <div class="gauche">
   
-  <h4>Mes Activites</h4>
-    <hr>
+
   <ul>
               
   <li><a href="https://chakirkhaire.com/lycee/php/literaturfr.php"><i class="fas fa-book-open"></i> Français</a></li>

@@ -31,7 +31,7 @@
       </div>
   
 
-    <div class="container-fluid">
+    <div class="container main">
     <div class="gauche">
    <ul>
    <li><i class="fas fa-angle-double-right"></i> <a href="literaturfr.php">Bienvenue au cours </a></li>

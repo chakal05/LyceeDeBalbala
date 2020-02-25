@@ -1,8 +1,11 @@
 <?php
 session_start();
-    if(!isset($_SESSION['id'])){
+  if (!isset( $_SESSION['id'])) {
+              
         header("Location: index.php");
-    }
+          exit;
+        
+      }
 ?>
 
 <!DOCTYPE html>
@@ -19,13 +22,13 @@ session_start();
    
 </head>
 <body>
-    <?php include('header.php');   ?>
+   <?php  include('header.php'); ?>
 
     <div class= "up">
     <h4> Questions/Réponses </h4>
    </div>
    
-    <div class="container-fluid">
+    <div class="container main">
     
     <div class="gauche">
     <ul>
@@ -57,7 +60,7 @@ Pour changer de filière, vous devez obligatoirement effectuer une demande d’a
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-<script src="../css/jquery.js"></script>
-<script src="../css/header.js" ></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/header.js" ></script>
 </body>
 </html>

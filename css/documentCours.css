@@ -25,12 +25,11 @@ html, body{
      color:  rgb(1, 20, 83);
      margin:2%;
   }
-  .container-fluid{
-      width: 96%;
+  .main {
        color:  rgb(1, 20, 83);
   }
 
-  .container-fluid .gauche{
+   .main .gauche{
       display: none;
      background-color:rgb(251, 251, 251);
       padding: 3%;
@@ -40,16 +39,16 @@ html, body{
   .gauche ul li{
     list-style: none;
     }
-  .container-fluid .gauche a{
+   .main .gauche a{
       color:  rgb(1, 20, 83);
     text-decoration: none;
     font-weight: bold;
   }
 
-  .container-fluid .right a {
+   .main .right a {
      color:  rgb(1, 20, 83);
   }
-  .container-fluid .right{
+   .main .right{
     background-color: #fff;
     border-radius: 3px;
     
@@ -62,8 +61,7 @@ html, body{
 
   @media screen and (min-width: 992px){
 
-    .container-fluid{
-    width: 97%;
+     .main{
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 5px 1fr 5px 1fr;
@@ -76,22 +74,22 @@ html, body{
    margin-bottom: 5%;
     }
 
-    .container-fluid .gauche{
+     .main .gauche{
         display: block;
         grid-area: left;
         padding: 5%;
         height: 200px;
     }
     
-    .container-fluid .gauche ul{
+     .main .gauche ul{
       margin-top: 7%;
   }
 
-  .container-fluid .gauche ul li  {
+   .main .gauche ul li  {
     margin-top: 5%;
   }
   
-  .container-fluid .right{
+   .main .right{
     grid-area: right;
   margin-top: -1px;
 }
@@ -102,17 +100,3 @@ html, body{
 }
   }
 
-
-  @media screen and (min-width: 992px){
-
-    .container-fluid .gauche{
-        -ms-grid-row: 1;
-        -ms-grid-column: 1;
-    }
-
-    .container-fluid .right{
-        -ms-grid-row: 1;
-        -ms-grid-column: 3;
-        -ms-grid-column-span: 3;
-    }
-}

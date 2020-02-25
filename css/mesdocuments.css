@@ -12,7 +12,7 @@
     box-sizing: border-box;
     }
 
-    .container-fluid{
+    .main{
     width: 96%;
     }
 
@@ -41,17 +41,16 @@
     color:  rgb(1, 20, 83);
     }
 
-    .container-fluid .gauche .bleu {
+    .main .gauche .bleu {
     font-weight: bold;
      color: rgb(1, 20, 83);
     }
 
-    .container-fluid .gauche .bleu:hover{
+    .main .gauche .bleu:hover{
     text-decoration: underline;
     }
 
-    .container-fluid .gauche{
-    display: none;
+    .main .gauche{
     background-color: rgb(251, 251, 251);
     text-align: center;
     }
@@ -94,8 +93,7 @@
 
     @media screen and (min-width: 992px){
 
-    .container-fluid{
-        width:97%;
+    .main{
       display: -ms-grid;
       display: grid;
       -ms-grid-columns: 1fr 3% 1fr 3% 1fr;
@@ -109,12 +107,10 @@
     }
 
     .up{
-      margin-top: 1%;
-    margin-bottom: 1%;
+      margin: 1rem;
     }
 
-    .container-fluid .gauche{
-        display: block;
+    .main .gauche{
         grid-area: left;
         height: 180px;
         text-align: center;
@@ -123,7 +119,7 @@
      .gauche .btn-primary{
         margin:5%;
     }
-    .container-fluid .gauche .bleu{
+    .main .gauche .bleu{
         margin-top:7%;
     }
     .righti{
@@ -151,19 +147,3 @@
         color: #fff;
     }
     }
-
-    @media screen and (min-width: 992px){
-
-    .container-fluid .gauche{
-        -ms-grid-row: 1;
-        -ms-grid-column: 1;
-
-    }
-
-    .righti{
-        -ms-grid-row: 1;
-        -ms-grid-column: 3;
-        -ms-grid-column-span: 3;
-
-    }
-}

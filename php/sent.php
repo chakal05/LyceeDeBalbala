@@ -51,7 +51,7 @@
         <h4> Messages envoyés  </h4>
         </div>
 
-        <div class="container-fluid">
+        <div class="container main">
 
         <div class="gauche">
         <div class="pim">
@@ -59,9 +59,9 @@
         <hr>
 
         <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="new_pm.php"><i class="fas fa-angle-double-right"></i> Envoyer un message</a></li>
-        <li class="nav-item "><a class="nav-link" href="pm_list.php"><i class="fas fa-angle-double-right"></i> Recus</a></li>
-        <li class="nav-item"><a class="nav-link" href="sent.php"><i class="fas fa-angle-double-right"></i> ENVOYES</a></li>
+        <li class="nav-item"><a href="new_pm.php"><button  class="btn btn-sm btn-block" ><i class="fas fa-angle-double-right"></i> Envoyer un message</button></a></li>
+        <li class="nav-item "><a href="pm_list.php"><button  class="btn btn-sm btn-block" ><i class="fas fa-angle-double-right"></i> Recus</button></a></li>
+        <li class="nav-item"><a href="sent.php"><button  class="btn btn-sm btn-block" ><i class="fas fa-angle-double-right"></i> ENVOYES</button></a></li>
         </ul>
 
         </div>

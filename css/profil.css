@@ -12,15 +12,8 @@
     box-sizing: border-box;
     }
 
-    .container-fluid{
-    width: 95%;
-    }
 
-    .container-fluid .gauche{
-    display:none;
-    }
-
-    .container-fluid .right{
+      .main  .right{
     margin-top: 5%;
     border: 1px solid;
     color: #21398A;
@@ -30,19 +23,19 @@
     background-color: rgb(255, 255, 255);
     }
 
-    .container-fluid .right p{
+    .main .right p{
     text-align: center;
     text-transform: uppercase;
     margin-top:5%;
     padding: 5px;
     }
 
-    .container-fluid .right ul{
+     .main .right ul{
     margin-top: 5%;
     padding:1%;
     }
 
-    .container-fluid .right li{
+     .main .right li{
     list-style: none;
     margin-top: 1%;
     margin-left: 5%;
@@ -72,8 +65,7 @@
     
     /*For ipad 768px*/
     @media screen and (min-width:768px){
-        .container-fluid{
-    width: 97%;
+         .main {
        display: -ms-grid;
     display: grid;
         -ms-grid-columns: 1fr 10px 2fr;
@@ -87,15 +79,14 @@
     margin-bottom: 1%;
     }
 
-    .container-fluid .gauche{
-    display: block;
+     .main .gauche{
     grid-area: left;
     width:80%;
     margin:0 auto;
     margin-top:3%;
     }
 
-    .container-fluid .right{
+   .main .right{
     grid-area: right;
     position:relative;
     top:2.5%;
@@ -109,14 +100,14 @@
     height: 300px;
     }
 
-    .container-fluid .right p{
+      .main .right p{
     text-align: center;
     }
 
-    .container-fluid .right ul{
+   .main .right ul{
     }
 
-    .container-fluid .right li{
+     .main .right li{
     list-style: none;
     margin-left: 7%;
     }

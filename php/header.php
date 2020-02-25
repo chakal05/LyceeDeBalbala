@@ -6,18 +6,18 @@ $user ="";
    
  echo "
  
- <div class='content'>
-  <div class='logo'>
-    <img src='../images/mandela.jpg'>
-    </div>
-    <nav class='navbar navbar-expand-lg'>
+ <div class='container top'>
+
+    <nav class='navbar  navbar-expand-lg'>
+     <a class='navbar-brand' href='#'>
+    Lycee Mandela
+  </a>
          <button class='navbar-toggler navbar-light bg-light ' type='button' data-toggle='collapse' data-target='#navbarTogglerDemo03' aria-controls='navbarTogglerDemo03' aria-expanded='false' aria-label='Toggle navigation'>
            <span class='navbar-toggler-icon'></span>
          </button>
-         <a class='navbar-brand' href='#'>$user</a>
        
          <div class='collapse navbar-collapse' id='navbarTogglerDemo03'>
- 
+
            <ul class='navbar-nav mr-auto mt-2 mt-lg-0'>
             
  <div class='btn-group'>

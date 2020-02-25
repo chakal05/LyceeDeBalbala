@@ -66,7 +66,7 @@
     
           <?php   include('header.php');  ?> 
 
-          <div class="container-fluid">
+          <div class="container main">
 
           <div class="gauche">
           <div class="card" style="width: 18rem;">

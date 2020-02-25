@@ -1,7 +1,7 @@
 <?php
 
 
-$link = mysqli_connect("localhost", "root", "chakal10", "lycee");
+$link = mysqli_connect("localhost", "chakgpqj_balbala", "rZwfwt3_njm_", "chakgpqj_user");
 
 
 $mail_webmaster = 'chakir@chakirkhaire.com';

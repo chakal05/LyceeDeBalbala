@@ -54,7 +54,7 @@ if(isset($_SESSION['id'])){
 
     </div>
 
-  <div class="container-fluid">
+  <div class="container main">
 
   <div class="gauche">
 

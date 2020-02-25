@@ -89,7 +89,7 @@
     <h4> Messages réçus </h4>
    </div>
    
-    <div class="container-fluid">
+    <div class="container main">
 
   <div class="gauche">
     <div class="pim">
@@ -97,9 +97,9 @@
         <hr>
 
     <ul class="navbar-nav">
-    <li class="nav-item"><a class="nav-link" id="new" href='new_pm.php'><i class="fas fa-angle-double-right"></i> Envoyer un message</a></li>
-    <li class="nav-item "><a class="nav-link" id="list" href='pm_list.php'><i class="fas fa-angle-double-right"></i> MESSAGE RECUS</a></li>
-    <li class="nav-item"><a class="nav-link" id="sent" href='sent.php'><i class="fas fa-angle-double-right"></i> Envoyes</a></li>
+    <li class="nav-item"><a id="new" href='new_pm.php'><button  class="btn btn-sm btn-block"><i class="fas fa-angle-double-right"></i> Envoyer un message</button></a></li>
+    <li class="nav-item "><a id="list" href='pm_list.php'><button  class="btn btn-sm btn-block"><i class="fas fa-angle-double-right"></i> MESSAGE RECUS</button></a></li>
+    <li class="nav-item"><a  id="sent" href='sent.php'><button  class="btn btn-sm btn-block"><i class="fas fa-angle-double-right"></i> Envoyes</button></a></li>
     </ul>
     
    </div>

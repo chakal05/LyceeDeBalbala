@@ -12,17 +12,14 @@
     box-sizing: border-box;
     }
 
-    .container-fluid{
-    width:97%;
-    }
+   
 
-    .container-fluid .gauche{
-    display: none;
+     .main .gauche{
     background-color: rgb(251, 251, 251);
     padding-bottom: 3%;
     border-radius: 3px;
     }
-    .container-fluid .gauche h4{
+     .main .gauche h4{
     color:  rgb(1, 20, 83);
     text-transform: uppercase;
     text-align: center;
@@ -32,10 +29,10 @@
     margin-bottom:2%;
     }
 
-    .container-fluid .gauche li{
+     .main .gauche li{
         list-style:none;
     }
-    .container-fluid .gauche a {
+     .main .gauche a {
     text-decoration: none;
      color:  rgb(1, 20, 83);
     margin-top: 5px;
@@ -44,22 +41,22 @@
     margin-left: 5%;
     }
 
-    .container-fluid .gauche .btn{
+    .main .gauche .btn{
         margin-top: 5%;
         margin-left: 35%;
     }
 
-    .container-fluid .gauche .btn a{
+     .main .gauche .btn a{
         color: #fff;
     }
-    .container-fluid .right{
+     .main .right{
     margin-top: 3%;
     text-align: center;
     border-radius: 3px;
     }
 
 
-    .container-fluid .right label{
+     .main .right label{
      color:  rgb(1, 20, 83);
     margin-top: 1%;
     }
@@ -87,8 +84,7 @@
     /* Large devices (desktops, 992px and up)*/
     @media screen and (min-width: 992px) { 
 
-    .container-fluid{
-    width: 98%;
+     .main{
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
@@ -101,60 +97,35 @@
     margin-top: 2%;
     }
 
-    .container-fluid .gauche{
-    display: block;
+     .main .gauche{
     grid-area: left;
     padding-top: 5px;
     height: 310px;
     }
 
-    .container-fluid .right{
+     .main .right{
     grid-area: right;
     margin-top: 0;
     border: none;
     text-align: center;
     }
-    .container-fluid .right .btn{
+    .main .right .btn{
     margin-left: 5%;
     }
 
-    .container-fluid .gauche h4{
+   .main .gauche h4{
     margin-top: 7%;
     }
 
-    .container-fluid .gauche .list-group{
+    .main .gauche .list-group{
     margin-top: 7%;
     margin-left: 3%;
     }
     .succes, .btn-warning,
-    .container-fluid .right .form-control,
-    .container-fluid .right label{
+     .main .right .form-control,
+     .main .right label{
     width: 90%;
     margin-left: 5%;
     }
 
     }
-    @media screen and (min-width: 992px){ 
-
-    .container-fluid .gauche{
-        -ms-grid-row: 1;
-        -ms-grid-column: 1;
-    } 
-
-    .container-fluid .right{
-        -ms-grid-row: 1;
-        -ms-grid-column: 3;
-        -ms-grid-column-span: 3;
-    }
-
-    .container-fluid .gauche .list-group{
-        margin-bottom: 7%;
-    }
-    
-    #back{
-       margin-left: 39%;
-    }
-    #send{
-        margin-top: 3.5%;
-    }
-}

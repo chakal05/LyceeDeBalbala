@@ -12,13 +12,9 @@ html, body{
     box-sizing: border-box;
 }
 
-.container-fluid{
-    width: 95%;
-  }
   
   
-.container-fluid .gauche{
-  display: none;
+.main .gauche{
   background-color: rgb(251, 251, 251); 
   text-align: center;
   }
@@ -46,19 +42,19 @@ html, body{
   }
 
   
-  .container-fluid  .gauche .nav-item a{
+  .main .gauche .nav-item a{
     text-decoration: none;
     color:  rgb(1, 20, 83);
     font-weight: bold;
     margin-top: -3px;
   }
  
-  .container-fluid .gauche .functions .btn {
+  .main .gauche .functions .btn {
     color:  rgb(1, 20, 83);
     font-weight: bold;
   }
 
-  .container-fluid .gauche .functions h4{
+  .main .gauche .functions h4{
       width:80%;
       margin:0 auto;
   }
@@ -95,7 +91,7 @@ html, body{
       margin-top: -1%;
     }
   
-    .container-fluid .gauche .functions li{
+    .main .gauche .functions li{
       margin-top: 1%;
    }
   }
@@ -105,8 +101,7 @@ html, body{
    /* Large devices (desktops, 992px and up)*/
    @media screen and (min-width: 992px) { 
      
-    .container-fluid{
-        width: 98%;
+    .main {
         display: -ms-grid;
         display: grid;
         -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
@@ -119,37 +114,35 @@ html, body{
        margin-bottom: 3%;
     }
     
-    .container-fluid .gauche{
-        display: block;
+    .main .gauche{
         grid-area: left;
         padding-top: 5px;
         height: 300px;
     }
        
-    .container-fluid .display-message{
+    .main .display-message{
       grid-area: right;
       margin-top: 0;
     }
 
     .up{
-    margin-top: 1%;
-    margin-bottom: 2%;
+    margin:1rem;
     }
 
-    .navbar-nav a {
+  .main .gauche .navbar-nav a {
     margin-top: -3%;
     }
 
-    .container-fluid .gauche .btn{
+    .main .gauche .btn{
       text-align: left;
       margin-left: 6%;
     }
 
-    .container-fluid .gauche i {
+    .main .gauche i {
       margin-left: 5%;
     }
 
-    .container-fluid .gauche .functions li{
+ .main .gauche .functions li{
       margin-top: 1%;
     }
 
@@ -163,28 +156,3 @@ html, body{
     }
 
    }
-   @media screen and (min-width: 992px){ 
-     
-    .container-fluid .gauche{
-      text-align: left;
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    } 
-     
-    .container-fluid .display-message{
-    -ms-grid-row: 1;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 3;
-    }
-
-    .container-fluid .gauche .pim{
-      margin-left: 7%;
-    }
-    
-    .container-fluid .gauche a {
-      font-size: 14.7px;
-    }
-    .container-fluid .gauche .btn a{
-      padding-top: 3%;
-    }
-}

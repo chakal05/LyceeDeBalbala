@@ -79,7 +79,7 @@
     include('header.php');
     ?>
     
-    <div class="container-fluid">
+    <div class="container main">
         
     <div class="gauche">
     <h4>Contacts</h4>
